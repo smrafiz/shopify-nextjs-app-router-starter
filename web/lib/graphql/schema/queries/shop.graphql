@@ -1,0 +1,13 @@
+query ShopInfo {
+  shop {
+    name
+    email
+    myshopifyDomain
+    plan {
+      displayName
+    }
+    primaryDomain {
+      url
+    }
+  }
+}

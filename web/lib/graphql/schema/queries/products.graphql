@@ -1,0 +1,29 @@
+query ProductsList($first: Int!, $after: String) {
+  products(first: $first, after: $after) {
+    edges {
+      node {
+        id
+        title
+        handle
+        status
+        featuredImage {
+          url
+          altText
+        }
+        variants(first: 1) {
+          edges {
+            node {
+              id
+              price
+            }
+          }
+        }
+      }
+      cursor
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
