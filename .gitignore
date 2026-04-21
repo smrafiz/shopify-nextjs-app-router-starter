@@ -1,0 +1,7 @@
+node_modules/
+.next/
+.env
+.env.local
+web/prisma/generated/
+*.tsbuildinfo
+.DS_Store
