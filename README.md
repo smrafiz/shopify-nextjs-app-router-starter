@@ -71,8 +71,10 @@ Component → React Query hook → Server Action → Service → Repository → 
 ## Commands
 
 ```bash
-bun run dev           # Start dev server (Shopify CLI)
-cd web && bun run migrate   # Run DB migrations
-cd web && bun test          # Run unit tests
-cd web && bunx tsc --noEmit # Type check
+bun run dev              # Start dev server (Shopify CLI)
+bun run build:widgets    # Build widget TS → extension assets (one-shot)
+bun run dev:widgets      # Watch-build widget TS → extension assets
+cd web && bun run migrate      # Run DB migrations
+cd web && bun test             # Run unit tests
+cd web && bunx tsc --noEmit    # Type check
 ```

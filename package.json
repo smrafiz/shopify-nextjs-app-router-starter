@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "shopify app dev",
+    "dev:widgets": "cd web/widgets && vite build --watch",
     "build": "shopify app build",
+    "build:widgets": "cd web/widgets && vite build",
     "deploy": "shopify app deploy",
     "info": "shopify app info"
   },

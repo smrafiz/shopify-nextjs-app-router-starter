@@ -14,7 +14,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "graphql-codegen": "graphql-codegen --config codegen.ts"
+    "graphql-codegen": "graphql-codegen --config codegen.ts",
+    "build:widgets": "cd widgets && vite build",
+    "dev:widgets": "cd widgets && vite build --watch"
   },
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",
@@ -51,6 +53,7 @@
     "prettier": "^3.8.3",
     "tailwindcss": "^4.2.3",
     "ts-jest": "^29.4.9",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vite": "^6.3.0"
   }
 }
