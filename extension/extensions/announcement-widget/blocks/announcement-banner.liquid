@@ -1,0 +1,27 @@
+{% comment %}
+  Announcement Banner Block
+  Fetches the active announcement from the App Proxy and renders it.
+  Dismiss state stored in sessionStorage.
+{% endcomment %}
+
+<div
+  id="announcement-banner-{{ block.id }}"
+  class="announcement-banner announcement-banner--hidden"
+  data-shop="{{ shop.permanent_domain }}"
+  data-block-id="{{ block.id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="announcement-banner__inner">
+    <span class="announcement-banner__message" id="announcement-message-{{ block.id }}"></span>
+    <button
+      class="announcement-banner__close"
+      aria-label="Dismiss announcement"
+      data-dismiss-target="announcement-banner-{{ block.id }}"
+    >
+      &times;
+    </button>
+  </div>
+</div>
+
+{{ 'announcement-widget.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'announcement-widget.js' | asset_url }}" defer></script>

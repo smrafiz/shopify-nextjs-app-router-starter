@@ -1,0 +1,11 @@
+api_version = "2025-10"
+name = "Announcement Banner"
+handle = "announcement-banner"
+
+[[extensions]]
+type = "theme"
+name = "Announcement Banner"
+handle = "announcement-banner"
+
+  [extensions.capabilities]
+  network_access = true
