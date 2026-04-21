@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client"
+  output   = "./generated"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Session {
+  id               String            @id @default(uuid())
+  accessToken      String?
+  expires          DateTime?
+  isOnline         Boolean
+  scope            String?
+  shop             String
+  state            String
+  apiKey           String
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  onlineAccessInfo OnlineAccessInfo?
+
+  @@map("sessions")
+}
+
+model OnlineAccessInfo {
+  id                  String          @id @default(uuid())
+  sessionId           String?         @unique
+  expiresIn           Int
+  associatedUserScope String
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+  associatedUser      AssociatedUser?
+  session             Session?        @relation(fields: [sessionId], references: [id])
+
+  @@map("online_access_infos")
+}
+
+model AssociatedUser {
+  id                 String            @id @default(uuid())
+  onlineAccessInfoId String?           @unique
+  userId             BigInt
+  firstName          String
+  lastName           String
+  email              String
+  accountOwner       Boolean
+  locale             String
+  collaborator       Boolean
+  emailVerified      Boolean
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  onlineAccessInfo   OnlineAccessInfo? @relation(fields: [onlineAccessInfoId], references: [id])
+
+  @@map("associated_users")
+}
+
+model Shop {
+  id                 String    @id @default(cuid())
+  domain             String    @unique
+  setupComplete      Boolean   @default(false)
+  webhooksRegistered Boolean   @default(false)
+  lastSetupCheck     DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  announcements Announcement[]
+
+  @@index([domain, setupComplete])
+  @@map("shops")
+}
+
+model WebhookDelivery {
+  id          String   @id
+  topic       String
+  shop        String
+  processedAt DateTime @default(now())
+
+  @@index([shop, processedAt])
+  @@map("webhook_deliveries")
+}
+
+model Announcement {
+  id        String           @id @default(cuid())
+  shopId    String
+  title     String
+  message   String
+  type      AnnouncementType @default(INFO)
+  isActive  Boolean          @default(false)
+  bgColor   String           @default("#1a1a1a")
+  textColor String           @default("#ffffff")
+  startsAt  DateTime?
+  endsAt    DateTime?
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  shop Shop @relation(fields: [shopId], references: [id], onDelete: Cascade)
+
+  @@index([shopId, isActive])
+  @@map("announcements")
+}
+
+enum AnnouncementType {
+  INFO
+  WARNING
+  PROMO
+  URGENT
+}
