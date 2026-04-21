@@ -16,7 +16,8 @@
     "test:coverage": "jest --coverage",
     "graphql-codegen": "graphql-codegen --config codegen.ts",
     "build:widgets": "cd widgets && vite build",
-    "dev:widgets": "cd widgets && vite build --watch"
+    "dev:widgets": "cd widgets && vite build --watch",
+    "update:config": "bun run _developer/tomlWriter.ts"
   },
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",
@@ -35,6 +36,7 @@
     "react": "19.2.5",
     "react-dom": "19.2.5",
     "react-hook-form": "^7.73.1",
+    "dotenv": "^16.4.0",
     "zod": "^4.3.6",
     "zustand": "^5.0.12"
   },
@@ -54,6 +56,7 @@
     "tailwindcss": "^4.2.3",
     "ts-jest": "^29.4.9",
     "typescript": "^6.0.3",
+    "@iarna/toml": "^2.2.5",
     "vite": "^6.3.0"
   }
 }
