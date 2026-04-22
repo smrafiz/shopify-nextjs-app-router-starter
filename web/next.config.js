@@ -5,6 +5,23 @@ const nextConfig = {
   devIndicators: false,
   compress: true,
   poweredByHeader: false,
+  experimental: {
+    dynamicIO: true,
+    cacheComponents: true,
+    turbopackFileSystemCacheForDev: true,
+    cacheLife: {
+      dashboard: {
+        stale: 30,
+        revalidate: 60,
+        expire: 300,
+      },
+      "dashboard-long": {
+        stale: 300,
+        revalidate: 600,
+        expire: 3600,
+      },
+    },
+  },
   env: {
     NEXT_PUBLIC_HOST: process.env.HOST,
     NEXT_PUBLIC_SHOPIFY_API_KEY: process.env.SHOPIFY_API_KEY,

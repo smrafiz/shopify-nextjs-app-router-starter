@@ -28,4 +28,10 @@ declare module "react" {
   }
 }
 
+declare module "next/cache" {
+    export function cacheLife(
+        profile: "dashboard" | "dashboard-long" | string,
+    ): void;
+}
+
 export {};

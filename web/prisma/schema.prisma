@@ -56,18 +56,68 @@ model AssociatedUser {
 }
 
 model Shop {
-  id                 String    @id @default(cuid())
-  domain             String    @unique
-  setupComplete      Boolean   @default(false)
-  webhooksRegistered Boolean   @default(false)
-  lastSetupCheck     DateTime?
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  id                   String      @id @default(cuid())
+  domain               String      @unique
+  status               ShopStatus  @default(ACTIVE)
+  setupComplete        Boolean     @default(false)
+  webhooksRegistered   Boolean     @default(false)
+  lastSetupCheck       DateTime?
+  metafieldSetupDone   Boolean     @default(false)
+  discountSetupDone    Boolean     @default(false)
+  setupGuideDismissed  Boolean     @default(false)
+  setupProgress        Json?
+  locales              String[]    @default([])
+  primaryLocale        String?
+  localesUpdatedAt     DateTime?
+  createdAt            DateTime    @default(now())
+  updatedAt            DateTime    @updatedAt
 
   announcements Announcement[]
+  appSettings   AppSettings?
+  shopPlan      ShopPlan?
 
   @@index([domain, setupComplete])
   @@map("shops")
+}
+
+model AppSettings {
+  id                    String              @id @default(cuid())
+  shopId                String              @unique
+  defaultDiscountType   String?
+  defaultDiscountValue  Float?
+  maxBundlesPerShop     Int                 @default(10)
+  redirectAfterCart     String              @default("CART")
+  hidePaymentButtons    Boolean             @default(false)
+  enableStockValidation Boolean             @default(true)
+  maxBundlesPerOrder    Int?
+  labelsJson            Json?
+  globalStylesJson      Json?
+  customCss             String?
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+
+  shop Shop @relation(fields: [shopId], references: [id], onDelete: Cascade)
+
+  @@map("app_settings")
+}
+
+model ShopPlan {
+  id                String                       @id @default(cuid())
+  shopId            String                       @unique
+  plan              PlanName                     @default(FREE)
+  status            ShopifySubscriptionStatus?
+  billingId         String?
+  billingInterval   BillingInterval?
+  trialUsed         Boolean                      @default(false)
+  trialEndsAt       DateTime?
+  currentPeriodEnd  DateTime?
+  cancelledAt       DateTime?
+  createdAt         DateTime                     @default(now())
+  updatedAt         DateTime                     @updatedAt
+
+  shop Shop @relation(fields: [shopId], references: [id], onDelete: Cascade)
+
+  @@map("shop_plans")
 }
 
 model WebhookDelivery {
@@ -105,4 +155,66 @@ enum AnnouncementType {
   WARNING
   PROMO
   URGENT
+}
+
+enum ShopStatus {
+  ACTIVE
+  SUSPENDED
+  UNINSTALLED
+}
+
+enum ShopifySubscriptionStatus {
+  ACTIVE
+  CANCELLED
+  DECLINED
+  EXPIRED
+  FROZEN
+  PENDING
+}
+
+enum PlanName {
+  FREE
+  PRO
+}
+
+enum BillingInterval {
+  EVERY_30_DAYS
+  ANNUAL
+}
+
+enum NotificationPriority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum NotificationType {
+  INFO
+  WARNING
+  ERROR
+  SUCCESS
+}
+
+enum AlertRuleStatus {
+  ACTIVE
+  PAUSED
+  DELETED
+}
+
+enum AlertFrequency {
+  IMMEDIATE
+  HOURLY
+  DAILY
+}
+
+enum ComparisonOperator {
+  EQUALS
+  NOT_EQUALS
+  GREATER_THAN
+  LESS_THAN
+  GREATER_THAN_OR_EQUAL
+  LESS_THAN_OR_EQUAL
+  CONTAINS
+  NOT_CONTAINS
 }

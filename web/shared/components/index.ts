@@ -5,4 +5,3 @@ export * from "./loading";
 export * from "./feedback";
 export * from "./overlays";
 export * from "./auth";
-export * from "./providers";
