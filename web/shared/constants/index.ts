@@ -1,4 +1,6 @@
-export const SHOPIFY_API_VERSION = "2025-10";
+import { ApiVersion } from "@shopify/shopify-api";
+
+export const SHOPIFY_API_VERSION = ApiVersion.January26;
 
 export const ROUTES = {
   DASHBOARD: "/",

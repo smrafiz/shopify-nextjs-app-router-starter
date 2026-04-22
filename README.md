@@ -2,7 +2,7 @@
 
 A production-ready starter for Shopify embedded apps.
 
-**Stack:** Next.js 16 · React 19 · Prisma 7 · PostgreSQL · Zustand · React Query · Shopify Polaris · TypeScript · bun
+**Stack:** Next.js 16 · React 19 · Prisma 7 · PostgreSQL · Zustand · React Query · Shopify Polaris · TypeScript · pnpm
 
 ## Features
 
@@ -19,17 +19,17 @@ A production-ready starter for Shopify embedded apps.
 # 1. Clone and install
 git clone https://github.com/your-org/shopify-nextjs-app-router-starter
 cd shopify-nextjs-app-router-starter
-bun install
+pnpm install
 
 # 2. Configure environment
 cp .env.example .env
 # Fill in SHOPIFY_API_KEY, SHOPIFY_API_SECRET, DATABASE_URL
 
 # 3. Migrate database
-cd web && bun run migrate
+cd web && pnpm run migrate
 
 # 4. Start dev server
-cd .. && bun run dev
+cd .. && pnpm run dev
 ```
 
 ## Architecture
@@ -65,16 +65,16 @@ Component → React Query hook → Server Action → Service → Repository → 
 1. Copy `web/features/announcements/` as a template
 2. Replace `Announcement` / `announcement` with your entity name
 3. Update `web/prisma/schema.prisma` with your model
-4. Run `bun run migrate`
+4. Run `pnpm run migrate`
 5. Add your route in `web/app/(dashboard)/`
 
 ## Commands
 
 ```bash
-bun run dev              # Start dev server (Shopify CLI)
-bun run build:widgets    # Build widget TS → extension assets (one-shot)
-bun run dev:widgets      # Watch-build widget TS → extension assets
-cd web && bun run migrate      # Run DB migrations
-cd web && bun test             # Run unit tests
-cd web && bunx tsc --noEmit    # Type check
+pnpm run dev              # Start dev server (app + widgets concurrently)
+pnpm run build:widgets    # Build widget TS → extension assets (one-shot)
+pnpm run dev:widgets      # Watch-build widget TS → extension assets
+cd web && pnpm run migrate      # Run DB migrations
+cd web && pnpm test             # Run unit tests
+cd web && pnpx tsc --noEmit     # Type check
 ```

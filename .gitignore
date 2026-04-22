@@ -1,7 +1,100 @@
-node_modules/
-.next/
+# Environment
 .env
-.env.local
-web/prisma/generated/
-*.tsbuildinfo
+.env.*
+.env*.local
+!.env.example
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing & Coverage
+coverage/
+.vitest/
+
+# macOS & OS
 .DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Tunnel configs
+config/tunnel.pid
+ngrok.yml
+tunnel.log
+
+# Vite / Widget Builds
+dist/
+extensions/*/build/
+extensions/*/dist/
+extensions/*/assets/*.js
+extensions/*/assets/*.css
+
+# Database (Prisma)
+web/database.sqlite
+web/prisma/dev.db
+web/prisma/test.db
+*.sqlite
+prisma/generated/
+
+# Next.js Build
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Production / Deployment
+.build/
+.vercel/
+tmp/
+.cache/
+
+# Shopify CLI / App Config
+shopify.app.toml
+.shopify-cli.yml
+.shopify-cli-*.json
+.shopify/
+
+# Generated GraphQL / Types
+web/lib/graphql/generated/
+web/lib/__generated__/
+generated/
+types/generated.ts
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.orig
+
+# Package Manager Lockfiles
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Security / Certificates
+*.pem
+*.key
+*.crt
+*.p12
+
+# Shopify Extension Specific
+extensions/**/node_modules/
+extensions/**/.env
+extensions/**/.next
+extensions/**/.vite/
+extension/extensions/**/*.css
+extension/extensions/**/*.js
+
+# Misc / Temporary
+*.tmp
+*.bak
+*.old

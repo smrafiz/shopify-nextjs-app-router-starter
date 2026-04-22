@@ -8,16 +8,14 @@
     "dev": "next dev",
     "migrate": "prisma migrate dev",
     "postinstall": "prisma generate",
-    "prisma:push": "bunx prisma db push",
-    "prisma:studio": "bunx prisma studio",
-    "prisma:migrate": "bunx prisma migrate dev --name",
+    "prisma:push": "pnpx prisma db push",
+    "prisma:pull": "pnpx prisma db pull",
+    "prisma:studio": "pnpx prisma studio",
+    "prisma:migrate": "pnpx prisma migrate dev --name",
+    "graphql-codegen": "graphql-codegen --config codegen.ts",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "graphql-codegen": "graphql-codegen --config codegen.ts",
-    "build:widgets": "cd widgets && vite build",
-    "dev:widgets": "cd widgets && vite build --watch",
-    "update:config": "bun run _developer/tomlWriter.ts"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",
@@ -25,11 +23,15 @@
     "@prisma/adapter-pg": "^7.7.0",
     "@prisma/client": "^7.7.0",
     "@shopify/app-bridge-react": "^4.2.10",
+    "@shopify/app-bridge-types": "^0.7.0",
+    "@shopify/polaris-types": "^1.0.6",
     "@shopify/shopify-api": "^13.0.0",
     "@tanstack/react-query": "^5.99.2",
     "@tanstack/react-query-devtools": "^5.99.2",
+    "dotenv": "^16.4.0",
     "graphql": "^16.10.0",
     "graphql-request": "^7.4.0",
+    "validator": "^13.15.35",
     "isomorphic-dompurify": "^3.9.0",
     "next": "16.2.4",
     "pg": "^8.20.0",
@@ -37,11 +39,19 @@
     "react": "19.2.5",
     "react-dom": "19.2.5",
     "react-hook-form": "^7.73.1",
-    "dotenv": "^16.4.0",
     "zod": "^4.3.6",
     "zustand": "^5.0.12"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^6.3.1",
+    "@graphql-codegen/client-preset": "^5.3.0",
+    "@shopify/api-codegen-preset": "^2.0.0",
+    "@types/validator": "^13.15.10",
+    "eslint": "^10.2.1",
+    "eslint-config-next": "16.2.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "@tailwindcss/postcss": "^4.2.3",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -53,14 +63,15 @@
     "jest": "^30.3.0",
     "jest-mock-extended": "^4.0.1",
     "postcss": "^8.5.10",
-    "prettier": "^3.8.3",
     "tailwindcss": "^4.2.3",
     "ts-jest": "^29.4.9",
-    "typescript": "^6.0.3",
-    "@graphql-codegen/cli": "^6.3.1",
-    "@graphql-codegen/client-preset": "^5.3.0",
-    "@iarna/toml": "^2.2.5",
-    "@shopify/api-codegen-preset": "^2.0.0",
-    "vite": "^6.3.0"
+    "tsx": "^4.19.0",
+    "typescript": "^6.0.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.14",
+      "@types/react-dom": "19.2.3"
+    }
   }
 }

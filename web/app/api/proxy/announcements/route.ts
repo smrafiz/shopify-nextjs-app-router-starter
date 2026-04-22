@@ -1,22 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/shared/repositories/prisma-connect";
 import { isValidShopDomain } from "@/shared/utils";
+import { createRateLimiter, RATE_LIMIT_RESPONSE } from "@/lib/rate-limit";
 
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT = 100;
-const RATE_WINDOW_MS = 60_000;
-
-function checkRateLimit(shop: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(shop);
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(shop, { count: 1, resetAt: now + RATE_WINDOW_MS });
-    return true;
-  }
-  if (entry.count >= RATE_LIMIT) return false;
-  entry.count++;
-  return true;
-}
+const checkRateLimit = createRateLimiter({
+  windowMs: 60_000,
+  maxRequests: 100,
+});
 
 export async function GET(req: NextRequest) {
   const shop = req.nextUrl.searchParams.get("shop") ?? "";
@@ -26,7 +16,7 @@ export async function GET(req: NextRequest) {
   }
 
   if (!checkRateLimit(shop)) {
-    return NextResponse.json({ error: "Rate limit exceeded" }, { status: 429 });
+    return RATE_LIMIT_RESPONSE;
   }
 
   const now = new Date();
@@ -38,18 +28,8 @@ export async function GET(req: NextRequest) {
     where: {
       shopId: shopRecord.id,
       isActive: true,
-      OR: [
-        { startsAt: null },
-        { startsAt: { lte: now } },
-      ],
-      AND: [
-        {
-          OR: [
-            { endsAt: null },
-            { endsAt: { gte: now } },
-          ],
-        },
-      ],
+      OR: [{ startsAt: null }, { startsAt: { lte: now } }],
+      AND: [{ OR: [{ endsAt: null }, { endsAt: { gte: now } }] }],
     },
     orderBy: { createdAt: "desc" },
     select: {
@@ -62,5 +42,8 @@ export async function GET(req: NextRequest) {
     },
   });
 
-  return NextResponse.json({ announcement }, { headers: { "Cache-Control": "no-store" } });
+  return NextResponse.json(
+    { announcement },
+    { headers: { "Cache-Control": "no-store" } }
+  );
 }
