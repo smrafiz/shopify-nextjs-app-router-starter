@@ -4,3 +4,5 @@ export * from "./formatters";
 export * from "./helpers";
 export * from "./error";
 export * from "./validation";
+export * from "./query";
+export * from "./shopify";

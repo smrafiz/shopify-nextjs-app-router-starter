@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev:app": "shopify app dev",
     "dev:widgets": "cd web/widgets && vite build --watch",
     "dev": "concurrently --raw \"pnpm:dev:app\" \"pnpm:dev:widgets\"",
+    "dev:auto": "node scripts/update-env-host.js",
+    "dev:full": "pnpm run --filter web graphql-codegen && node scripts/update-env-host.js",
     "build": "shopify app build",
     "build:widgets": "cd web/widgets && vite build",
     "deploy": "shopify app deploy",
