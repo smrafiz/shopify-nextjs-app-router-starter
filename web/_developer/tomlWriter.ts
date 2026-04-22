@@ -3,7 +3,7 @@ import "dotenv/config";
 import path from "path";
 import toml from "@iarna/toml";
 import setupCheck from "./setupCheck";
-import type { AppConfig } from "@/_developer/types/toml";
+import type { AppConfig } from "./types/toml";
 import { SHOPIFY_API_VERSION } from "../shared/constants";
 
 const config: AppConfig = {} as AppConfig;

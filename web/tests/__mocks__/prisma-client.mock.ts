@@ -1,7 +1,8 @@
 export const AnnouncementType = {
   INFO: "INFO",
   WARNING: "WARNING",
-  PROMOTION: "PROMOTION",
+  PROMO: "PROMO",
+  URGENT: "URGENT",
 } as const;
 
 const mockPrisma = {

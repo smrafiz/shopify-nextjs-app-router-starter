@@ -3,14 +3,30 @@ import { AnnouncementCard } from "./AnnouncementCard";
 import { AnnouncementForm } from "./AnnouncementForm";
 
 export function AnnouncementList() {
-  const { announcements, isLoading, error, isFormOpen, openForm } = useAnnouncements();
+  const {
+    announcements,
+    isLoading,
+    error,
+    isFormOpen,
+    openForm,
+    update,
+    remove,
+    isDeleting,
+  } = useAnnouncements();
 
   if (isLoading) return <p>Loading announcements...</p>;
   if (error) return <p style={{ color: "#dc2626" }}>Error: {error.message}</p>;
 
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "20px",
+        }}
+      >
         <h2 style={{ margin: 0 }}>Announcements</h2>
         <button
           onClick={() => openForm()}
@@ -57,7 +73,16 @@ export function AnnouncementList() {
           </p>
         </div>
       ) : (
-        announcements.map((a) => <AnnouncementCard key={a.id} announcement={a} />)
+        announcements.map((a) => (
+          <AnnouncementCard
+            key={a.id}
+            announcement={a}
+            onToggle={(id, isActive) => update(id, { isActive })}
+            onEdit={openForm}
+            onDelete={remove}
+            isDeleting={isDeleting}
+          />
+        ))
       )}
     </div>
   );

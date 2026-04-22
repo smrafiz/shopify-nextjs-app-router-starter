@@ -77,7 +77,6 @@ types/generated.ts
 
 # Package Manager Lockfiles
 package-lock.json
-pnpm-lock.yaml
 yarn.lock
 
 # Security / Certificates

@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "pnpm graphql-codegen",
     "build": "next build",
     "dev": "next dev",
     "migrate": "prisma migrate dev",
@@ -23,6 +24,7 @@
     "@prisma/adapter-pg": "^7.7.0",
     "@prisma/client": "^7.7.0",
     "@shopify/app-bridge-react": "^4.2.10",
+    "@shopify/polaris": "^13.9.5",
     "@shopify/app-bridge-types": "^0.7.0",
     "@shopify/polaris-types": "^1.0.6",
     "@shopify/shopify-api": "^13.0.0",

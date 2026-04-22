@@ -1,20 +1,27 @@
-import { useAnnouncements } from "../hooks";
 import { Announcement } from "../types";
+
+const TYPE_COLORS: Record<string, string> = {
+  INFO: "#0070f3",
+  WARNING: "#f5a623",
+  PROMO: "#7c3aed",
+  URGENT: "#dc2626",
+};
 
 interface Props {
   announcement: Announcement;
+  onToggle: (id: string, isActive: boolean) => void;
+  onEdit: (announcement: Announcement) => void;
+  onDelete: (id: string) => void;
+  isDeleting: boolean;
 }
 
-export function AnnouncementCard({ announcement }: Props) {
-  const { update, remove, openForm, isDeleting } = useAnnouncements();
-
-  const typeColors: Record<string, string> = {
-    INFO: "#0070f3",
-    WARNING: "#f5a623",
-    PROMO: "#7c3aed",
-    URGENT: "#dc2626",
-  };
-
+export function AnnouncementCard({
+  announcement,
+  onToggle,
+  onEdit,
+  onDelete,
+  isDeleting,
+}: Props) {
   return (
     <div
       style={{
@@ -33,7 +40,7 @@ export function AnnouncementCard({ announcement }: Props) {
             style={{
               fontSize: "11px",
               fontWeight: 600,
-              color: typeColors[announcement.type] ?? "#6b7280",
+              color: TYPE_COLORS[announcement.type] ?? "#6b7280",
               textTransform: "uppercase",
             }}
           >
@@ -52,26 +59,26 @@ export function AnnouncementCard({ announcement }: Props) {
           </span>
         </div>
         <p style={{ margin: "0 0 4px", fontWeight: 600 }}>{announcement.title}</p>
-        <p style={{ margin: 0, color: "#6b7280", fontSize: "14px" }}>{announcement.message}</p>
+        <p style={{ margin: 0, color: "#6b7280", fontSize: "14px" }}>
+          {announcement.message}
+        </p>
       </div>
 
       <div style={{ display: "flex", gap: "8px", marginLeft: "16px" }}>
         <button
-          onClick={() =>
-            update(announcement.id, { isActive: !announcement.isActive })
-          }
+          onClick={() => onToggle(announcement.id, !announcement.isActive)}
           style={{ cursor: "pointer", padding: "6px 12px", borderRadius: "6px", border: "1px solid #e1e3e5" }}
         >
           {announcement.isActive ? "Deactivate" : "Activate"}
         </button>
         <button
-          onClick={() => openForm(announcement)}
+          onClick={() => onEdit(announcement)}
           style={{ cursor: "pointer", padding: "6px 12px", borderRadius: "6px", border: "1px solid #e1e3e5" }}
         >
           Edit
         </button>
         <button
-          onClick={() => remove(announcement.id)}
+          onClick={() => onDelete(announcement.id)}
           disabled={isDeleting}
           style={{
             cursor: "pointer",
