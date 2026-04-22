@@ -50,12 +50,12 @@ export const cacheDurations = {
 
 /** Invalidate all shop-scoped cache tags for a given shop domain. */
 export function invalidateShopCache(shop: string): void {
-  revalidateTag(cacheTags.shop(shop));
-  revalidateTag(cacheTags.session(shop));
-  revalidateTag(cacheTags.announcements(shop));
+  revalidateTag(cacheTags.shop(shop), "max");
+  revalidateTag(cacheTags.session(shop), "max");
+  revalidateTag(cacheTags.announcements(shop), "max");
 }
 
 /** Invalidate Shopify product cache for a shop. */
 export function invalidateProductCache(shop: string): void {
-  revalidateTag(cacheTags.shopifyProducts(shop));
+  revalidateTag(cacheTags.shopifyProducts(shop), "max");
 }

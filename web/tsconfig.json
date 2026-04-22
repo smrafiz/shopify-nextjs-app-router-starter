@@ -23,7 +23,8 @@
       "@/tests/*": ["./tests/*"],
       "@/features/*": ["./features/*"],
       "@/shared/*": ["./shared/*"],
-      "@/prisma/*": ["./prisma/*"]
+      "@/prisma/*": ["./prisma/*"],
+      "@/security/*": ["./security/*"]
     }
   },
   "include": [

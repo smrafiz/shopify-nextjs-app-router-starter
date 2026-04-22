@@ -14,6 +14,9 @@ export interface SessionState {
     host: string | null;
     isInitialized: boolean;
     hasValidSession: boolean;
+    /** The raw App Bridge session token (JWT). */
+    sessionToken: string | null;
+    /** @deprecated Use sessionToken !== null. Kept for backward compatibility. */
     hasToken: boolean;
     isValidating: boolean;
     sessionError: string | null;
@@ -25,17 +28,23 @@ export interface SessionStore extends SessionState {
     startSessionValidation: () => void;
     sessionValidationSuccess: (shop?: string) => void;
     sessionValidationFailed: (error: string) => void;
+    updateSessionToken: (token: string) => void;
     clearSession: () => void;
     reset: () => void;
     validateSession: () => Promise<void>;
     retryValidation: () => Promise<void>;
+    /** Returns true if lastValidated is older than 5 minutes. */
+    isSessionExpired: () => boolean;
 }
+
+const SESSION_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 const initialState: SessionState = {
     shop: null,
     host: null,
     isInitialized: false,
     hasValidSession: false,
+    sessionToken: null,
     hasToken: false,
     isValidating: true,
     sessionError: null,
@@ -63,20 +72,36 @@ export const useSessionStore = create<SessionStore>()((set, get) => ({
         set({
             isValidating: false,
             hasValidSession: false,
+            sessionToken: null,
             hasToken: false,
             sessionError: error,
+            lastValidated: new Date(),
+        }),
+
+    updateSessionToken: (token) =>
+        set({
+            sessionToken: token,
+            hasToken: true,
+            hasValidSession: true,
             lastValidated: new Date(),
         }),
 
     clearSession: () =>
         set({
             hasValidSession: false,
+            sessionToken: null,
             hasToken: false,
             sessionError: null,
             lastValidated: null,
         }),
 
     reset: () => set(initialState),
+
+    isSessionExpired: () => {
+        const { lastValidated } = get();
+        if (!lastValidated) return true;
+        return Date.now() - lastValidated.getTime() > SESSION_TTL_MS;
+    },
 
     validateSession: async () => {
         const store = get();
@@ -105,7 +130,9 @@ export const useSessionStore = create<SessionStore>()((set, get) => ({
                     if (data.valid) {
                         store.sessionValidationSuccess(data.shop);
                     } else {
-                        store.sessionValidationFailed(data.error || "Session validation failed");
+                        store.sessionValidationFailed(
+                            data.error || "Session validation failed",
+                        );
                     }
                 } else {
                     store.sessionValidationFailed("Server validation failed");
@@ -115,7 +142,9 @@ export const useSessionStore = create<SessionStore>()((set, get) => ({
             }
         } catch (error) {
             store.sessionValidationFailed(
-                error instanceof Error ? error.message : "Session validation failed",
+                error instanceof Error
+                    ? error.message
+                    : "Session validation failed",
             );
         }
     },
