@@ -15,7 +15,8 @@
     "deploy": "shopify app deploy",
     "info": "shopify app info",
     "pretty": "prettier --write ./",
-    "update:config": "pnpx tsx web/_developer/tomlWriter.ts && pnpm run pretty"
+    "update:config": "pnpx tsx web/_developer/tomlWriter.ts && pnpm run pretty",
+    "encrypt-tokens": "pnpx tsx scripts/encrypt-existing-tokens.ts"
   },
   "dependencies": {
     "@iarna/toml": "^2.2.5",

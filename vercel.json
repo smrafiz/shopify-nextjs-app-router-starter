@@ -1,0 +1,25 @@
+{
+  "buildCommand": "cd web && pnpm build",
+  "outputDirectory": "web/.next",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "crons": [
+    {
+      "path": "/api/cron/keep-alive",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/prune",
+      "schedule": "0 2 * * *"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/proxy/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" }
+      ]
+    }
+  ]
+}

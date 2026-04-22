@@ -1,37 +1,13 @@
-import crypto from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { createRateLimiter, RATE_LIMIT_RESPONSE } from "@/lib/rate-limit";
 import { findOfflineSessionByShop } from "@/shared/repositories";
 import { executeGraphQLQuery } from "@/lib/graphql/client/server-action";
+import { verifyProxyHmac } from "@/lib/shopify/proxy";
 
 const checkRateLimit = createRateLimiter({
   windowMs: 60_000,
   maxRequests: 100,
 });
-
-function verifyProxyHmac(searchParams: URLSearchParams): boolean {
-  const hmac = searchParams.get("hmac");
-  if (!hmac) return false;
-
-  const params = new URLSearchParams(searchParams);
-  params.delete("hmac");
-
-  const sortedParams = Array.from(params.entries())
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
-    .join("&");
-
-  const expected = crypto
-    .createHmac("sha256", process.env.SHOPIFY_API_SECRET!)
-    .update(sortedParams)
-    .digest("hex");
-
-  try {
-    return crypto.timingSafeEqual(Buffer.from(hmac), Buffer.from(expected));
-  } catch {
-    return false;
-  }
-}
 
 const PRODUCTS_QUERY = `
   query GetProducts($ids: [ID!]!) {
