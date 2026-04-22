@@ -66,7 +66,7 @@ model Shop {
   discountSetupDone    Boolean     @default(false)
   setupGuideDismissed  Boolean     @default(false)
   setupProgress        Json?
-  locales              String[]    @default([])
+  locales              Json?
   primaryLocale        String?
   localesUpdatedAt     DateTime?
   createdAt            DateTime    @default(now())

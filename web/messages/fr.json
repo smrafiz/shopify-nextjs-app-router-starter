@@ -1,0 +1,61 @@
+{
+  "Meta": {
+    "error": "Une erreur inattendue s'est produite",
+    "tryAgain": "Réessayer",
+    "appTitle": "Mon application Shopify",
+    "pages": {
+      "dashboard": {
+        "title": "Tableau de bord",
+        "description": "Vue d'ensemble de votre tableau de bord."
+      },
+      "settings": {
+        "title": "Paramètres",
+        "description": "Configurez les paramètres de votre application."
+      }
+    }
+  },
+  "Common": {
+    "Navigation": {
+      "dashboard": "Tableau de bord",
+      "settings": "Paramètres"
+    },
+    "Actions": {
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "delete": "Supprimer",
+      "edit": "Modifier",
+      "create": "Créer",
+      "confirm": "Confirmer",
+      "back": "Retour",
+      "next": "Suivant",
+      "loading": "Chargement...",
+      "retry": "Réessayer"
+    },
+    "Status": {
+      "active": "Actif",
+      "inactive": "Inactif",
+      "draft": "Brouillon",
+      "archived": "Archivé"
+    },
+    "Errors": {
+      "generic": "Une erreur s'est produite. Veuillez réessayer.",
+      "notFound": "Introuvable.",
+      "unauthorized": "Vous n'êtes pas autorisé à effectuer cette action.",
+      "validation": "Veuillez vérifier les erreurs dans le formulaire."
+    },
+    "Feedback": {
+      "saved": "Enregistré avec succès.",
+      "deleted": "Supprimé avec succès.",
+      "created": "Créé avec succès.",
+      "updated": "Mis à jour avec succès."
+    }
+  },
+  "Dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bienvenue sur votre tableau de bord."
+  },
+  "Settings": {
+    "title": "Paramètres",
+    "saved": "Paramètres enregistrés."
+  }
+}

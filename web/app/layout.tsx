@@ -1,6 +1,7 @@
 import { Metadata } from "next";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import "./globals.css";
+import { I18nLoader } from "./i18n-loader";
 import { Providers } from "@/shared/components";
 import { AppLayoutWrapper } from "@/shared/components";
 
@@ -24,9 +25,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body suppressHydrationWarning>
         <Providers>
-          <AppLayoutWrapper>
-            <main>{children}</main>
-          </AppLayoutWrapper>
+          <Suspense>
+            <I18nLoader>
+              <AppLayoutWrapper>
+                <main>{children}</main>
+              </AppLayoutWrapper>
+            </I18nLoader>
+          </Suspense>
         </Providers>
       </body>
     </html>

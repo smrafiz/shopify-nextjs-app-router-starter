@@ -1,0 +1,61 @@
+{
+  "Meta": {
+    "error": "An unexpected error occurred",
+    "tryAgain": "Try again",
+    "appTitle": "My Shopify App",
+    "pages": {
+      "dashboard": {
+        "title": "Dashboard",
+        "description": "Your app dashboard overview."
+      },
+      "settings": {
+        "title": "Settings",
+        "description": "Configure your app settings."
+      }
+    }
+  },
+  "Common": {
+    "Navigation": {
+      "dashboard": "Dashboard",
+      "settings": "Settings"
+    },
+    "Actions": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "create": "Create",
+      "confirm": "Confirm",
+      "back": "Back",
+      "next": "Next",
+      "loading": "Loading...",
+      "retry": "Retry"
+    },
+    "Status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "draft": "Draft",
+      "archived": "Archived"
+    },
+    "Errors": {
+      "generic": "Something went wrong. Please try again.",
+      "notFound": "Not found.",
+      "unauthorized": "You are not authorized to perform this action.",
+      "validation": "Please check the form for errors."
+    },
+    "Feedback": {
+      "saved": "Saved successfully.",
+      "deleted": "Deleted successfully.",
+      "created": "Created successfully.",
+      "updated": "Updated successfully."
+    }
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to your app dashboard."
+  },
+  "Settings": {
+    "title": "Settings",
+    "saved": "Settings saved."
+  }
+}
