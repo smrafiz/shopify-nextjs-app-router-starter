@@ -1,8 +1,5 @@
-import { ApiVersion } from "@shopify/shopify-api";
-
-export const SHOPIFY_API_VERSION = ApiVersion.January26;
-
-export * from "./routes";
-export * from "./plans";
-export * from "./ui";
-export * from "./validation-messages";
+export * from "./ui.constants";
+export * from "./plans.constants";
+export * from "./routes.constants";
+export * from "./shopify.constants";
+export * from "./validation-messages.constants";

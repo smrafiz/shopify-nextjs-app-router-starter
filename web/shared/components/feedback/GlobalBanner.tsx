@@ -7,13 +7,19 @@ import {
     type BannerType,
 } from "@/shared/stores/global-banner.store";
 
-function toneFromType(type: BannerType): "success" | "info" | "warning" | "critical" {
+function toneFromType(
+    type: BannerType,
+): "success" | "info" | "warning" | "critical" {
     switch (type) {
-        case "success": return "success";
-        case "error": return "critical";
-        case "warning": return "warning";
+        case "success":
+            return "success";
+        case "error":
+            return "critical";
+        case "warning":
+            return "warning";
         case "info":
-        default: return "info";
+        default:
+            return "info";
     }
 }
 

@@ -23,11 +23,15 @@ Shopify may deliver the same webhook more than once. The `WebhookDelivery` table
 
 ```ts
 // Check before processing
-const existing = await prisma.webhookDelivery.findUnique({ where: { id: webhookId } });
+const existing = await prisma.webhookDelivery.findUnique({
+    where: { id: webhookId },
+});
 if (existing) return new Response(null, { status: 200 });
 
 // Record after successful processing
-prisma.webhookDelivery.create({ data: { id: webhookId, topic, shop } }).catch(() => {});
+prisma.webhookDelivery
+    .create({ data: { id: webhookId, topic, shop } })
+    .catch(() => {});
 ```
 
 The `id` field is the `X-Shopify-Webhook-Id` header value. Records older than 7 days are pruned by the `/api/cron/prune` job.
@@ -40,13 +44,13 @@ Vercel serverless functions can lose in-memory state between requests. If a webh
 let handlerInitPromise: Promise<void> | null = null;
 
 function ensureHandlers(topic: string): Promise<void> {
-  const handlers = shopify.webhooks.getHandlers(topic);
-  if (handlers && handlers.length > 0) return Promise.resolve();
+    const handlers = shopify.webhooks.getHandlers(topic);
+    if (handlers && handlers.length > 0) return Promise.resolve();
 
-  if (!handlerInitPromise) {
-    handlerInitPromise = Promise.resolve().then(() => addHandlers());
-  }
-  return handlerInitPromise;
+    if (!handlerInitPromise) {
+        handlerInitPromise = Promise.resolve().then(() => addHandlers());
+    }
+    return handlerInitPromise;
 }
 ```
 
@@ -61,16 +65,16 @@ import shopify from "../config/initialize-context";
 import { DeliveryMethod } from "@shopify/shopify-api";
 
 export function addHandlers(): void {
-  shopify.webhooks.addHandlers({
-    PRODUCTS_UPDATE: {
-      deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "/api/webhooks",
-      callback: async (topic, shop, body) => {
-        const payload = JSON.parse(body);
-        // handle product update
-      },
-    },
-  });
+    shopify.webhooks.addHandlers({
+        PRODUCTS_UPDATE: {
+            deliveryMethod: DeliveryMethod.Http,
+            callbackUrl: "/api/webhooks",
+            callback: async (topic, shop, body) => {
+                const payload = JSON.parse(body);
+                // handle product update
+            },
+        },
+    });
 }
 ```
 

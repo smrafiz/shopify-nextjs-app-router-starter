@@ -6,17 +6,17 @@ Types are generated from the Shopify Admin API schema (version `2025-10`). The c
 
 ```ts
 const config: CodegenConfig = {
-  schema: `https://shopify.dev/admin-graphql-direct-proxy/${SHOPIFY_API_VERSION}`,
-  documents: ["./lib/graphql/schema/**/*.graphql"],
-  generates: {
-    "./lib/graphql/generated/": {
-      preset: "client",
+    schema: `https://shopify.dev/admin-graphql-direct-proxy/${SHOPIFY_API_VERSION}`,
+    documents: ["./lib/graphql/schema/**/*.graphql"],
+    generates: {
+        "./lib/graphql/generated/": {
+            preset: "client",
+        },
+        "./shared/types/generated/admin.generated.d.ts": {
+            preset,
+            presetConfig: { apiType: ApiType.Admin },
+        },
     },
-    "./shared/types/generated/admin.generated.d.ts": {
-      preset,
-      presetConfig: { apiType: ApiType.Admin },
-    },
-  },
 };
 ```
 
@@ -35,17 +35,17 @@ Place `.graphql` files in `web/lib/graphql/schema/`. Codegen picks them up autom
 ```graphql
 # web/lib/graphql/schema/products.graphql
 query GetProducts($first: Int!) {
-  products(first: $first) {
-    nodes {
-      id
-      title
-      handle
-      featuredImage {
-        url
-        altText
-      }
+    products(first: $first) {
+        nodes {
+            id
+            title
+            handle
+            featuredImage {
+                url
+                altText
+            }
+        }
     }
-  }
 }
 ```
 
@@ -64,16 +64,16 @@ import { useGraphQL } from "@/shared/hooks/data/use-graphql";
 import { GetProductsDocument } from "@/lib/graphql/generated/graphql";
 
 function ProductList() {
-  const { data, loading, error } = useGraphQL(
-    GetProductsDocument,
-    { first: 10 },
-    { staleTime: 1000 * 60 * 5 }
-  );
+    const { data, loading, error } = useGraphQL(
+        GetProductsDocument,
+        { first: 10 },
+        { staleTime: 1000 * 60 * 5 },
+    );
 
-  if (loading) return <Spinner />;
-  if (error) return <p>Failed to load products</p>;
+    if (loading) return <Spinner />;
+    if (error) return <p>Failed to load products</p>;
 
-  return data?.products.nodes.map(p => <p key={p.id}>{p.title}</p>);
+    return data?.products.nodes.map((p) => <p key={p.id}>{p.title}</p>);
 }
 ```
 
@@ -81,31 +81,38 @@ The React Query cache key is derived from the operation name plus variables. Two
 
 **Options:**
 
-| Option | Default | Description |
-|---|---|---|
-| `enabled` | `true` | Disable the query conditionally |
-| `staleTime` | 5 minutes | How long cached data is considered fresh |
-| `refetchOnMount` | `"always"` | Refetch when the component mounts |
-| `refetchOnWindowFocus` | `false` | Don't refetch on tab switch |
+| Option                 | Default    | Description                              |
+| ---------------------- | ---------- | ---------------------------------------- |
+| `enabled`              | `true`     | Disable the query conditionally          |
+| `staleTime`            | 5 minutes  | How long cached data is considered fresh |
+| `refetchOnMount`       | `"always"` | Refetch when the component mounts        |
+| `refetchOnWindowFocus` | `false`    | Don't refetch on tab switch              |
 
 ## useGraphQLMutation Hook
 
 ```tsx
 import { useGraphQLMutation } from "@/shared/hooks/data/use-graphql";
-import { UpdateProductDocument, GetProductsDocument } from "@/lib/graphql/generated/graphql";
+import {
+    UpdateProductDocument,
+    GetProductsDocument,
+} from "@/lib/graphql/generated/graphql";
 
 function EditProduct() {
-  const mutation = useGraphQLMutation(UpdateProductDocument, {
-    invalidate: [{ document: GetProductsDocument }],
-    onSuccess: () => console.log("saved"),
-    onError: (err) => console.error(err),
-  });
+    const mutation = useGraphQLMutation(UpdateProductDocument, {
+        invalidate: [{ document: GetProductsDocument }],
+        onSuccess: () => console.log("saved"),
+        onError: (err) => console.error(err),
+    });
 
-  return (
-    <button onClick={() => mutation.mutate({ id: "gid://...", title: "New title" })}>
-      Save
-    </button>
-  );
+    return (
+        <button
+            onClick={() =>
+                mutation.mutate({ id: "gid://...", title: "New title" })
+            }
+        >
+            Save
+        </button>
+    );
 }
 ```
 

@@ -10,8 +10,13 @@ import { DashboardSkeleton } from "@/shared/components/loading/skeleton/Dashboar
  * Show a skeleton while initializing; redirect to auth on failure.
  */
 export function ProtectedRoute({ children }: { children: ReactNode }) {
-    const { isInitialized, hasValidSession, isRefreshing, isThemeExtension, sessionToken } =
-        useProtectedSession();
+    const {
+        isInitialized,
+        hasValidSession,
+        isRefreshing,
+        isThemeExtension,
+        sessionToken,
+    } = useProtectedSession();
     const pathname = usePathname();
 
     // Theme extensions bypass session protection

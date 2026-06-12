@@ -26,8 +26,7 @@ function documentQueryKey<TResult, TVariables>(
     document: TypedDocumentNode<TResult, TVariables>,
     variables?: TVariables | object,
 ): unknown[] {
-    const name =
-        (document.definitions[0] as any)?.name?.value ?? "unknown";
+    const name = (document.definitions[0] as any)?.name?.value ?? "unknown";
     return variables ? [name, variables] : [name];
 }
 
@@ -65,7 +64,8 @@ export function useGraphQL<TResult = any, TVariables extends object = any>(
                 );
             }
 
-            if (!result.data) throw new Error("No data returned from GraphQL query");
+            if (!result.data)
+                throw new Error("No data returned from GraphQL query");
 
             return result.data;
         },
@@ -126,7 +126,8 @@ export function useGraphQLMutation<
                 );
             }
 
-            if (!result.data) throw new Error("No data returned from GraphQL mutation");
+            if (!result.data)
+                throw new Error("No data returned from GraphQL mutation");
 
             return result.data;
         },

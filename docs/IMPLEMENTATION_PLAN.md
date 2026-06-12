@@ -133,6 +133,7 @@ shopify-nextjs-app-router-starter/
 ## Task 1: Project Scaffold
 
 **Files:**
+
 - Create: `shopify-nextjs-app-router-starter/package.json`
 - Create: `shopify-nextjs-app-router-starter/.env.example`
 - Create: `shopify-nextjs-app-router-starter/web/package.json`
@@ -144,16 +145,16 @@ shopify-nextjs-app-router-starter/
 ```json
 // shopify-nextjs-app-router-starter/package.json
 {
-  "name": "shopify-nextjs-app-router-starter",
-  "version": "0.1.0",
-  "license": "MIT",
-  "scripts": {
-    "dev": "shopify app dev",
-    "build": "shopify app build",
-    "deploy": "shopify app deploy",
-    "info": "shopify app info"
-  },
-  "keywords": ["shopify", "nextjs", "polaris", "prisma", "starter"]
+    "name": "shopify-nextjs-app-router-starter",
+    "version": "0.1.0",
+    "license": "MIT",
+    "scripts": {
+        "dev": "shopify app dev",
+        "build": "shopify app build",
+        "deploy": "shopify app deploy",
+        "info": "shopify app info"
+    },
+    "keywords": ["shopify", "nextjs", "polaris", "prisma", "starter"]
 }
 ```
 
@@ -173,60 +174,60 @@ DATABASE_URL=postgresql://user:password@localhost:5432/shopify_starter
 ```json
 // shopify-nextjs-app-router-starter/web/package.json
 {
-  "name": "shopify-starter-web",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "migrate": "prisma migrate dev",
-    "postinstall": "prisma generate",
-    "prisma:push": "bunx prisma db push",
-    "prisma:studio": "bunx prisma studio",
-    "prisma:migrate": "bunx prisma migrate dev --name",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "graphql-codegen": "graphql-codegen --config codegen.ts"
-  },
-  "dependencies": {
-    "@graphql-typed-document-node/core": "^3.2.0",
-    "@hookform/resolvers": "^5.2.2",
-    "@prisma/adapter-pg": "^7.7.0",
-    "@prisma/client": "^7.7.0",
-    "@shopify/app-bridge-react": "^4.2.10",
-    "@shopify/shopify-api": "^13.0.0",
-    "@tanstack/react-query": "^5.99.2",
-    "@tanstack/react-query-devtools": "^5.99.2",
-    "graphql-request": "^7.4.0",
-    "isomorphic-dompurify": "^3.9.0",
-    "next": "16.2.4",
-    "pg": "^8.20.0",
-    "prisma": "^7.7.0",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
-    "react-hook-form": "^7.73.1",
-    "zod": "^4.3.6",
-    "zustand": "^5.0.12"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.3",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.2",
-    "@types/jest": "^30.0.0",
-    "@types/node": "^25.6.0",
-    "@types/react": "19.2.14",
-    "@types/react-dom": "19.2.3",
-    "autoprefixer": "^10.5.0",
-    "jest": "^30.3.0",
-    "jest-mock-extended": "^4.0.1",
-    "postcss": "^8.5.10",
-    "prettier": "^3.8.3",
-    "tailwindcss": "^4.2.3",
-    "ts-jest": "^29.4.9",
-    "typescript": "^6.0.3"
-  }
+    "name": "shopify-starter-web",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "migrate": "prisma migrate dev",
+        "postinstall": "prisma generate",
+        "prisma:push": "bunx prisma db push",
+        "prisma:studio": "bunx prisma studio",
+        "prisma:migrate": "bunx prisma migrate dev --name",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "graphql-codegen": "graphql-codegen --config codegen.ts"
+    },
+    "dependencies": {
+        "@graphql-typed-document-node/core": "^3.2.0",
+        "@hookform/resolvers": "^5.2.2",
+        "@prisma/adapter-pg": "^7.7.0",
+        "@prisma/client": "^7.7.0",
+        "@shopify/app-bridge-react": "^4.2.10",
+        "@shopify/shopify-api": "^13.0.0",
+        "@tanstack/react-query": "^5.99.2",
+        "@tanstack/react-query-devtools": "^5.99.2",
+        "graphql-request": "^7.4.0",
+        "isomorphic-dompurify": "^3.9.0",
+        "next": "16.2.4",
+        "pg": "^8.20.0",
+        "prisma": "^7.7.0",
+        "react": "19.2.5",
+        "react-dom": "19.2.5",
+        "react-hook-form": "^7.73.1",
+        "zod": "^4.3.6",
+        "zustand": "^5.0.12"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.2.3",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^16.3.2",
+        "@types/jest": "^30.0.0",
+        "@types/node": "^25.6.0",
+        "@types/react": "19.2.14",
+        "@types/react-dom": "19.2.3",
+        "autoprefixer": "^10.5.0",
+        "jest": "^30.3.0",
+        "jest-mock-extended": "^4.0.1",
+        "postcss": "^8.5.10",
+        "prettier": "^3.8.3",
+        "tailwindcss": "^4.2.3",
+        "ts-jest": "^29.4.9",
+        "typescript": "^6.0.3"
+    }
 }
 ```
 
@@ -234,31 +235,31 @@ DATABASE_URL=postgresql://user:password@localhost:5432/shopify_starter
 
 ```json
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [{ "name": "next" }],
-    "paths": {
-      "@/*": ["./*"],
-      "@/lib/*": ["./lib/*"],
-      "@/features/*": ["./features/*"],
-      "@/shared/*": ["./shared/*"],
-      "@/prisma/*": ["./prisma/*"]
-    }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "target": "ES2022",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "plugins": [{ "name": "next" }],
+        "paths": {
+            "@/*": ["./*"],
+            "@/lib/*": ["./lib/*"],
+            "@/features/*": ["./features/*"],
+            "@/shared/*": ["./shared/*"],
+            "@/prisma/*": ["./prisma/*"]
+        }
+    },
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+    "exclude": ["node_modules"]
 }
 ```
 
@@ -267,34 +268,37 @@ DATABASE_URL=postgresql://user:password@localhost:5432/shopify_starter
 ```js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  allowedDevOrigins: ["*.trycloudflare.com"],
-  reactStrictMode: true,
-  devIndicators: false,
-  compress: true,
-  poweredByHeader: false,
-  env: {
-    NEXT_PUBLIC_HOST: process.env.HOST,
-    NEXT_PUBLIC_SHOPIFY_API_KEY: process.env.SHOPIFY_API_KEY,
-  },
-  images: {
-    remotePatterns: [{ protocol: "https", hostname: "cdn.shopify.com" }],
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "X-DNS-Prefetch-Control", value: "on" },
-          {
-            key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains; preload",
-          },
-        ],
-      },
-    ];
-  },
+    allowedDevOrigins: ["*.trycloudflare.com"],
+    reactStrictMode: true,
+    devIndicators: false,
+    compress: true,
+    poweredByHeader: false,
+    env: {
+        NEXT_PUBLIC_HOST: process.env.HOST,
+        NEXT_PUBLIC_SHOPIFY_API_KEY: process.env.SHOPIFY_API_KEY,
+    },
+    images: {
+        remotePatterns: [{ protocol: "https", hostname: "cdn.shopify.com" }],
+    },
+    async headers() {
+        return [
+            {
+                source: "/(.*)",
+                headers: [
+                    { key: "X-Content-Type-Options", value: "nosniff" },
+                    {
+                        key: "Referrer-Policy",
+                        value: "strict-origin-when-cross-origin",
+                    },
+                    { key: "X-DNS-Prefetch-Control", value: "on" },
+                    {
+                        key: "Strict-Transport-Security",
+                        value: "max-age=63072000; includeSubDomains; preload",
+                    },
+                ],
+            },
+        ];
+    },
 };
 
 export default nextConfig;
@@ -314,6 +318,7 @@ git commit -m "chore: project scaffold"
 ## Task 2: Prisma Schema
 
 **Files:**
+
 - Create: `web/prisma/schema.prisma`
 
 - [ ] **Step 1: Write schema**
@@ -448,6 +453,7 @@ enum AnnouncementType {
 cd /Users/radiustheme/Shopify/shopify-nextjs-app-router-starter/web
 bunx prisma validate
 ```
+
 Expected: `The schema at prisma/schema.prisma is valid`
 
 - [ ] **Step 3: Commit**
@@ -462,6 +468,7 @@ git commit -m "feat: prisma schema (sessions + shop + announcements)"
 ## Task 3: DB Connection + Shopify Config
 
 **Files:**
+
 - Create: `web/shared/repositories/prisma-connect.ts`
 - Create: `web/lib/shopify/config/initialize-context.ts`
 - Create: `web/shared/constants/index.ts`
@@ -477,33 +484,33 @@ import { PrismaClient } from "@/prisma/generated/client";
 const MAX_POOL_SIZE = parseInt(process.env.DB_POOL_SIZE ?? "5", 10);
 
 function createPrismaClient() {
-  const connectionString = process.env.DATABASE_URL;
-  if (!connectionString) throw new Error("DATABASE_URL is not set");
+    const connectionString = process.env.DATABASE_URL;
+    if (!connectionString) throw new Error("DATABASE_URL is not set");
 
-  const pool = new Pool({
-    connectionString,
-    max: MAX_POOL_SIZE,
-    idleTimeoutMillis: 30_000,
-    connectionTimeoutMillis: 5_000,
-    keepAlive: true,
-  });
+    const pool = new Pool({
+        connectionString,
+        max: MAX_POOL_SIZE,
+        idleTimeoutMillis: 30_000,
+        connectionTimeoutMillis: 5_000,
+        keepAlive: true,
+    });
 
-  pool.on("error", (err) => {
-    console.error("[DB Pool] Idle client error:", err.message);
-  });
+    pool.on("error", (err) => {
+        console.error("[DB Pool] Idle client error:", err.message);
+    });
 
-  const adapter = new PrismaPg(pool);
-  return new PrismaClient({ adapter });
+    const adapter = new PrismaPg(pool);
+    return new PrismaClient({ adapter });
 }
 
 const globalForPrisma = globalThis as unknown as {
-  prisma?: ReturnType<typeof createPrismaClient>;
+    prisma?: ReturnType<typeof createPrismaClient>;
 };
 
 export const prisma = globalForPrisma.prisma ?? createPrismaClient();
 
 if (process.env.NODE_ENV !== "production") {
-  globalForPrisma.prisma = prisma;
+    globalForPrisma.prisma = prisma;
 }
 
 export default prisma;
@@ -516,8 +523,8 @@ export default prisma;
 export const SHOPIFY_API_VERSION = "2025-10";
 
 export const ROUTES = {
-  DASHBOARD: "/",
-  ANNOUNCEMENTS: "/announcements",
+    DASHBOARD: "/",
+    ANNOUNCEMENTS: "/announcements",
 } as const;
 ```
 
@@ -531,25 +538,25 @@ import { shopifyApi, LogSeverity } from "@shopify/shopify-api";
 
 const REQUIRED_ENV = ["SHOPIFY_API_KEY", "SHOPIFY_API_SECRET"] as const;
 for (const key of REQUIRED_ENV) {
-  if (!process.env[key]) {
-    throw new Error(`Missing required environment variable: ${key}`);
-  }
+    if (!process.env[key]) {
+        throw new Error(`Missing required environment variable: ${key}`);
+    }
 }
 
 const shopify = shopifyApi({
-  apiKey: process.env.SHOPIFY_API_KEY!,
-  apiSecretKey: process.env.SHOPIFY_API_SECRET!,
-  scopes: process.env.SCOPES?.split(",") || ["read_products"],
-  hostName: process.env.HOST?.replace(/https?:\/\//, "") || "",
-  hostScheme: "https",
-  isEmbeddedApp: true,
-  apiVersion: SHOPIFY_API_VERSION,
-  logger: {
-    level:
-      process.env.NODE_ENV === "development"
-        ? LogSeverity.Debug
-        : LogSeverity.Error,
-  },
+    apiKey: process.env.SHOPIFY_API_KEY!,
+    apiSecretKey: process.env.SHOPIFY_API_SECRET!,
+    scopes: process.env.SCOPES?.split(",") || ["read_products"],
+    hostName: process.env.HOST?.replace(/https?:\/\//, "") || "",
+    hostScheme: "https",
+    isEmbeddedApp: true,
+    apiVersion: SHOPIFY_API_VERSION,
+    logger: {
+        level:
+            process.env.NODE_ENV === "development"
+                ? LogSeverity.Debug
+                : LogSeverity.Error,
+    },
 });
 
 export default shopify;
@@ -567,6 +574,7 @@ git commit -m "feat: db connection + shopify api config"
 ## Task 4: Shared Types + Utils
 
 **Files:**
+
 - Create: `web/shared/types/action-response.types.ts`
 - Create: `web/shared/types/graphql.types.ts`
 - Create: `web/shared/types/index.ts`
@@ -579,8 +587,8 @@ git commit -m "feat: db connection + shopify api config"
 ```typescript
 // web/shared/types/action-response.types.ts
 export type ActionResponse<T = undefined> =
-  | { status: "success"; data: T; message?: string }
-  | { status: "error"; message: string; errors?: Record<string, string[]> };
+    | { status: "success"; data: T; message?: string }
+    | { status: "error"; message: string; errors?: Record<string, string[]> };
 ```
 
 - [ ] **Step 2: Create GraphQL types**
@@ -588,23 +596,23 @@ export type ActionResponse<T = undefined> =
 ```typescript
 // web/shared/types/graphql.types.ts
 export interface GraphQLRequest {
-  query: unknown;
-  variables?: Record<string, unknown>;
-  sessionToken?: string;
-  shop?: string;
-  accessToken?: string;
-  _retried?: boolean;
-  _retryCount?: number;
+    query: unknown;
+    variables?: Record<string, unknown>;
+    sessionToken?: string;
+    shop?: string;
+    accessToken?: string;
+    _retried?: boolean;
+    _retryCount?: number;
 }
 
 export interface GraphQLError {
-  message: string;
-  extensions?: { code?: string; timestamp?: string; statusCode?: number };
+    message: string;
+    extensions?: { code?: string; timestamp?: string; statusCode?: number };
 }
 
 export interface GraphQLResponse<T> {
-  data?: T;
-  errors?: GraphQLError[];
+    data?: T;
+    errors?: GraphQLError[];
 }
 ```
 
@@ -621,11 +629,11 @@ export * from "./graphql.types";
 ```typescript
 // web/shared/utils/domain.utils.ts
 export function normalizeShopDomain(dest: string): string {
-  return dest.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    return dest.replace(/^https?:\/\//, "").replace(/\/$/, "");
 }
 
 export function isValidShopDomain(shop: string): boolean {
-  return /^[a-zA-Z0-9][a-zA-Z0-9-]*\.myshopify\.com$/.test(shop);
+    return /^[a-zA-Z0-9][a-zA-Z0-9-]*\.myshopify\.com$/.test(shop);
 }
 ```
 
@@ -634,13 +642,13 @@ export function isValidShopDomain(shop: string): boolean {
 ```typescript
 // web/shared/utils/session.utils.ts
 export function extractBearerToken(authHeader: string | null): string | null {
-  if (!authHeader?.startsWith("Bearer ")) return null;
-  return authHeader.slice(7);
+    if (!authHeader?.startsWith("Bearer ")) return null;
+    return authHeader.slice(7);
 }
 
 export function isSessionExpired(expires: Date | null | undefined): boolean {
-  if (!expires) return false;
-  return new Date() >= expires;
+    if (!expires) return false;
+    return new Date() >= expires;
 }
 ```
 
@@ -664,6 +672,7 @@ git commit -m "feat: shared types and utils"
 ## Task 5: Session + Shop Repositories
 
 **Files:**
+
 - Create: `web/shared/repositories/session.repository.ts`
 - Create: `web/shared/repositories/shop.repository.ts`
 - Create: `web/shared/repositories/index.ts`
@@ -676,45 +685,45 @@ import prisma from "./prisma-connect";
 import { Session } from "@shopify/shopify-api";
 
 export async function findOfflineSessionByShop(
-  shop: string
+    shop: string,
 ): Promise<Session | null> {
-  const record = await prisma.session.findFirst({
-    where: { shop, isOnline: false },
-    orderBy: { createdAt: "desc" },
-  });
-  if (!record) return null;
-  return record as unknown as Session;
+    const record = await prisma.session.findFirst({
+        where: { shop, isOnline: false },
+        orderBy: { createdAt: "desc" },
+    });
+    if (!record) return null;
+    return record as unknown as Session;
 }
 
 export async function storeSession(session: Session): Promise<void> {
-  const apiKey = process.env.SHOPIFY_API_KEY!;
-  await prisma.$transaction([
-    prisma.session.upsert({
-      where: { id: session.id },
-      update: {
-        accessToken: session.accessToken,
-        expires: session.expires,
-        scope: session.scope,
-        state: session.state ?? "",
-        isOnline: session.isOnline,
-        apiKey,
-      },
-      create: {
-        id: session.id,
-        shop: session.shop,
-        accessToken: session.accessToken,
-        expires: session.expires,
-        isOnline: session.isOnline,
-        scope: session.scope,
-        state: session.state ?? "",
-        apiKey,
-      },
-    }),
-  ]);
+    const apiKey = process.env.SHOPIFY_API_KEY!;
+    await prisma.$transaction([
+        prisma.session.upsert({
+            where: { id: session.id },
+            update: {
+                accessToken: session.accessToken,
+                expires: session.expires,
+                scope: session.scope,
+                state: session.state ?? "",
+                isOnline: session.isOnline,
+                apiKey,
+            },
+            create: {
+                id: session.id,
+                shop: session.shop,
+                accessToken: session.accessToken,
+                expires: session.expires,
+                isOnline: session.isOnline,
+                scope: session.scope,
+                state: session.state ?? "",
+                apiKey,
+            },
+        }),
+    ]);
 }
 
 export async function deleteSessionsByShop(shop: string): Promise<void> {
-  await prisma.session.deleteMany({ where: { shop } });
+    await prisma.session.deleteMany({ where: { shop } });
 }
 ```
 
@@ -725,59 +734,59 @@ export async function deleteSessionsByShop(shop: string): Promise<void> {
 import prisma from "./prisma-connect";
 
 export async function upsertShop(domain: string): Promise<void> {
-  await prisma.shop.upsert({
-    where: { domain },
-    update: {},
-    create: { domain },
-  });
+    await prisma.shop.upsert({
+        where: { domain },
+        update: {},
+        create: { domain },
+    });
 }
 
 export async function getShopSetupStatus(
-  domain: string
+    domain: string,
 ): Promise<{ setupComplete: boolean; webhooksRegistered: boolean }> {
-  const shop = await prisma.shop.findUnique({
-    where: { domain },
-    select: { setupComplete: true, webhooksRegistered: true },
-  });
-  return shop ?? { setupComplete: false, webhooksRegistered: false };
+    const shop = await prisma.shop.findUnique({
+        where: { domain },
+        select: { setupComplete: true, webhooksRegistered: true },
+    });
+    return shop ?? { setupComplete: false, webhooksRegistered: false };
 }
 
 export async function claimSetupLock(domain: string): Promise<boolean> {
-  const now = new Date();
-  const lockExpiry = new Date(now.getTime() - 5 * 60 * 1000); // 5 min
+    const now = new Date();
+    const lockExpiry = new Date(now.getTime() - 5 * 60 * 1000); // 5 min
 
-  const result = await prisma.shop.updateMany({
-    where: {
-      domain,
-      OR: [
-        { lastSetupCheck: null },
-        { lastSetupCheck: { lt: lockExpiry } },
-      ],
-    },
-    data: { lastSetupCheck: now },
-  });
-  return result.count > 0;
+    const result = await prisma.shop.updateMany({
+        where: {
+            domain,
+            OR: [
+                { lastSetupCheck: null },
+                { lastSetupCheck: { lt: lockExpiry } },
+            ],
+        },
+        data: { lastSetupCheck: now },
+    });
+    return result.count > 0;
 }
 
 export async function releaseSetupLock(domain: string): Promise<void> {
-  await prisma.shop.update({
-    where: { domain },
-    data: { lastSetupCheck: null },
-  });
+    await prisma.shop.update({
+        where: { domain },
+        data: { lastSetupCheck: null },
+    });
 }
 
 export async function markSetupComplete(domain: string): Promise<void> {
-  await prisma.shop.update({
-    where: { domain },
-    data: { setupComplete: true },
-  });
+    await prisma.shop.update({
+        where: { domain },
+        data: { setupComplete: true },
+    });
 }
 
 export async function markWebhooksRegistered(domain: string): Promise<void> {
-  await prisma.shop.update({
-    where: { domain },
-    data: { webhooksRegistered: true },
-  });
+    await prisma.shop.update({
+        where: { domain },
+        data: { webhooksRegistered: true },
+    });
 }
 ```
 
@@ -802,6 +811,7 @@ git commit -m "feat: session and shop repositories"
 ## Task 6: Auth + Webhook Infrastructure
 
 **Files:**
+
 - Create: `web/lib/shopify/auth/verify.ts`
 - Create: `web/lib/shopify/webhooks/gdpr.ts`
 - Create: `web/lib/shopify/webhooks/handlers.ts`
@@ -814,114 +824,119 @@ git commit -m "feat: session and shop repositories"
 
 ```typescript
 // web/lib/shopify/auth/verify.ts
-import { extractBearerToken, isSessionExpired, normalizeShopDomain } from "@/shared/utils";
 import {
-  findOfflineSessionByShop,
-  storeSession,
-  upsertShop,
-  getShopSetupStatus,
-  claimSetupLock,
-  releaseSetupLock,
-  markSetupComplete,
-  markWebhooksRegistered,
+    extractBearerToken,
+    isSessionExpired,
+    normalizeShopDomain,
+} from "@/shared/utils";
+import {
+    findOfflineSessionByShop,
+    storeSession,
+    upsertShop,
+    getShopSetupStatus,
+    claimSetupLock,
+    releaseSetupLock,
+    markSetupComplete,
+    markWebhooksRegistered,
 } from "@/shared/repositories";
 import shopify from "../config/initialize-context";
 import { registerWebhooks } from "../webhooks/register";
 import { RequestedTokenType, Session } from "@shopify/shopify-api";
 
 export async function verifyRequest(
-  req: Request,
-  isOnline: boolean
+    req: Request,
+    isOnline: boolean,
 ): Promise<{ shop: string; session: Session }> {
-  const sessionToken = extractBearerToken(req.headers.get("authorization"));
-  if (!sessionToken) throw new Error("No bearer token present");
-  return handleSessionToken(sessionToken, isOnline);
+    const sessionToken = extractBearerToken(req.headers.get("authorization"));
+    if (!sessionToken) throw new Error("No bearer token present");
+    return handleSessionToken(sessionToken, isOnline);
 }
 
 export async function tokenExchange({
-  shop,
-  sessionToken,
-  online,
-  store,
-  forceRefresh,
-}: {
-  shop: string;
-  sessionToken: string;
-  online?: boolean;
-  store?: boolean;
-  forceRefresh?: boolean;
-}): Promise<Session> {
-  if (!online && !forceRefresh) {
-    try {
-      const existing = await findOfflineSessionByShop(shop);
-      if (existing?.accessToken && !isSessionExpired(existing.expires)) {
-        return existing;
-      }
-    } catch {
-      // Session doesn't exist yet — will create below
-    }
-  }
-
-  const { session } = await shopify.auth.tokenExchange({
-    shop,
-    sessionToken,
-    requestedTokenType: online
-      ? RequestedTokenType.OnlineAccessToken
-      : RequestedTokenType.OfflineAccessToken,
-  });
-
-  if (store || forceRefresh) await storeSession(session);
-  return session;
-}
-
-export async function handleSessionToken(
-  sessionToken: string,
-  online?: boolean,
-  store?: boolean,
-  forceRefresh?: boolean
-): Promise<{ shop: string; session: Session }> {
-  const payload = await shopify.session.decodeSessionToken(sessionToken);
-  const shop = normalizeShopDomain(payload.dest);
-
-  const session = await tokenExchange({
     shop,
     sessionToken,
     online,
-    store: store !== false,
+    store,
     forceRefresh,
-  });
-
-  if (store !== false) {
-    try {
-      const { setupComplete, webhooksRegistered } = await getShopSetupStatus(shop);
-      if (setupComplete && webhooksRegistered) return { shop, session };
-
-      await upsertShop(shop);
-
-      if (session.accessToken && (await claimSetupLock(shop))) {
-        let webhooksSucceeded = false;
+}: {
+    shop: string;
+    sessionToken: string;
+    online?: boolean;
+    store?: boolean;
+    forceRefresh?: boolean;
+}): Promise<Session> {
+    if (!online && !forceRefresh) {
         try {
-          if (!webhooksRegistered) {
-            await registerWebhooks(session);
-            await markWebhooksRegistered(shop);
-          }
-          webhooksSucceeded = true;
-        } catch (err) {
-          console.error("[Auth] Webhook registration failed:", err);
+            const existing = await findOfflineSessionByShop(shop);
+            if (existing?.accessToken && !isSessionExpired(existing.expires)) {
+                return existing;
+            }
+        } catch {
+            // Session doesn't exist yet — will create below
         }
-
-        if (webhooksSucceeded) {
-          await markSetupComplete(shop);
-        } else {
-          await releaseSetupLock(shop);
-        }
-      }
-    } catch (err) {
-      console.error("[Auth] Shop setup failed:", err);
     }
-  }
 
-  return { shop, session };
+    const { session } = await shopify.auth.tokenExchange({
+        shop,
+        sessionToken,
+        requestedTokenType: online
+            ? RequestedTokenType.OnlineAccessToken
+            : RequestedTokenType.OfflineAccessToken,
+    });
+
+    if (store || forceRefresh) await storeSession(session);
+    return session;
+}
+
+export async function handleSessionToken(
+    sessionToken: string,
+    online?: boolean,
+    store?: boolean,
+    forceRefresh?: boolean,
+): Promise<{ shop: string; session: Session }> {
+    const payload = await shopify.session.decodeSessionToken(sessionToken);
+    const shop = normalizeShopDomain(payload.dest);
+
+    const session = await tokenExchange({
+        shop,
+        sessionToken,
+        online,
+        store: store !== false,
+        forceRefresh,
+    });
+
+    if (store !== false) {
+        try {
+            const { setupComplete, webhooksRegistered } =
+                await getShopSetupStatus(shop);
+            if (setupComplete && webhooksRegistered) return { shop, session };
+
+            await upsertShop(shop);
+
+            if (session.accessToken && (await claimSetupLock(shop))) {
+                let webhooksSucceeded = false;
+                try {
+                    if (!webhooksRegistered) {
+                        await registerWebhooks(session);
+                        await markWebhooksRegistered(shop);
+                    }
+                    webhooksSucceeded = true;
+                } catch (err) {
+                    console.error("[Auth] Webhook registration failed:", err);
+                }
+
+                if (webhooksSucceeded) {
+                    await markSetupComplete(shop);
+                } else {
+                    await releaseSetupLock(shop);
+                }
+            }
+        } catch (err) {
+            console.error("[Auth] Shop setup failed:", err);
+        }
+    }
+
+    return { shop, session };
 }
 ```
 
@@ -933,29 +948,32 @@ import shopify from "../config/initialize-context";
 import { DeliveryMethod } from "@shopify/shopify-api";
 
 export function setupGDPRWebHooks(callbackUrl: string): void {
-  shopify.webhooks.addHandlers({
-    CUSTOMERS_DATA_REQUEST: {
-      deliveryMethod: DeliveryMethod.Http,
-      callbackUrl,
-      callback: async (_topic, shop, body) => {
-        console.log(`[GDPR] customers/data_request from ${shop}:`, body);
-      },
-    },
-    CUSTOMERS_REDACT: {
-      deliveryMethod: DeliveryMethod.Http,
-      callbackUrl,
-      callback: async (_topic, shop, body) => {
-        console.log(`[GDPR] customers/redact from ${shop}:`, body);
-      },
-    },
-    SHOP_REDACT: {
-      deliveryMethod: DeliveryMethod.Http,
-      callbackUrl,
-      callback: async (_topic, shop) => {
-        console.log(`[GDPR] shop/redact from ${shop}`);
-      },
-    },
-  });
+    shopify.webhooks.addHandlers({
+        CUSTOMERS_DATA_REQUEST: {
+            deliveryMethod: DeliveryMethod.Http,
+            callbackUrl,
+            callback: async (_topic, shop, body) => {
+                console.log(
+                    `[GDPR] customers/data_request from ${shop}:`,
+                    body,
+                );
+            },
+        },
+        CUSTOMERS_REDACT: {
+            deliveryMethod: DeliveryMethod.Http,
+            callbackUrl,
+            callback: async (_topic, shop, body) => {
+                console.log(`[GDPR] customers/redact from ${shop}:`, body);
+            },
+        },
+        SHOP_REDACT: {
+            deliveryMethod: DeliveryMethod.Http,
+            callbackUrl,
+            callback: async (_topic, shop) => {
+                console.log(`[GDPR] shop/redact from ${shop}`);
+            },
+        },
+    });
 }
 ```
 
@@ -966,16 +984,16 @@ export function setupGDPRWebHooks(callbackUrl: string): void {
 import { deleteSessionsByShop } from "@/shared/repositories";
 
 export async function handleAppUninstalled(
-  shop: string,
-  _body: string
+    shop: string,
+    _body: string,
 ): Promise<void> {
-  try {
-    await deleteSessionsByShop(shop);
-    console.log(`[Webhook] app/uninstalled: cleaned sessions for ${shop}`);
-  } catch (err) {
-    console.error(`[Webhook] app/uninstalled failed for ${shop}:`, err);
-    throw err;
-  }
+    try {
+        await deleteSessionsByShop(shop);
+        console.log(`[Webhook] app/uninstalled: cleaned sessions for ${shop}`);
+    } catch (err) {
+        console.error(`[Webhook] app/uninstalled failed for ${shop}:`, err);
+        throw err;
+    }
 }
 ```
 
@@ -991,38 +1009,39 @@ import { handleAppUninstalled } from "./handlers";
 let webhooksInitialized = false;
 
 export function addHandlers(): void {
-  if (webhooksInitialized) return;
+    if (webhooksInitialized) return;
 
-  setupGDPRWebHooks("/api/webhooks");
+    setupGDPRWebHooks("/api/webhooks");
 
-  shopify.webhooks.addHandlers({
-    APP_UNINSTALLED: {
-      deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "/api/webhooks",
-      callback: async (_topic, shop, body) => {
-        await handleAppUninstalled(shop, body);
-      },
-    },
-  });
+    shopify.webhooks.addHandlers({
+        APP_UNINSTALLED: {
+            deliveryMethod: DeliveryMethod.Http,
+            callbackUrl: "/api/webhooks",
+            callback: async (_topic, shop, body) => {
+                await handleAppUninstalled(shop, body);
+            },
+        },
+    });
 
-  webhooksInitialized = true;
+    webhooksInitialized = true;
 }
 
 export async function registerWebhooks(session: Session): Promise<void> {
-  addHandlers();
+    addHandlers();
 
-  if (!session.accessToken) throw new Error(`No access token for ${session.shop}`);
-  if (!session.shop) throw new Error("No shop in session");
+    if (!session.accessToken)
+        throw new Error(`No access token for ${session.shop}`);
+    if (!session.shop) throw new Error("No shop in session");
 
-  const responses = await shopify.webhooks.register({ session });
+    const responses = await shopify.webhooks.register({ session });
 
-  const failed = Object.entries(responses)
-    .filter(([, results]) => results.some((r) => !r.success))
-    .map(([topic]) => topic);
+    const failed = Object.entries(responses)
+        .filter(([, results]) => results.some((r) => !r.success))
+        .map(([topic]) => topic);
 
-  if (failed.length > 0) {
-    console.warn("[Webhooks] Failed topics:", failed.join(", "));
-  }
+    if (failed.length > 0) {
+        console.warn("[Webhooks] Failed topics:", failed.join(", "));
+    }
 }
 ```
 
@@ -1053,102 +1072,144 @@ const MAX_RETRIES = 3;
 const BACKOFF_MS = [0, 1000, 3000];
 
 function retryableStatus(error: unknown): number | null {
-  if (error && typeof error === "object" && "response" in error) {
-    const s = (error as any).response?.status;
-    if (RETRYABLE_CODES.includes(s)) return s;
-  }
-  return null;
+    if (error && typeof error === "object" && "response" in error) {
+        const s = (error as any).response?.status;
+        if (RETRYABLE_CODES.includes(s)) return s;
+    }
+    return null;
 }
 
 export async function executeGraphQLQuery<T = any>(
-  request: GraphQLRequest
+    request: GraphQLRequest,
 ): Promise<GraphQLResponse<T>> {
-  try {
-    const { query, variables = {} } = request;
-    if (!query) {
-      return { errors: [{ message: "GraphQL query is required", extensions: { code: "MISSING_QUERY" } }] };
-    }
-
-    let shop: string;
-    let accessToken: string;
-
-    if (request.shop && request.accessToken) {
-      shop = request.shop;
-      accessToken = request.accessToken;
-    } else if (request.sessionToken) {
-      const result = await handleSessionToken(request.sessionToken, false, false);
-      if (!result.session?.accessToken) {
-        return { errors: [{ message: "No access token in session", extensions: { code: "MISSING_ACCESS_TOKEN" } }] };
-      }
-      shop = result.shop;
-      accessToken = result.session.accessToken;
-    } else {
-      return { errors: [{ message: "Authentication required", extensions: { code: "MISSING_AUTH" } }] };
-    }
-
-    const endpoint = `https://${shop}/admin/api/${SHOPIFY_API_VERSION}/graphql.json`;
-    const client = new GraphQLClient(endpoint, {
-      headers: {
-        "X-Shopify-Access-Token": accessToken,
-        "Content-Type": "application/json",
-      },
-    });
-
-    const queryString =
-      typeof query === "string"
-        ? query
-        : (query as TypedDocumentNode)?.loc?.source?.body ?? print(query as any);
-
-    const result = await client.request<T>(queryString, variables);
-    return { data: result };
-  } catch (error) {
-    // 401: force token refresh + retry once
-    if (request.sessionToken && !request._retried) {
-      const status = (error as any)?.response?.status;
-      if (status === 401) {
-        try {
-          const refreshed = await handleSessionToken(request.sessionToken, false, true, true);
-          if (refreshed.session?.accessToken) {
-            return executeGraphQLQuery<T>({
-              ...request,
-              shop: refreshed.shop,
-              accessToken: refreshed.session.accessToken,
-              _retried: true,
-            });
-          }
-        } catch {
-          // Fall through to error handling
+    try {
+        const { query, variables = {} } = request;
+        if (!query) {
+            return {
+                errors: [
+                    {
+                        message: "GraphQL query is required",
+                        extensions: { code: "MISSING_QUERY" },
+                    },
+                ],
+            };
         }
-      }
+
+        let shop: string;
+        let accessToken: string;
+
+        if (request.shop && request.accessToken) {
+            shop = request.shop;
+            accessToken = request.accessToken;
+        } else if (request.sessionToken) {
+            const result = await handleSessionToken(
+                request.sessionToken,
+                false,
+                false,
+            );
+            if (!result.session?.accessToken) {
+                return {
+                    errors: [
+                        {
+                            message: "No access token in session",
+                            extensions: { code: "MISSING_ACCESS_TOKEN" },
+                        },
+                    ],
+                };
+            }
+            shop = result.shop;
+            accessToken = result.session.accessToken;
+        } else {
+            return {
+                errors: [
+                    {
+                        message: "Authentication required",
+                        extensions: { code: "MISSING_AUTH" },
+                    },
+                ],
+            };
+        }
+
+        const endpoint = `https://${shop}/admin/api/${SHOPIFY_API_VERSION}/graphql.json`;
+        const client = new GraphQLClient(endpoint, {
+            headers: {
+                "X-Shopify-Access-Token": accessToken,
+                "Content-Type": "application/json",
+            },
+        });
+
+        const queryString =
+            typeof query === "string"
+                ? query
+                : ((query as TypedDocumentNode)?.loc?.source?.body ??
+                  print(query as any));
+
+        const result = await client.request<T>(queryString, variables);
+        return { data: result };
+    } catch (error) {
+        // 401: force token refresh + retry once
+        if (request.sessionToken && !request._retried) {
+            const status = (error as any)?.response?.status;
+            if (status === 401) {
+                try {
+                    const refreshed = await handleSessionToken(
+                        request.sessionToken,
+                        false,
+                        true,
+                        true,
+                    );
+                    if (refreshed.session?.accessToken) {
+                        return executeGraphQLQuery<T>({
+                            ...request,
+                            shop: refreshed.shop,
+                            accessToken: refreshed.session.accessToken,
+                            _retried: true,
+                        });
+                    }
+                } catch {
+                    // Fall through to error handling
+                }
+            }
+        }
+
+        const retryable = retryableStatus(error);
+        const retryCount = request._retryCount ?? 0;
+
+        if (retryable && retryCount < MAX_RETRIES) {
+            const delay = BACKOFF_MS[retryCount] ?? 3000;
+            if (delay > 0) await new Promise((r) => setTimeout(r, delay));
+            return executeGraphQLQuery<T>({
+                ...request,
+                _retryCount: retryCount + 1,
+            });
+        }
+
+        if (retryable && retryCount >= MAX_RETRIES) {
+            return {
+                errors: [
+                    {
+                        message: `Shopify API unavailable (HTTP ${retryable}). Please try again later.`,
+                        extensions: {
+                            code: "SHOPIFY_UNAVAILABLE",
+                            statusCode: retryable,
+                        },
+                    },
+                ],
+            };
+        }
+
+        const msg =
+            error instanceof Error ? error.message : "Unknown GraphQL error";
+        return {
+            errors: [{ message: msg, extensions: { code: "INTERNAL_ERROR" } }],
+        };
     }
-
-    const retryable = retryableStatus(error);
-    const retryCount = request._retryCount ?? 0;
-
-    if (retryable && retryCount < MAX_RETRIES) {
-      const delay = BACKOFF_MS[retryCount] ?? 3000;
-      if (delay > 0) await new Promise((r) => setTimeout(r, delay));
-      return executeGraphQLQuery<T>({ ...request, _retryCount: retryCount + 1 });
-    }
-
-    if (retryable && retryCount >= MAX_RETRIES) {
-      return {
-        errors: [{
-          message: `Shopify API unavailable (HTTP ${retryable}). Please try again later.`,
-          extensions: { code: "SHOPIFY_UNAVAILABLE", statusCode: retryable },
-        }],
-      };
-    }
-
-    const msg = error instanceof Error ? error.message : "Unknown GraphQL error";
-    return { errors: [{ message: msg, extensions: { code: "INTERNAL_ERROR" } }] };
-  }
 }
 
 export async function executeGraphQLMutation<T = any>(
-  request: GraphQLRequest
+    request: GraphQLRequest,
 ): Promise<GraphQLResponse<T>> {
-  return executeGraphQLQuery<T>(request);
+    return executeGraphQLQuery<T>(request);
 }
 ```
 
@@ -1171,6 +1232,7 @@ git commit -m "feat: auth, webhook, and graphql client infrastructure"
 ## Task 7: API Routes
 
 **Files:**
+
 - Create: `web/app/api/auth/route.ts`
 - Create: `web/app/api/webhooks/route.ts`
 
@@ -1184,21 +1246,29 @@ import { isValidShopDomain } from "@/shared/utils";
 const CLIENT_ID = process.env.SHOPIFY_API_KEY;
 
 export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const shop = searchParams.get("shop");
-  const returnTo = searchParams.get("returnTo") || "/";
+    const { searchParams } = new URL(request.url);
+    const shop = searchParams.get("shop");
+    const returnTo = searchParams.get("returnTo") || "/";
 
-  if (!CLIENT_ID) {
-    return NextResponse.json({ error: "Authentication unavailable" }, { status: 500 });
-  }
+    if (!CLIENT_ID) {
+        return NextResponse.json(
+            { error: "Authentication unavailable" },
+            { status: 500 },
+        );
+    }
 
-  if (!shop || !isValidShopDomain(shop)) {
-    return NextResponse.json({ error: "Invalid or missing shop domain" }, { status: 400 });
-  }
+    if (!shop || !isValidShopDomain(shop)) {
+        return NextResponse.json(
+            { error: "Invalid or missing shop domain" },
+            { status: 400 },
+        );
+    }
 
-  const sanitizedReturnTo = /^\/[a-zA-Z0-9/_-]*$/.test(returnTo) ? returnTo : "/";
-  const embeddedUrl = `https://${shop}/admin/apps/${CLIENT_ID}${sanitizedReturnTo}`;
-  return NextResponse.redirect(embeddedUrl);
+    const sanitizedReturnTo = /^\/[a-zA-Z0-9/_-]*$/.test(returnTo)
+        ? returnTo
+        : "/";
+    const embeddedUrl = `https://${shop}/admin/apps/${CLIENT_ID}${sanitizedReturnTo}`;
+    return NextResponse.redirect(embeddedUrl);
 }
 ```
 
@@ -1214,51 +1284,63 @@ import prisma from "@/shared/repositories/prisma-connect";
 let handlerInitPromise: Promise<void> | null = null;
 
 function ensureHandlers(topic: string): Promise<void> {
-  const handlers = shopify.webhooks.getHandlers(topic);
-  if (handlers && handlers.length > 0) return Promise.resolve();
+    const handlers = shopify.webhooks.getHandlers(topic);
+    if (handlers && handlers.length > 0) return Promise.resolve();
 
-  if (!handlerInitPromise) {
-    console.warn(`[Webhook] No handlers for topic: ${topic}, re-adding.`);
-    handlerInitPromise = Promise.resolve().then(() => addHandlers());
-  }
-  return handlerInitPromise;
+    if (!handlerInitPromise) {
+        console.warn(`[Webhook] No handlers for topic: ${topic}, re-adding.`);
+        handlerInitPromise = Promise.resolve().then(() => addHandlers());
+    }
+    return handlerInitPromise;
 }
 
 export async function POST(req: Request) {
-  const headerList = await headers();
-  const topic = headerList.get("x-shopify-topic") || "unknown";
-  const shop = headerList.get("x-shopify-shop-domain") || "unknown";
-  const webhookId = headerList.get("x-shopify-webhook-id");
+    const headerList = await headers();
+    const topic = headerList.get("x-shopify-topic") || "unknown";
+    const shop = headerList.get("x-shopify-shop-domain") || "unknown";
+    const webhookId = headerList.get("x-shopify-webhook-id");
 
-  // Idempotency: skip already-processed deliveries
-  if (webhookId) {
-    const existing = await prisma.webhookDelivery.findUnique({ where: { id: webhookId } });
-    if (existing) return new Response(null, { status: 200 });
-  }
-
-  const rawBody = await req.text();
-  await ensureHandlers(topic);
-
-  try {
-    const { statusCode } = await shopify.webhooks.process({ rawBody, rawRequest: req });
-
+    // Idempotency: skip already-processed deliveries
     if (webhookId) {
-      prisma.webhookDelivery
-        .create({ data: { id: webhookId, topic, shop } })
-        .catch(() => {});
-
-      prisma.webhookDelivery
-        .deleteMany({
-          where: { processedAt: { lt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) } },
-        })
-        .catch(() => {});
+        const existing = await prisma.webhookDelivery.findUnique({
+            where: { id: webhookId },
+        });
+        if (existing) return new Response(null, { status: 200 });
     }
 
-    return new Response(null, { status: statusCode });
-  } catch (err) {
-    console.error(`[Webhook] Processing failed for ${topic} from ${shop}:`, err);
-    return new Response("Webhook processing failed", { status: 500 });
-  }
+    const rawBody = await req.text();
+    await ensureHandlers(topic);
+
+    try {
+        const { statusCode } = await shopify.webhooks.process({
+            rawBody,
+            rawRequest: req,
+        });
+
+        if (webhookId) {
+            prisma.webhookDelivery
+                .create({ data: { id: webhookId, topic, shop } })
+                .catch(() => {});
+
+            prisma.webhookDelivery
+                .deleteMany({
+                    where: {
+                        processedAt: {
+                            lt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+                        },
+                    },
+                })
+                .catch(() => {});
+        }
+
+        return new Response(null, { status: statusCode });
+    } catch (err) {
+        console.error(
+            `[Webhook] Processing failed for ${topic} from ${shop}:`,
+            err,
+        );
+        return new Response("Webhook processing failed", { status: 500 });
+    }
 }
 ```
 
@@ -1276,62 +1358,64 @@ const RATE_LIMIT = 100;
 const RATE_WINDOW_MS = 60_000;
 
 function checkRateLimit(shop: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(shop);
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(shop, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    const now = Date.now();
+    const entry = rateLimitMap.get(shop);
+    if (!entry || now > entry.resetAt) {
+        rateLimitMap.set(shop, { count: 1, resetAt: now + RATE_WINDOW_MS });
+        return true;
+    }
+    if (entry.count >= RATE_LIMIT) return false;
+    entry.count++;
     return true;
-  }
-  if (entry.count >= RATE_LIMIT) return false;
-  entry.count++;
-  return true;
 }
 
 export async function GET(req: NextRequest) {
-  const shop = req.nextUrl.searchParams.get("shop") ?? "";
+    const shop = req.nextUrl.searchParams.get("shop") ?? "";
 
-  if (!isValidShopDomain(shop)) {
-    return NextResponse.json({ error: "Invalid shop" }, { status: 400 });
-  }
+    if (!isValidShopDomain(shop)) {
+        return NextResponse.json({ error: "Invalid shop" }, { status: 400 });
+    }
 
-  if (!checkRateLimit(shop)) {
-    return NextResponse.json({ error: "Rate limit exceeded" }, { status: 429 });
-  }
+    if (!checkRateLimit(shop)) {
+        return NextResponse.json(
+            { error: "Rate limit exceeded" },
+            { status: 429 },
+        );
+    }
 
-  const now = new Date();
+    const now = new Date();
 
-  const shopRecord = await prisma.shop.findUnique({ where: { domain: shop } });
-  if (!shopRecord) return NextResponse.json({ announcement: null });
+    const shopRecord = await prisma.shop.findUnique({
+        where: { domain: shop },
+    });
+    if (!shopRecord) return NextResponse.json({ announcement: null });
 
-  const announcement = await prisma.announcement.findFirst({
-    where: {
-      shopId: shopRecord.id,
-      isActive: true,
-      OR: [
-        { startsAt: null },
-        { startsAt: { lte: now } },
-      ],
-      AND: [
-        {
-          OR: [
-            { endsAt: null },
-            { endsAt: { gte: now } },
-          ],
+    const announcement = await prisma.announcement.findFirst({
+        where: {
+            shopId: shopRecord.id,
+            isActive: true,
+            OR: [{ startsAt: null }, { startsAt: { lte: now } }],
+            AND: [
+                {
+                    OR: [{ endsAt: null }, { endsAt: { gte: now } }],
+                },
+            ],
         },
-      ],
-    },
-    orderBy: { createdAt: "desc" },
-    select: {
-      id: true,
-      title: true,
-      message: true,
-      type: true,
-      bgColor: true,
-      textColor: true,
-    },
-  });
+        orderBy: { createdAt: "desc" },
+        select: {
+            id: true,
+            title: true,
+            message: true,
+            type: true,
+            bgColor: true,
+            textColor: true,
+        },
+    });
 
-  return NextResponse.json({ announcement }, { headers: { "Cache-Control": "no-store" } });
+    return NextResponse.json(
+        { announcement },
+        { headers: { "Cache-Control": "no-store" } },
+    );
 }
 ```
 
@@ -1347,6 +1431,7 @@ git commit -m "feat: api routes (auth redirect, webhooks, app proxy)"
 ## Task 8: Announcements Feature — Types + Validation + Repository
 
 **Files:**
+
 - Create: `web/features/announcements/types/announcement.types.ts`
 - Create: `web/features/announcements/types/index.ts`
 - Create: `web/features/announcements/validation/announcement.zod.ts`
@@ -1361,32 +1446,32 @@ git commit -m "feat: api routes (auth redirect, webhooks, app proxy)"
 export type AnnouncementType = "INFO" | "WARNING" | "PROMO" | "URGENT";
 
 export interface Announcement {
-  id: string;
-  shopId: string;
-  title: string;
-  message: string;
-  type: AnnouncementType;
-  isActive: boolean;
-  bgColor: string;
-  textColor: string;
-  startsAt: Date | null;
-  endsAt: Date | null;
-  createdAt: Date;
-  updatedAt: Date;
+    id: string;
+    shopId: string;
+    title: string;
+    message: string;
+    type: AnnouncementType;
+    isActive: boolean;
+    bgColor: string;
+    textColor: string;
+    startsAt: Date | null;
+    endsAt: Date | null;
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 export type CreateAnnouncementInput = {
-  title: string;
-  message: string;
-  type: AnnouncementType;
-  bgColor: string;
-  textColor: string;
-  startsAt?: Date | null;
-  endsAt?: Date | null;
+    title: string;
+    message: string;
+    type: AnnouncementType;
+    bgColor: string;
+    textColor: string;
+    startsAt?: Date | null;
+    endsAt?: Date | null;
 };
 
 export type UpdateAnnouncementInput = Partial<CreateAnnouncementInput> & {
-  isActive?: boolean;
+    isActive?: boolean;
 };
 ```
 
@@ -1404,27 +1489,33 @@ export * from "./announcement.types";
 import { z } from "zod";
 
 export const createAnnouncementSchema = z.object({
-  title: z.string().min(1, "Title is required").max(100),
-  message: z.string().min(1, "Message is required").max(500),
-  type: z.enum(["INFO", "WARNING", "PROMO", "URGENT"]),
-  bgColor: z
-    .string()
-    .regex(/^#[0-9a-fA-F]{6}$/, "Must be a valid hex color")
-    .default("#1a1a1a"),
-  textColor: z
-    .string()
-    .regex(/^#[0-9a-fA-F]{6}$/, "Must be a valid hex color")
-    .default("#ffffff"),
-  startsAt: z.string().datetime().optional().nullable(),
-  endsAt: z.string().datetime().optional().nullable(),
+    title: z.string().min(1, "Title is required").max(100),
+    message: z.string().min(1, "Message is required").max(500),
+    type: z.enum(["INFO", "WARNING", "PROMO", "URGENT"]),
+    bgColor: z
+        .string()
+        .regex(/^#[0-9a-fA-F]{6}$/, "Must be a valid hex color")
+        .default("#1a1a1a"),
+    textColor: z
+        .string()
+        .regex(/^#[0-9a-fA-F]{6}$/, "Must be a valid hex color")
+        .default("#ffffff"),
+    startsAt: z.string().datetime().optional().nullable(),
+    endsAt: z.string().datetime().optional().nullable(),
 });
 
-export const updateAnnouncementSchema = createAnnouncementSchema.partial().extend({
-  isActive: z.boolean().optional(),
-});
+export const updateAnnouncementSchema = createAnnouncementSchema
+    .partial()
+    .extend({
+        isActive: z.boolean().optional(),
+    });
 
-export type CreateAnnouncementFormValues = z.infer<typeof createAnnouncementSchema>;
-export type UpdateAnnouncementFormValues = z.infer<typeof updateAnnouncementSchema>;
+export type CreateAnnouncementFormValues = z.infer<
+    typeof createAnnouncementSchema
+>;
+export type UpdateAnnouncementFormValues = z.infer<
+    typeof updateAnnouncementSchema
+>;
 ```
 
 - [ ] **Step 4: Create validation barrel**
@@ -1441,64 +1532,66 @@ export * from "./announcement.zod";
 import prisma from "@/shared/repositories/prisma-connect";
 import { CreateAnnouncementInput, UpdateAnnouncementInput } from "../types";
 
-export async function findShopIdByDomain(domain: string): Promise<string | null> {
-  const shop = await prisma.shop.findUnique({
-    where: { domain },
-    select: { id: true },
-  });
-  return shop?.id ?? null;
+export async function findShopIdByDomain(
+    domain: string,
+): Promise<string | null> {
+    const shop = await prisma.shop.findUnique({
+        where: { domain },
+        select: { id: true },
+    });
+    return shop?.id ?? null;
 }
 
 export async function findAllByShop(shopId: string) {
-  return prisma.announcement.findMany({
-    where: { shopId },
-    orderBy: { createdAt: "desc" },
-  });
+    return prisma.announcement.findMany({
+        where: { shopId },
+        orderBy: { createdAt: "desc" },
+    });
 }
 
 export async function findById(id: string) {
-  return prisma.announcement.findUnique({ where: { id } });
+    return prisma.announcement.findUnique({ where: { id } });
 }
 
 export async function createAnnouncement(
-  shopId: string,
-  data: CreateAnnouncementInput
+    shopId: string,
+    data: CreateAnnouncementInput,
 ) {
-  return prisma.announcement.create({
-    data: {
-      shopId,
-      title: data.title,
-      message: data.message,
-      type: data.type,
-      bgColor: data.bgColor,
-      textColor: data.textColor,
-      startsAt: data.startsAt ?? null,
-      endsAt: data.endsAt ?? null,
-    },
-  });
+    return prisma.announcement.create({
+        data: {
+            shopId,
+            title: data.title,
+            message: data.message,
+            type: data.type,
+            bgColor: data.bgColor,
+            textColor: data.textColor,
+            startsAt: data.startsAt ?? null,
+            endsAt: data.endsAt ?? null,
+        },
+    });
 }
 
 export async function updateAnnouncement(
-  id: string,
-  data: UpdateAnnouncementInput
+    id: string,
+    data: UpdateAnnouncementInput,
 ) {
-  return prisma.announcement.update({
-    where: { id },
-    data: {
-      ...(data.title !== undefined && { title: data.title }),
-      ...(data.message !== undefined && { message: data.message }),
-      ...(data.type !== undefined && { type: data.type }),
-      ...(data.isActive !== undefined && { isActive: data.isActive }),
-      ...(data.bgColor !== undefined && { bgColor: data.bgColor }),
-      ...(data.textColor !== undefined && { textColor: data.textColor }),
-      ...(data.startsAt !== undefined && { startsAt: data.startsAt }),
-      ...(data.endsAt !== undefined && { endsAt: data.endsAt }),
-    },
-  });
+    return prisma.announcement.update({
+        where: { id },
+        data: {
+            ...(data.title !== undefined && { title: data.title }),
+            ...(data.message !== undefined && { message: data.message }),
+            ...(data.type !== undefined && { type: data.type }),
+            ...(data.isActive !== undefined && { isActive: data.isActive }),
+            ...(data.bgColor !== undefined && { bgColor: data.bgColor }),
+            ...(data.textColor !== undefined && { textColor: data.textColor }),
+            ...(data.startsAt !== undefined && { startsAt: data.startsAt }),
+            ...(data.endsAt !== undefined && { endsAt: data.endsAt }),
+        },
+    });
 }
 
 export async function deleteAnnouncement(id: string) {
-  return prisma.announcement.delete({ where: { id } });
+    return prisma.announcement.delete({ where: { id } });
 }
 ```
 
@@ -1521,6 +1614,7 @@ git commit -m "feat: announcement types, validation, and repository"
 ## Task 9: Announcements Feature — Service + Actions
 
 **Files:**
+
 - Create: `web/features/announcements/services/announcement.service.ts`
 - Create: `web/features/announcements/services/index.ts`
 - Create: `web/features/announcements/actions/announcement-read.actions.ts`
@@ -1532,66 +1626,68 @@ git commit -m "feat: announcement types, validation, and repository"
 ```typescript
 // web/features/announcements/services/announcement.service.ts
 import {
-  findShopIdByDomain,
-  findAllByShop,
-  findById,
-  createAnnouncement,
-  updateAnnouncement,
-  deleteAnnouncement,
+    findShopIdByDomain,
+    findAllByShop,
+    findById,
+    createAnnouncement,
+    updateAnnouncement,
+    deleteAnnouncement,
 } from "../repositories";
 import { CreateAnnouncementInput, UpdateAnnouncementInput } from "../types";
 import { ActionResponse } from "@/shared/types";
 
 export async function getAnnouncementsForShop(
-  domain: string
+    domain: string,
 ): Promise<ActionResponse<Awaited<ReturnType<typeof findAllByShop>>>> {
-  const shopId = await findShopIdByDomain(domain);
-  if (!shopId) return { status: "error", message: "Shop not found" };
-  const data = await findAllByShop(shopId);
-  return { status: "success", data };
+    const shopId = await findShopIdByDomain(domain);
+    if (!shopId) return { status: "error", message: "Shop not found" };
+    const data = await findAllByShop(shopId);
+    return { status: "success", data };
 }
 
 export async function createAnnouncementForShop(
-  domain: string,
-  input: CreateAnnouncementInput
+    domain: string,
+    input: CreateAnnouncementInput,
 ): Promise<ActionResponse<Awaited<ReturnType<typeof createAnnouncement>>>> {
-  const shopId = await findShopIdByDomain(domain);
-  if (!shopId) return { status: "error", message: "Shop not found" };
-  const data = await createAnnouncement(shopId, input);
-  return { status: "success", data };
+    const shopId = await findShopIdByDomain(domain);
+    if (!shopId) return { status: "error", message: "Shop not found" };
+    const data = await createAnnouncement(shopId, input);
+    return { status: "success", data };
 }
 
 export async function updateAnnouncementById(
-  id: string,
-  domain: string,
-  input: UpdateAnnouncementInput
+    id: string,
+    domain: string,
+    input: UpdateAnnouncementInput,
 ): Promise<ActionResponse<Awaited<ReturnType<typeof updateAnnouncement>>>> {
-  const existing = await findById(id);
-  if (!existing) return { status: "error", message: "Announcement not found" };
+    const existing = await findById(id);
+    if (!existing)
+        return { status: "error", message: "Announcement not found" };
 
-  const shopId = await findShopIdByDomain(domain);
-  if (!shopId || existing.shopId !== shopId) {
-    return { status: "error", message: "Unauthorized" };
-  }
+    const shopId = await findShopIdByDomain(domain);
+    if (!shopId || existing.shopId !== shopId) {
+        return { status: "error", message: "Unauthorized" };
+    }
 
-  const data = await updateAnnouncement(id, input);
-  return { status: "success", data };
+    const data = await updateAnnouncement(id, input);
+    return { status: "success", data };
 }
 
 export async function deleteAnnouncementById(
-  id: string,
-  domain: string
+    id: string,
+    domain: string,
 ): Promise<ActionResponse<null>> {
-  const existing = await findById(id);
-  if (!existing) return { status: "error", message: "Announcement not found" };
+    const existing = await findById(id);
+    if (!existing)
+        return { status: "error", message: "Announcement not found" };
 
-  const shopId = await findShopIdByDomain(domain);
-  if (!shopId || existing.shopId !== shopId) {
-    return { status: "error", message: "Unauthorized" };
-  }
+    const shopId = await findShopIdByDomain(domain);
+    if (!shopId || existing.shopId !== shopId) {
+        return { status: "error", message: "Unauthorized" };
+    }
 
-  await deleteAnnouncement(id);
-  return { status: "success", data: null };
+    await deleteAnnouncement(id);
+    return { status: "success", data: null };
 }
 ```
 
@@ -1612,13 +1708,16 @@ import { handleSessionToken } from "@/lib/shopify";
 import { getAnnouncementsForShop } from "../services";
 
 export async function getAnnouncementsAction(sessionToken: string) {
-  try {
-    const { shop } = await handleSessionToken(sessionToken);
-    return getAnnouncementsForShop(shop);
-  } catch (err) {
-    console.error("[Action] getAnnouncements failed:", err);
-    return { status: "error" as const, message: "Failed to fetch announcements" };
-  }
+    try {
+        const { shop } = await handleSessionToken(sessionToken);
+        return getAnnouncementsForShop(shop);
+    } catch (err) {
+        console.error("[Action] getAnnouncements failed:", err);
+        return {
+            status: "error" as const,
+            message: "Failed to fetch announcements",
+        };
+    }
 }
 ```
 
@@ -1630,59 +1729,86 @@ export async function getAnnouncementsAction(sessionToken: string) {
 
 import { handleSessionToken } from "@/lib/shopify";
 import {
-  createAnnouncementForShop,
-  updateAnnouncementById,
-  deleteAnnouncementById,
+    createAnnouncementForShop,
+    updateAnnouncementById,
+    deleteAnnouncementById,
 } from "../services";
-import { createAnnouncementSchema, updateAnnouncementSchema } from "../validation";
+import {
+    createAnnouncementSchema,
+    updateAnnouncementSchema,
+} from "../validation";
 import { CreateAnnouncementInput, UpdateAnnouncementInput } from "../types";
 
 export async function createAnnouncementAction(
-  sessionToken: string,
-  input: CreateAnnouncementInput
+    sessionToken: string,
+    input: CreateAnnouncementInput,
 ) {
-  try {
-    const parsed = createAnnouncementSchema.safeParse(input);
-    if (!parsed.success) {
-      return { status: "error" as const, message: "Validation failed", errors: parsed.error.flatten().fieldErrors };
+    try {
+        const parsed = createAnnouncementSchema.safeParse(input);
+        if (!parsed.success) {
+            return {
+                status: "error" as const,
+                message: "Validation failed",
+                errors: parsed.error.flatten().fieldErrors,
+            };
+        }
+        const { shop } = await handleSessionToken(sessionToken);
+        return createAnnouncementForShop(
+            shop,
+            parsed.data as CreateAnnouncementInput,
+        );
+    } catch (err) {
+        console.error("[Action] createAnnouncement failed:", err);
+        return {
+            status: "error" as const,
+            message: "Failed to create announcement",
+        };
     }
-    const { shop } = await handleSessionToken(sessionToken);
-    return createAnnouncementForShop(shop, parsed.data as CreateAnnouncementInput);
-  } catch (err) {
-    console.error("[Action] createAnnouncement failed:", err);
-    return { status: "error" as const, message: "Failed to create announcement" };
-  }
 }
 
 export async function updateAnnouncementAction(
-  sessionToken: string,
-  id: string,
-  input: UpdateAnnouncementInput
+    sessionToken: string,
+    id: string,
+    input: UpdateAnnouncementInput,
 ) {
-  try {
-    const parsed = updateAnnouncementSchema.safeParse(input);
-    if (!parsed.success) {
-      return { status: "error" as const, message: "Validation failed", errors: parsed.error.flatten().fieldErrors };
+    try {
+        const parsed = updateAnnouncementSchema.safeParse(input);
+        if (!parsed.success) {
+            return {
+                status: "error" as const,
+                message: "Validation failed",
+                errors: parsed.error.flatten().fieldErrors,
+            };
+        }
+        const { shop } = await handleSessionToken(sessionToken);
+        return updateAnnouncementById(
+            id,
+            shop,
+            parsed.data as UpdateAnnouncementInput,
+        );
+    } catch (err) {
+        console.error("[Action] updateAnnouncement failed:", err);
+        return {
+            status: "error" as const,
+            message: "Failed to update announcement",
+        };
     }
-    const { shop } = await handleSessionToken(sessionToken);
-    return updateAnnouncementById(id, shop, parsed.data as UpdateAnnouncementInput);
-  } catch (err) {
-    console.error("[Action] updateAnnouncement failed:", err);
-    return { status: "error" as const, message: "Failed to update announcement" };
-  }
 }
 
 export async function deleteAnnouncementAction(
-  sessionToken: string,
-  id: string
+    sessionToken: string,
+    id: string,
 ) {
-  try {
-    const { shop } = await handleSessionToken(sessionToken);
-    return deleteAnnouncementById(id, shop);
-  } catch (err) {
-    console.error("[Action] deleteAnnouncement failed:", err);
-    return { status: "error" as const, message: "Failed to delete announcement" };
-  }
+    try {
+        const { shop } = await handleSessionToken(sessionToken);
+        return deleteAnnouncementById(id, shop);
+    } catch (err) {
+        console.error("[Action] deleteAnnouncement failed:", err);
+        return {
+            status: "error" as const,
+            message: "Failed to delete announcement",
+        };
+    }
 }
 ```
 
@@ -1706,6 +1832,7 @@ git commit -m "feat: announcement service and server actions"
 ## Task 10: Announcements Feature — React Query + Zustand
 
 **Files:**
+
 - Create: `web/features/announcements/api/announcement-keys.ts`
 - Create: `web/features/announcements/api/announcement-queries.ts`
 - Create: `web/features/announcements/api/announcement-mutations.ts`
@@ -1720,9 +1847,9 @@ git commit -m "feat: announcement service and server actions"
 ```typescript
 // web/features/announcements/api/announcement-keys.ts
 export const announcementKeys = {
-  all: ["announcements"] as const,
-  lists: () => [...announcementKeys.all, "list"] as const,
-  detail: (id: string) => [...announcementKeys.all, "detail", id] as const,
+    all: ["announcements"] as const,
+    lists: () => [...announcementKeys.all, "list"] as const,
+    detail: (id: string) => [...announcementKeys.all, "detail", id] as const,
 };
 ```
 
@@ -1736,17 +1863,17 @@ import { getAnnouncementsAction } from "../actions";
 import { announcementKeys } from "./announcement-keys";
 
 export function useAnnouncementsQuery() {
-  const shopify = useAppBridge();
+    const shopify = useAppBridge();
 
-  return useQuery({
-    queryKey: announcementKeys.lists(),
-    queryFn: async () => {
-      const token = await shopify.idToken();
-      const result = await getAnnouncementsAction(token);
-      if (result.status === "error") throw new Error(result.message);
-      return result.data;
-    },
-  });
+    return useQuery({
+        queryKey: announcementKeys.lists(),
+        queryFn: async () => {
+            const token = await shopify.idToken();
+            const result = await getAnnouncementsAction(token);
+            if (result.status === "error") throw new Error(result.message);
+            return result.data;
+        },
+    });
 }
 ```
 
@@ -1757,62 +1884,74 @@ export function useAnnouncementsQuery() {
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useAppBridge } from "@shopify/app-bridge-react";
 import {
-  createAnnouncementAction,
-  updateAnnouncementAction,
-  deleteAnnouncementAction,
+    createAnnouncementAction,
+    updateAnnouncementAction,
+    deleteAnnouncementAction,
 } from "../actions";
 import { announcementKeys } from "./announcement-keys";
 import { CreateAnnouncementInput, UpdateAnnouncementInput } from "../types";
 
 export function useCreateAnnouncement() {
-  const shopify = useAppBridge();
-  const queryClient = useQueryClient();
+    const shopify = useAppBridge();
+    const queryClient = useQueryClient();
 
-  return useMutation({
-    mutationFn: async (input: CreateAnnouncementInput) => {
-      const token = await shopify.idToken();
-      const result = await createAnnouncementAction(token, input);
-      if (result.status === "error") throw new Error(result.message);
-      return result.data;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: announcementKeys.lists() });
-    },
-  });
+    return useMutation({
+        mutationFn: async (input: CreateAnnouncementInput) => {
+            const token = await shopify.idToken();
+            const result = await createAnnouncementAction(token, input);
+            if (result.status === "error") throw new Error(result.message);
+            return result.data;
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: announcementKeys.lists(),
+            });
+        },
+    });
 }
 
 export function useUpdateAnnouncement() {
-  const shopify = useAppBridge();
-  const queryClient = useQueryClient();
+    const shopify = useAppBridge();
+    const queryClient = useQueryClient();
 
-  return useMutation({
-    mutationFn: async ({ id, input }: { id: string; input: UpdateAnnouncementInput }) => {
-      const token = await shopify.idToken();
-      const result = await updateAnnouncementAction(token, id, input);
-      if (result.status === "error") throw new Error(result.message);
-      return result.data;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: announcementKeys.lists() });
-    },
-  });
+    return useMutation({
+        mutationFn: async ({
+            id,
+            input,
+        }: {
+            id: string;
+            input: UpdateAnnouncementInput;
+        }) => {
+            const token = await shopify.idToken();
+            const result = await updateAnnouncementAction(token, id, input);
+            if (result.status === "error") throw new Error(result.message);
+            return result.data;
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: announcementKeys.lists(),
+            });
+        },
+    });
 }
 
 export function useDeleteAnnouncement() {
-  const shopify = useAppBridge();
-  const queryClient = useQueryClient();
+    const shopify = useAppBridge();
+    const queryClient = useQueryClient();
 
-  return useMutation({
-    mutationFn: async (id: string) => {
-      const token = await shopify.idToken();
-      const result = await deleteAnnouncementAction(token, id);
-      if (result.status === "error") throw new Error(result.message);
-      return result.data;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: announcementKeys.lists() });
-    },
-  });
+    return useMutation({
+        mutationFn: async (id: string) => {
+            const token = await shopify.idToken();
+            const result = await deleteAnnouncementAction(token, id);
+            if (result.status === "error") throw new Error(result.message);
+            return result.data;
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: announcementKeys.lists(),
+            });
+        },
+    });
 }
 ```
 
@@ -1833,19 +1972,20 @@ import { create } from "zustand";
 import { Announcement } from "../types";
 
 interface AnnouncementStore {
-  selectedId: string | null;
-  isFormOpen: boolean;
-  setSelected: (id: string | null) => void;
-  openForm: (announcement?: Announcement) => void;
-  closeForm: () => void;
+    selectedId: string | null;
+    isFormOpen: boolean;
+    setSelected: (id: string | null) => void;
+    openForm: (announcement?: Announcement) => void;
+    closeForm: () => void;
 }
 
 export const useAnnouncementStore = create<AnnouncementStore>((set) => ({
-  selectedId: null,
-  isFormOpen: false,
-  setSelected: (id) => set({ selectedId: id }),
-  openForm: (announcement) => set({ selectedId: announcement?.id ?? null, isFormOpen: true }),
-  closeForm: () => set({ selectedId: null, isFormOpen: false }),
+    selectedId: null,
+    isFormOpen: false,
+    setSelected: (id) => set({ selectedId: id }),
+    openForm: (announcement) =>
+        set({ selectedId: announcement?.id ?? null, isFormOpen: true }),
+    closeForm: () => set({ selectedId: null, isFormOpen: false }),
 }));
 ```
 
@@ -1861,34 +2001,46 @@ export * from "./announcement.store";
 ```typescript
 // web/features/announcements/hooks/use-announcements.ts
 import { useAnnouncementsQuery } from "../api/announcement-queries";
-import { useCreateAnnouncement, useUpdateAnnouncement, useDeleteAnnouncement } from "../api/announcement-mutations";
+import {
+    useCreateAnnouncement,
+    useUpdateAnnouncement,
+    useDeleteAnnouncement,
+} from "../api/announcement-mutations";
 import { useAnnouncementStore } from "../stores";
 
 export function useAnnouncements() {
-  const { data: announcements = [], isLoading, error } = useAnnouncementsQuery();
-  const createMutation = useCreateAnnouncement();
-  const updateMutation = useUpdateAnnouncement();
-  const deleteMutation = useDeleteAnnouncement();
-  const { isFormOpen, selectedId, openForm, closeForm } = useAnnouncementStore();
+    const {
+        data: announcements = [],
+        isLoading,
+        error,
+    } = useAnnouncementsQuery();
+    const createMutation = useCreateAnnouncement();
+    const updateMutation = useUpdateAnnouncement();
+    const deleteMutation = useDeleteAnnouncement();
+    const { isFormOpen, selectedId, openForm, closeForm } =
+        useAnnouncementStore();
 
-  const selectedAnnouncement = announcements.find((a) => a.id === selectedId) ?? null;
+    const selectedAnnouncement =
+        announcements.find((a) => a.id === selectedId) ?? null;
 
-  return {
-    announcements,
-    isLoading,
-    error,
-    isFormOpen,
-    selectedAnnouncement,
-    openForm,
-    closeForm,
-    create: createMutation.mutateAsync,
-    update: (id: string, input: Parameters<typeof updateMutation.mutateAsync>[0]["input"]) =>
-      updateMutation.mutateAsync({ id, input }),
-    remove: deleteMutation.mutateAsync,
-    isCreating: createMutation.isPending,
-    isUpdating: updateMutation.isPending,
-    isDeleting: deleteMutation.isPending,
-  };
+    return {
+        announcements,
+        isLoading,
+        error,
+        isFormOpen,
+        selectedAnnouncement,
+        openForm,
+        closeForm,
+        create: createMutation.mutateAsync,
+        update: (
+            id: string,
+            input: Parameters<typeof updateMutation.mutateAsync>[0]["input"],
+        ) => updateMutation.mutateAsync({ id, input }),
+        remove: deleteMutation.mutateAsync,
+        isCreating: createMutation.isPending,
+        isUpdating: updateMutation.isPending,
+        isDeleting: deleteMutation.isPending,
+    };
 }
 ```
 
@@ -1911,6 +2063,7 @@ git commit -m "feat: announcement react-query layer, store, and hook"
 ## Task 11: Announcements Feature — UI Components
 
 **Files:**
+
 - Create: `web/features/announcements/components/AnnouncementCard.tsx`
 - Create: `web/features/announcements/components/AnnouncementForm.tsx`
 - Create: `web/features/announcements/components/AnnouncementList.tsx`
@@ -1925,91 +2078,118 @@ import { useAnnouncements } from "../hooks";
 import { Announcement } from "../types";
 
 interface Props {
-  announcement: Announcement;
+    announcement: Announcement;
 }
 
 export function AnnouncementCard({ announcement }: Props) {
-  const { update, remove, openForm, isDeleting } = useAnnouncements();
+    const { update, remove, openForm, isDeleting } = useAnnouncements();
 
-  const typeColors: Record<string, string> = {
-    INFO: "#0070f3",
-    WARNING: "#f5a623",
-    PROMO: "#7c3aed",
-    URGENT: "#dc2626",
-  };
+    const typeColors: Record<string, string> = {
+        INFO: "#0070f3",
+        WARNING: "#f5a623",
+        PROMO: "#7c3aed",
+        URGENT: "#dc2626",
+    };
 
-  return (
-    <div
-      style={{
-        border: "1px solid #e1e3e5",
-        borderRadius: "8px",
-        padding: "16px",
-        marginBottom: "12px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "flex-start",
-      }}
-    >
-      <div style={{ flex: 1 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-          <span
+    return (
+        <div
             style={{
-              fontSize: "11px",
-              fontWeight: 600,
-              color: typeColors[announcement.type] ?? "#6b7280",
-              textTransform: "uppercase",
+                border: "1px solid #e1e3e5",
+                borderRadius: "8px",
+                padding: "16px",
+                marginBottom: "12px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
             }}
-          >
-            {announcement.type}
-          </span>
-          <span
-            style={{
-              fontSize: "11px",
-              padding: "2px 8px",
-              borderRadius: "12px",
-              backgroundColor: announcement.isActive ? "#dcfce7" : "#f3f4f6",
-              color: announcement.isActive ? "#16a34a" : "#6b7280",
-            }}
-          >
-            {announcement.isActive ? "Active" : "Inactive"}
-          </span>
+        >
+            <div style={{ flex: 1 }}>
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                        marginBottom: "4px",
+                    }}
+                >
+                    <span
+                        style={{
+                            fontSize: "11px",
+                            fontWeight: 600,
+                            color: typeColors[announcement.type] ?? "#6b7280",
+                            textTransform: "uppercase",
+                        }}
+                    >
+                        {announcement.type}
+                    </span>
+                    <span
+                        style={{
+                            fontSize: "11px",
+                            padding: "2px 8px",
+                            borderRadius: "12px",
+                            backgroundColor: announcement.isActive
+                                ? "#dcfce7"
+                                : "#f3f4f6",
+                            color: announcement.isActive
+                                ? "#16a34a"
+                                : "#6b7280",
+                        }}
+                    >
+                        {announcement.isActive ? "Active" : "Inactive"}
+                    </span>
+                </div>
+                <p style={{ margin: "0 0 4px", fontWeight: 600 }}>
+                    {announcement.title}
+                </p>
+                <p style={{ margin: 0, color: "#6b7280", fontSize: "14px" }}>
+                    {announcement.message}
+                </p>
+            </div>
+
+            <div style={{ display: "flex", gap: "8px", marginLeft: "16px" }}>
+                <button
+                    onClick={() =>
+                        update(announcement.id, {
+                            isActive: !announcement.isActive,
+                        })
+                    }
+                    style={{
+                        cursor: "pointer",
+                        padding: "6px 12px",
+                        borderRadius: "6px",
+                        border: "1px solid #e1e3e5",
+                    }}
+                >
+                    {announcement.isActive ? "Deactivate" : "Activate"}
+                </button>
+                <button
+                    onClick={() => openForm(announcement)}
+                    style={{
+                        cursor: "pointer",
+                        padding: "6px 12px",
+                        borderRadius: "6px",
+                        border: "1px solid #e1e3e5",
+                    }}
+                >
+                    Edit
+                </button>
+                <button
+                    onClick={() => remove(announcement.id)}
+                    disabled={isDeleting}
+                    style={{
+                        cursor: "pointer",
+                        padding: "6px 12px",
+                        borderRadius: "6px",
+                        border: "1px solid #fca5a5",
+                        color: "#dc2626",
+                        backgroundColor: "#fff5f5",
+                    }}
+                >
+                    Delete
+                </button>
+            </div>
         </div>
-        <p style={{ margin: "0 0 4px", fontWeight: 600 }}>{announcement.title}</p>
-        <p style={{ margin: 0, color: "#6b7280", fontSize: "14px" }}>{announcement.message}</p>
-      </div>
-
-      <div style={{ display: "flex", gap: "8px", marginLeft: "16px" }}>
-        <button
-          onClick={() =>
-            update(announcement.id, { isActive: !announcement.isActive })
-          }
-          style={{ cursor: "pointer", padding: "6px 12px", borderRadius: "6px", border: "1px solid #e1e3e5" }}
-        >
-          {announcement.isActive ? "Deactivate" : "Activate"}
-        </button>
-        <button
-          onClick={() => openForm(announcement)}
-          style={{ cursor: "pointer", padding: "6px 12px", borderRadius: "6px", border: "1px solid #e1e3e5" }}
-        >
-          Edit
-        </button>
-        <button
-          onClick={() => remove(announcement.id)}
-          disabled={isDeleting}
-          style={{
-            cursor: "pointer",
-            padding: "6px 12px",
-            borderRadius: "6px",
-            border: "1px solid #fca5a5",
-            color: "#dc2626",
-            backgroundColor: "#fff5f5",
-          }}
-        >
-          Delete
-        </button>
-      </div>
-    </div>
-  );
+    );
 }
 ```
 
@@ -2020,123 +2200,182 @@ export function AnnouncementCard({ announcement }: Props) {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAnnouncements } from "../hooks";
-import { createAnnouncementSchema, CreateAnnouncementFormValues } from "../validation";
+import {
+    createAnnouncementSchema,
+    CreateAnnouncementFormValues,
+} from "../validation";
 
 export function AnnouncementForm() {
-  const { create, update, selectedAnnouncement, closeForm, isCreating, isUpdating } =
-    useAnnouncements();
+    const {
+        create,
+        update,
+        selectedAnnouncement,
+        closeForm,
+        isCreating,
+        isUpdating,
+    } = useAnnouncements();
 
-  const { register, handleSubmit, formState: { errors } } = useForm<CreateAnnouncementFormValues>({
-    resolver: zodResolver(createAnnouncementSchema),
-    defaultValues: selectedAnnouncement
-      ? {
-          title: selectedAnnouncement.title,
-          message: selectedAnnouncement.message,
-          type: selectedAnnouncement.type,
-          bgColor: selectedAnnouncement.bgColor,
-          textColor: selectedAnnouncement.textColor,
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<CreateAnnouncementFormValues>({
+        resolver: zodResolver(createAnnouncementSchema),
+        defaultValues: selectedAnnouncement
+            ? {
+                  title: selectedAnnouncement.title,
+                  message: selectedAnnouncement.message,
+                  type: selectedAnnouncement.type,
+                  bgColor: selectedAnnouncement.bgColor,
+                  textColor: selectedAnnouncement.textColor,
+              }
+            : {
+                  type: "INFO",
+                  bgColor: "#1a1a1a",
+                  textColor: "#ffffff",
+              },
+    });
+
+    const onSubmit = async (values: CreateAnnouncementFormValues) => {
+        if (selectedAnnouncement) {
+            await update(selectedAnnouncement.id, values);
+        } else {
+            await create(values);
         }
-      : {
-          type: "INFO",
-          bgColor: "#1a1a1a",
-          textColor: "#ffffff",
-        },
-  });
+        closeForm();
+    };
 
-  const onSubmit = async (values: CreateAnnouncementFormValues) => {
-    if (selectedAnnouncement) {
-      await update(selectedAnnouncement.id, values);
-    } else {
-      await create(values);
-    }
-    closeForm();
-  };
+    const inputStyle = {
+        width: "100%",
+        padding: "8px",
+        border: "1px solid #e1e3e5",
+        borderRadius: "6px",
+        fontSize: "14px",
+        boxSizing: "border-box" as const,
+    };
 
-  const inputStyle = {
-    width: "100%",
-    padding: "8px",
-    border: "1px solid #e1e3e5",
-    borderRadius: "6px",
-    fontSize: "14px",
-    boxSizing: "border-box" as const,
-  };
+    const labelStyle = {
+        display: "block",
+        marginBottom: "4px",
+        fontWeight: 500,
+        fontSize: "14px",
+    };
 
-  const labelStyle = {
-    display: "block",
-    marginBottom: "4px",
-    fontWeight: 500,
-    fontSize: "14px",
-  };
+    return (
+        <form onSubmit={handleSubmit(onSubmit)} style={{ padding: "20px" }}>
+            <h3 style={{ marginBottom: "20px" }}>
+                {selectedAnnouncement
+                    ? "Edit Announcement"
+                    : "New Announcement"}
+            </h3>
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ padding: "20px" }}>
-      <h3 style={{ marginBottom: "20px" }}>
-        {selectedAnnouncement ? "Edit Announcement" : "New Announcement"}
-      </h3>
+            <div style={{ marginBottom: "16px" }}>
+                <label style={labelStyle}>Title</label>
+                <input
+                    {...register("title")}
+                    style={inputStyle}
+                    placeholder="Summer Sale ends tonight"
+                />
+                {errors.title && (
+                    <p style={{ color: "#dc2626", fontSize: "12px" }}>
+                        {errors.title.message}
+                    </p>
+                )}
+            </div>
 
-      <div style={{ marginBottom: "16px" }}>
-        <label style={labelStyle}>Title</label>
-        <input {...register("title")} style={inputStyle} placeholder="Summer Sale ends tonight" />
-        {errors.title && <p style={{ color: "#dc2626", fontSize: "12px" }}>{errors.title.message}</p>}
-      </div>
+            <div style={{ marginBottom: "16px" }}>
+                <label style={labelStyle}>Message</label>
+                <textarea
+                    {...register("message")}
+                    style={{
+                        ...inputStyle,
+                        minHeight: "80px",
+                        resize: "vertical",
+                    }}
+                    placeholder="Get 20% off all products this weekend only!"
+                />
+                {errors.message && (
+                    <p style={{ color: "#dc2626", fontSize: "12px" }}>
+                        {errors.message.message}
+                    </p>
+                )}
+            </div>
 
-      <div style={{ marginBottom: "16px" }}>
-        <label style={labelStyle}>Message</label>
-        <textarea
-          {...register("message")}
-          style={{ ...inputStyle, minHeight: "80px", resize: "vertical" }}
-          placeholder="Get 20% off all products this weekend only!"
-        />
-        {errors.message && <p style={{ color: "#dc2626", fontSize: "12px" }}>{errors.message.message}</p>}
-      </div>
+            <div style={{ marginBottom: "16px" }}>
+                <label style={labelStyle}>Type</label>
+                <select {...register("type")} style={inputStyle}>
+                    <option value="INFO">Info</option>
+                    <option value="WARNING">Warning</option>
+                    <option value="PROMO">Promo</option>
+                    <option value="URGENT">Urgent</option>
+                </select>
+            </div>
 
-      <div style={{ marginBottom: "16px" }}>
-        <label style={labelStyle}>Type</label>
-        <select {...register("type")} style={inputStyle}>
-          <option value="INFO">Info</option>
-          <option value="WARNING">Warning</option>
-          <option value="PROMO">Promo</option>
-          <option value="URGENT">Urgent</option>
-        </select>
-      </div>
+            <div
+                style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: "12px",
+                    marginBottom: "24px",
+                }}
+            >
+                <div>
+                    <label style={labelStyle}>Background Color</label>
+                    <input
+                        {...register("bgColor")}
+                        type="color"
+                        style={{
+                            width: "100%",
+                            height: "40px",
+                            cursor: "pointer",
+                        }}
+                    />
+                </div>
+                <div>
+                    <label style={labelStyle}>Text Color</label>
+                    <input
+                        {...register("textColor")}
+                        type="color"
+                        style={{
+                            width: "100%",
+                            height: "40px",
+                            cursor: "pointer",
+                        }}
+                    />
+                </div>
+            </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "24px" }}>
-        <div>
-          <label style={labelStyle}>Background Color</label>
-          <input {...register("bgColor")} type="color" style={{ width: "100%", height: "40px", cursor: "pointer" }} />
-        </div>
-        <div>
-          <label style={labelStyle}>Text Color</label>
-          <input {...register("textColor")} type="color" style={{ width: "100%", height: "40px", cursor: "pointer" }} />
-        </div>
-      </div>
-
-      <div style={{ display: "flex", gap: "12px" }}>
-        <button
-          type="submit"
-          disabled={isCreating || isUpdating}
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#008060",
-            color: "#fff",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer",
-            fontWeight: 600,
-          }}
-        >
-          {isCreating || isUpdating ? "Saving..." : "Save"}
-        </button>
-        <button
-          type="button"
-          onClick={closeForm}
-          style={{ padding: "10px 20px", border: "1px solid #e1e3e5", borderRadius: "6px", cursor: "pointer" }}
-        >
-          Cancel
-        </button>
-      </div>
-    </form>
-  );
+            <div style={{ display: "flex", gap: "12px" }}>
+                <button
+                    type="submit"
+                    disabled={isCreating || isUpdating}
+                    style={{
+                        padding: "10px 20px",
+                        backgroundColor: "#008060",
+                        color: "#fff",
+                        border: "none",
+                        borderRadius: "6px",
+                        cursor: "pointer",
+                        fontWeight: 600,
+                    }}
+                >
+                    {isCreating || isUpdating ? "Saving..." : "Save"}
+                </button>
+                <button
+                    type="button"
+                    onClick={closeForm}
+                    style={{
+                        padding: "10px 20px",
+                        border: "1px solid #e1e3e5",
+                        borderRadius: "6px",
+                        cursor: "pointer",
+                    }}
+                >
+                    Cancel
+                </button>
+            </div>
+        </form>
+    );
 }
 ```
 
@@ -2149,64 +2388,78 @@ import { AnnouncementCard } from "./AnnouncementCard";
 import { AnnouncementForm } from "./AnnouncementForm";
 
 export function AnnouncementList() {
-  const { announcements, isLoading, error, isFormOpen, openForm } = useAnnouncements();
+    const { announcements, isLoading, error, isFormOpen, openForm } =
+        useAnnouncements();
 
-  if (isLoading) return <p>Loading announcements...</p>;
-  if (error) return <p style={{ color: "#dc2626" }}>Error: {error.message}</p>;
+    if (isLoading) return <p>Loading announcements...</p>;
+    if (error)
+        return <p style={{ color: "#dc2626" }}>Error: {error.message}</p>;
 
-  return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-        <h2 style={{ margin: 0 }}>Announcements</h2>
-        <button
-          onClick={() => openForm()}
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#008060",
-            color: "#fff",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer",
-            fontWeight: 600,
-          }}
-        >
-          + New Announcement
-        </button>
-      </div>
+    return (
+        <div>
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: "20px",
+                }}
+            >
+                <h2 style={{ margin: 0 }}>Announcements</h2>
+                <button
+                    onClick={() => openForm()}
+                    style={{
+                        padding: "10px 20px",
+                        backgroundColor: "#008060",
+                        color: "#fff",
+                        border: "none",
+                        borderRadius: "6px",
+                        cursor: "pointer",
+                        fontWeight: 600,
+                    }}
+                >
+                    + New Announcement
+                </button>
+            </div>
 
-      {isFormOpen && (
-        <div
-          style={{
-            border: "1px solid #e1e3e5",
-            borderRadius: "8px",
-            marginBottom: "20px",
-            backgroundColor: "#fafafa",
-          }}
-        >
-          <AnnouncementForm />
+            {isFormOpen && (
+                <div
+                    style={{
+                        border: "1px solid #e1e3e5",
+                        borderRadius: "8px",
+                        marginBottom: "20px",
+                        backgroundColor: "#fafafa",
+                    }}
+                >
+                    <AnnouncementForm />
+                </div>
+            )}
+
+            {announcements.length === 0 ? (
+                <div
+                    style={{
+                        textAlign: "center",
+                        padding: "40px",
+                        border: "2px dashed #e1e3e5",
+                        borderRadius: "8px",
+                        color: "#6b7280",
+                    }}
+                >
+                    <p style={{ margin: "0 0 8px", fontWeight: 600 }}>
+                        No announcements yet
+                    </p>
+                    <p style={{ margin: 0, fontSize: "14px" }}>
+                        Create your first announcement to display on your
+                        storefront.
+                    </p>
+                </div>
+            ) : (
+                announcements.map((a) => (
+                    <AnnouncementCard key={a.id} announcement={a} />
+                ))
+            )}
         </div>
-      )}
-
-      {announcements.length === 0 ? (
-        <div
-          style={{
-            textAlign: "center",
-            padding: "40px",
-            border: "2px dashed #e1e3e5",
-            borderRadius: "8px",
-            color: "#6b7280",
-          }}
-        >
-          <p style={{ margin: "0 0 8px", fontWeight: 600 }}>No announcements yet</p>
-          <p style={{ margin: 0, fontSize: "14px" }}>
-            Create your first announcement to display on your storefront.
-          </p>
-        </div>
-      ) : (
-        announcements.map((a) => <AnnouncementCard key={a.id} announcement={a} />)
-      )}
-    </div>
-  );
+    );
 }
 ```
 
@@ -2237,6 +2490,7 @@ git commit -m "feat: announcement UI components (list, form, card)"
 ## Task 12: Providers + App Layout + Routes
 
 **Files:**
+
 - Create: `web/shared/components/Providers.tsx`
 - Create: `web/shared/components/AppLayout.tsx`
 - Create: `web/shared/components/index.ts`
@@ -2258,23 +2512,25 @@ import { AppProvider } from "@shopify/app-bridge-react";
 import { ReactNode, useState } from "react";
 
 export function Providers({ children }: { children: ReactNode }) {
-  const [queryClient] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: { retry: 1, staleTime: 30_000 },
-          mutations: { retry: 0 },
-        },
-      })
-  );
+    const [queryClient] = useState(
+        () =>
+            new QueryClient({
+                defaultOptions: {
+                    queries: { retry: 1, staleTime: 30_000 },
+                    mutations: { retry: 0 },
+                },
+            }),
+    );
 
-  const apiKey = process.env.NEXT_PUBLIC_SHOPIFY_API_KEY ?? "";
+    const apiKey = process.env.NEXT_PUBLIC_SHOPIFY_API_KEY ?? "";
 
-  return (
-    <AppProvider apiKey={apiKey}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </AppProvider>
-  );
+    return (
+        <AppProvider apiKey={apiKey}>
+            <QueryClientProvider client={queryClient}>
+                {children}
+            </QueryClientProvider>
+        </AppProvider>
+    );
 }
 ```
 
@@ -2290,47 +2546,63 @@ import { usePathname } from "next/navigation";
 import { ROUTES } from "@/shared/constants";
 
 export function AppLayout({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
+    const pathname = usePathname();
 
-  const navItems = [
-    { label: "Dashboard", href: ROUTES.DASHBOARD },
-    { label: "Announcements", href: ROUTES.ANNOUNCEMENTS },
-  ];
+    const navItems = [
+        { label: "Dashboard", href: ROUTES.DASHBOARD },
+        { label: "Announcements", href: ROUTES.ANNOUNCEMENTS },
+    ];
 
-  return (
-    <div style={{ display: "flex", minHeight: "100vh", fontFamily: "system-ui, sans-serif" }}>
-      <nav
-        style={{
-          width: "220px",
-          borderRight: "1px solid #e1e3e5",
-          padding: "20px 0",
-          backgroundColor: "#fafafa",
-          flexShrink: 0,
-        }}
-      >
-        <div style={{ padding: "0 20px 20px", fontWeight: 700, fontSize: "16px" }}>
-          My Shopify App
-        </div>
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
+    return (
+        <div
             style={{
-              display: "block",
-              padding: "10px 20px",
-              color: pathname === item.href ? "#008060" : "#374151",
-              fontWeight: pathname === item.href ? 600 : 400,
-              textDecoration: "none",
-              backgroundColor: pathname === item.href ? "#f0faf5" : "transparent",
+                display: "flex",
+                minHeight: "100vh",
+                fontFamily: "system-ui, sans-serif",
             }}
-          >
-            {item.label}
-          </Link>
-        ))}
-      </nav>
-      <main style={{ flex: 1, padding: "32px" }}>{children}</main>
-    </div>
-  );
+        >
+            <nav
+                style={{
+                    width: "220px",
+                    borderRight: "1px solid #e1e3e5",
+                    padding: "20px 0",
+                    backgroundColor: "#fafafa",
+                    flexShrink: 0,
+                }}
+            >
+                <div
+                    style={{
+                        padding: "0 20px 20px",
+                        fontWeight: 700,
+                        fontSize: "16px",
+                    }}
+                >
+                    My Shopify App
+                </div>
+                {navItems.map((item) => (
+                    <Link
+                        key={item.href}
+                        href={item.href}
+                        style={{
+                            display: "block",
+                            padding: "10px 20px",
+                            color:
+                                pathname === item.href ? "#008060" : "#374151",
+                            fontWeight: pathname === item.href ? 600 : 400,
+                            textDecoration: "none",
+                            backgroundColor:
+                                pathname === item.href
+                                    ? "#f0faf5"
+                                    : "transparent",
+                        }}
+                    >
+                        {item.label}
+                    </Link>
+                ))}
+            </nav>
+            <main style={{ flex: 1, padding: "32px" }}>{children}</main>
+        </div>
+    );
 }
 ```
 
@@ -2352,27 +2624,27 @@ import "./globals.css";
 import { Providers } from "@/shared/components";
 
 export const metadata: Metadata = {
-  title: "My Shopify App",
-  other: {
-    "shopify-app-origins": process.env.NEXT_PUBLIC_HOST || "",
-  },
+    title: "My Shopify App",
+    other: {
+        "shopify-app-origins": process.env.NEXT_PUBLIC_HOST || "",
+    },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <meta
-          name="shopify-api-key"
-          content={process.env.NEXT_PUBLIC_SHOPIFY_API_KEY || ""}
-        />
-        <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js" />
-      </head>
-      <body>
-        <Providers>{children}</Providers>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <head>
+                <meta
+                    name="shopify-api-key"
+                    content={process.env.NEXT_PUBLIC_SHOPIFY_API_KEY || ""}
+                />
+                <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js" />
+            </head>
+            <body>
+                <Providers>{children}</Providers>
+            </body>
+        </html>
+    );
 }
 ```
 
@@ -2380,19 +2652,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
 ```css
 /* web/app/globals.css */
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #1a1a1a;
-  background: #fff;
+    margin: 0;
+    padding: 0;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1a1a1a;
+    background: #fff;
 }
 
-a { color: inherit; }
+a {
+    color: inherit;
+}
 ```
 
 - [ ] **Step 6: Create root page (redirect)**
@@ -2403,7 +2680,7 @@ import { redirect } from "next/navigation";
 import { ROUTES } from "@/shared/constants";
 
 export default function RootPage() {
-  redirect(ROUTES.DASHBOARD);
+    redirect(ROUTES.DASHBOARD);
 }
 ```
 
@@ -2415,7 +2692,7 @@ import { ReactNode } from "react";
 import { AppLayout } from "@/shared/components";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
-  return <AppLayout>{children}</AppLayout>;
+    return <AppLayout>{children}</AppLayout>;
 }
 ```
 
@@ -2424,32 +2701,41 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 ```tsx
 // web/app/(dashboard)/page.tsx
 export default function DashboardPage() {
-  return (
-    <div>
-      <h1>Welcome to your Shopify App</h1>
-      <p style={{ color: "#6b7280" }}>
-        This is the starter template. Start by adding your features in{" "}
-        <code>web/features/</code>.
-      </p>
-      <div
-        style={{
-          marginTop: "24px",
-          padding: "20px",
-          border: "1px solid #e1e3e5",
-          borderRadius: "8px",
-          backgroundColor: "#f9fafb",
-        }}
-      >
-        <h3 style={{ margin: "0 0 8px" }}>Announcement Banner</h3>
-        <p style={{ margin: "0 0 16px", color: "#6b7280", fontSize: "14px" }}>
-          Manage storefront announcements from the Announcements page.
-        </p>
-        <a href="/announcements" style={{ color: "#008060", fontWeight: 600 }}>
-          Manage Announcements →
-        </a>
-      </div>
-    </div>
-  );
+    return (
+        <div>
+            <h1>Welcome to your Shopify App</h1>
+            <p style={{ color: "#6b7280" }}>
+                This is the starter template. Start by adding your features in{" "}
+                <code>web/features/</code>.
+            </p>
+            <div
+                style={{
+                    marginTop: "24px",
+                    padding: "20px",
+                    border: "1px solid #e1e3e5",
+                    borderRadius: "8px",
+                    backgroundColor: "#f9fafb",
+                }}
+            >
+                <h3 style={{ margin: "0 0 8px" }}>Announcement Banner</h3>
+                <p
+                    style={{
+                        margin: "0 0 16px",
+                        color: "#6b7280",
+                        fontSize: "14px",
+                    }}
+                >
+                    Manage storefront announcements from the Announcements page.
+                </p>
+                <a
+                    href="/announcements"
+                    style={{ color: "#008060", fontWeight: 600 }}
+                >
+                    Manage Announcements →
+                </a>
+            </div>
+        </div>
+    );
 }
 ```
 
@@ -2461,11 +2747,11 @@ import { Metadata } from "next";
 import { AnnouncementList } from "@/features/announcements";
 
 export const metadata: Metadata = {
-  title: "Announcements",
+    title: "Announcements",
 };
 
 export default function AnnouncementsPage() {
-  return <AnnouncementList />;
+    return <AnnouncementList />;
 }
 ```
 
@@ -2481,6 +2767,7 @@ git commit -m "feat: providers, layout, and app routes"
 ## Task 13: Service Unit Tests
 
 **Files:**
+
 - Create: `web/tests/announcement.service.test.ts`
 - Create: `web/jest.config.ts`
 
@@ -2491,15 +2778,15 @@ git commit -m "feat: providers, layout, and app routes"
 import type { Config } from "jest";
 
 const config: Config = {
-  preset: "ts-jest",
-  testEnvironment: "node",
-  moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/$1",
-  },
-  testMatch: ["**/*.test.ts", "**/*.test.tsx"],
-  transform: {
-    "^.+\\.(ts|tsx)$": ["ts-jest", { tsconfig: { module: "CommonJS" } }],
-  },
+    preset: "ts-jest",
+    testEnvironment: "node",
+    moduleNameMapper: {
+        "^@/(.*)$": "<rootDir>/$1",
+    },
+    testMatch: ["**/*.test.ts", "**/*.test.tsx"],
+    transform: {
+        "^.+\\.(ts|tsx)$": ["ts-jest", { tsconfig: { module: "CommonJS" } }],
+    },
 };
 
 export default config;
@@ -2509,108 +2796,126 @@ export default config;
 
 ```typescript
 // web/tests/announcement.service.test.ts
-import { getAnnouncementsForShop, createAnnouncementForShop } from "@/features/announcements/services/announcement.service";
+import {
+    getAnnouncementsForShop,
+    createAnnouncementForShop,
+} from "@/features/announcements/services/announcement.service";
 
-jest.mock("@/features/announcements/repositories/announcement.repository", () => ({
-  findShopIdByDomain: jest.fn(),
-  findAllByShop: jest.fn(),
-  createAnnouncement: jest.fn(),
-  findById: jest.fn(),
-  updateAnnouncement: jest.fn(),
-  deleteAnnouncement: jest.fn(),
-}));
+jest.mock(
+    "@/features/announcements/repositories/announcement.repository",
+    () => ({
+        findShopIdByDomain: jest.fn(),
+        findAllByShop: jest.fn(),
+        createAnnouncement: jest.fn(),
+        findById: jest.fn(),
+        updateAnnouncement: jest.fn(),
+        deleteAnnouncement: jest.fn(),
+    }),
+);
 
 import {
-  findShopIdByDomain,
-  findAllByShop,
-  createAnnouncement,
+    findShopIdByDomain,
+    findAllByShop,
+    createAnnouncement,
 } from "@/features/announcements/repositories/announcement.repository";
 
-const mockFindShopId = findShopIdByDomain as jest.MockedFunction<typeof findShopIdByDomain>;
+const mockFindShopId = findShopIdByDomain as jest.MockedFunction<
+    typeof findShopIdByDomain
+>;
 const mockFindAll = findAllByShop as jest.MockedFunction<typeof findAllByShop>;
-const mockCreate = createAnnouncement as jest.MockedFunction<typeof createAnnouncement>;
+const mockCreate = createAnnouncement as jest.MockedFunction<
+    typeof createAnnouncement
+>;
 
 describe("announcement.service", () => {
-  beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => jest.clearAllMocks());
 
-  describe("getAnnouncementsForShop", () => {
-    it("returns error when shop not found", async () => {
-      mockFindShopId.mockResolvedValue(null);
-      const result = await getAnnouncementsForShop("unknown.myshopify.com");
-      expect(result.status).toBe("error");
+    describe("getAnnouncementsForShop", () => {
+        it("returns error when shop not found", async () => {
+            mockFindShopId.mockResolvedValue(null);
+            const result = await getAnnouncementsForShop(
+                "unknown.myshopify.com",
+            );
+            expect(result.status).toBe("error");
+        });
+
+        it("returns announcements for valid shop", async () => {
+            const fakeAnnouncements = [
+                {
+                    id: "ann_1",
+                    shopId: "shop_1",
+                    title: "Summer Sale",
+                    message: "20% off everything",
+                    type: "PROMO" as const,
+                    isActive: true,
+                    bgColor: "#1a1a1a",
+                    textColor: "#ffffff",
+                    startsAt: null,
+                    endsAt: null,
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                },
+            ];
+            mockFindShopId.mockResolvedValue("shop_1");
+            mockFindAll.mockResolvedValue(fakeAnnouncements);
+            const result = await getAnnouncementsForShop("test.myshopify.com");
+            expect(result.status).toBe("success");
+            if (result.status === "success") {
+                expect(result.data).toHaveLength(1);
+                expect(result.data[0].title).toBe("Summer Sale");
+            }
+        });
     });
 
-    it("returns announcements for valid shop", async () => {
-      const fakeAnnouncements = [
-        {
-          id: "ann_1",
-          shopId: "shop_1",
-          title: "Summer Sale",
-          message: "20% off everything",
-          type: "PROMO" as const,
-          isActive: true,
-          bgColor: "#1a1a1a",
-          textColor: "#ffffff",
-          startsAt: null,
-          endsAt: null,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      ];
-      mockFindShopId.mockResolvedValue("shop_1");
-      mockFindAll.mockResolvedValue(fakeAnnouncements);
-      const result = await getAnnouncementsForShop("test.myshopify.com");
-      expect(result.status).toBe("success");
-      if (result.status === "success") {
-        expect(result.data).toHaveLength(1);
-        expect(result.data[0].title).toBe("Summer Sale");
-      }
-    });
-  });
+    describe("createAnnouncementForShop", () => {
+        it("returns error when shop not found", async () => {
+            mockFindShopId.mockResolvedValue(null);
+            const result = await createAnnouncementForShop(
+                "unknown.myshopify.com",
+                {
+                    title: "Test",
+                    message: "Test message",
+                    type: "INFO",
+                    bgColor: "#000000",
+                    textColor: "#ffffff",
+                },
+            );
+            expect(result.status).toBe("error");
+        });
 
-  describe("createAnnouncementForShop", () => {
-    it("returns error when shop not found", async () => {
-      mockFindShopId.mockResolvedValue(null);
-      const result = await createAnnouncementForShop("unknown.myshopify.com", {
-        title: "Test",
-        message: "Test message",
-        type: "INFO",
-        bgColor: "#000000",
-        textColor: "#ffffff",
-      });
-      expect(result.status).toBe("error");
+        it("creates announcement for valid shop", async () => {
+            const created = {
+                id: "ann_new",
+                shopId: "shop_1",
+                title: "Flash Sale",
+                message: "One day only!",
+                type: "URGENT" as const,
+                isActive: false,
+                bgColor: "#dc2626",
+                textColor: "#ffffff",
+                startsAt: null,
+                endsAt: null,
+                createdAt: new Date(),
+                updatedAt: new Date(),
+            };
+            mockFindShopId.mockResolvedValue("shop_1");
+            mockCreate.mockResolvedValue(created);
+            const result = await createAnnouncementForShop(
+                "test.myshopify.com",
+                {
+                    title: "Flash Sale",
+                    message: "One day only!",
+                    type: "URGENT",
+                    bgColor: "#dc2626",
+                    textColor: "#ffffff",
+                },
+            );
+            expect(result.status).toBe("success");
+            if (result.status === "success") {
+                expect(result.data.title).toBe("Flash Sale");
+            }
+        });
     });
-
-    it("creates announcement for valid shop", async () => {
-      const created = {
-        id: "ann_new",
-        shopId: "shop_1",
-        title: "Flash Sale",
-        message: "One day only!",
-        type: "URGENT" as const,
-        isActive: false,
-        bgColor: "#dc2626",
-        textColor: "#ffffff",
-        startsAt: null,
-        endsAt: null,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
-      mockFindShopId.mockResolvedValue("shop_1");
-      mockCreate.mockResolvedValue(created);
-      const result = await createAnnouncementForShop("test.myshopify.com", {
-        title: "Flash Sale",
-        message: "One day only!",
-        type: "URGENT",
-        bgColor: "#dc2626",
-        textColor: "#ffffff",
-      });
-      expect(result.status).toBe("success");
-      if (result.status === "success") {
-        expect(result.data.title).toBe("Flash Sale");
-      }
-    });
-  });
 });
 ```
 
@@ -2620,6 +2925,7 @@ describe("announcement.service", () => {
 cd /Users/radiustheme/Shopify/shopify-nextjs-app-router-starter/web
 bun test
 ```
+
 Expected: Tests should pass since mocks are wired. If they fail with import errors, check path aliases in jest.config.ts.
 
 - [ ] **Step 4: Commit**
@@ -2634,6 +2940,7 @@ git commit -m "test: announcement service unit tests"
 ## Task 14: Theme Extension (Announcement Widget)
 
 **Files:**
+
 - Create: `extension/extensions/announcement-widget/shopify.extension.toml`
 - Create: `extension/extensions/announcement-widget/blocks/announcement-banner.liquid`
 - Create: `extension/extensions/announcement-widget/assets/announcement-widget.js`
@@ -2694,70 +3001,74 @@ handle = "announcement-banner"
 ```javascript
 // extension/extensions/announcement-widget/assets/announcement-widget.js
 (function () {
-  "use strict";
+    "use strict";
 
-  const STORAGE_KEY = "dismissed_announcements";
+    const STORAGE_KEY = "dismissed_announcements";
 
-  function getDismissed() {
-    try {
-      return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || "[]");
-    } catch {
-      return [];
+    function getDismissed() {
+        try {
+            return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || "[]");
+        } catch {
+            return [];
+        }
     }
-  }
 
-  function dismiss(id) {
-    const dismissed = getDismissed();
-    if (!dismissed.includes(id)) {
-      dismissed.push(id);
-      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(dismissed));
+    function dismiss(id) {
+        const dismissed = getDismissed();
+        if (!dismissed.includes(id)) {
+            dismissed.push(id);
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify(dismissed));
+        }
     }
-  }
 
-  function isDismissed(id) {
-    return getDismissed().includes(id);
-  }
-
-  async function loadAnnouncement(banner) {
-    const shop = banner.dataset.shop;
-    const blockId = banner.dataset.blockId;
-    if (!shop) return;
-
-    try {
-      const res = await fetch(`/apps/announcements?shop=${encodeURIComponent(shop)}`);
-      if (!res.ok) return;
-      const { announcement } = await res.json();
-      if (!announcement) return;
-      if (isDismissed(announcement.id)) return;
-
-      const msgEl = document.getElementById(`announcement-message-${blockId}`);
-      if (msgEl) msgEl.textContent = announcement.message;
-
-      banner.style.backgroundColor = announcement.bgColor || "#1a1a1a";
-      banner.style.color = announcement.textColor || "#ffffff";
-      banner.dataset.announcementId = announcement.id;
-      banner.classList.remove("announcement-banner--hidden");
-    } catch (err) {
-      console.warn("[AnnouncementBanner] Failed to load:", err);
+    function isDismissed(id) {
+        return getDismissed().includes(id);
     }
-  }
 
-  function attachDismiss(banner) {
-    const btn = banner.querySelector(".announcement-banner__close");
-    if (!btn) return;
-    btn.addEventListener("click", () => {
-      const id = banner.dataset.announcementId;
-      if (id) dismiss(id);
-      banner.classList.add("announcement-banner--hidden");
+    async function loadAnnouncement(banner) {
+        const shop = banner.dataset.shop;
+        const blockId = banner.dataset.blockId;
+        if (!shop) return;
+
+        try {
+            const res = await fetch(
+                `/apps/announcements?shop=${encodeURIComponent(shop)}`,
+            );
+            if (!res.ok) return;
+            const { announcement } = await res.json();
+            if (!announcement) return;
+            if (isDismissed(announcement.id)) return;
+
+            const msgEl = document.getElementById(
+                `announcement-message-${blockId}`,
+            );
+            if (msgEl) msgEl.textContent = announcement.message;
+
+            banner.style.backgroundColor = announcement.bgColor || "#1a1a1a";
+            banner.style.color = announcement.textColor || "#ffffff";
+            banner.dataset.announcementId = announcement.id;
+            banner.classList.remove("announcement-banner--hidden");
+        } catch (err) {
+            console.warn("[AnnouncementBanner] Failed to load:", err);
+        }
+    }
+
+    function attachDismiss(banner) {
+        const btn = banner.querySelector(".announcement-banner__close");
+        if (!btn) return;
+        btn.addEventListener("click", () => {
+            const id = banner.dataset.announcementId;
+            if (id) dismiss(id);
+            banner.classList.add("announcement-banner--hidden");
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".announcement-banner").forEach((banner) => {
+            loadAnnouncement(banner);
+            attachDismiss(banner);
+        });
     });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".announcement-banner").forEach((banner) => {
-      loadAnnouncement(banner);
-      attachDismiss(banner);
-    });
-  });
 })();
 ```
 
@@ -2766,48 +3077,48 @@ handle = "announcement-banner"
 ```css
 /* extension/extensions/announcement-widget/assets/announcement-widget.css */
 .announcement-banner {
-  width: 100%;
-  padding: 12px 16px;
-  text-align: center;
-  position: relative;
-  transition: opacity 0.2s ease;
+    width: 100%;
+    padding: 12px 16px;
+    text-align: center;
+    position: relative;
+    transition: opacity 0.2s ease;
 }
 
 .announcement-banner--hidden {
-  display: none;
+    display: none;
 }
 
 .announcement-banner__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .announcement-banner__message {
-  font-size: 14px;
-  font-weight: 500;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .announcement-banner__close {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-  opacity: 0.7;
-  padding: 0;
-  color: inherit;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    opacity: 0.7;
+    padding: 0;
+    color: inherit;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .announcement-banner__close:hover {
-  opacity: 1;
+    opacity: 1;
 }
 ```
 
@@ -2816,9 +3127,9 @@ handle = "announcement-banner"
 ```json
 // extension/extensions/announcement-widget/locales/en.default.json
 {
-  "t": {
-    "dismiss": "Dismiss announcement"
-  }
+    "t": {
+        "dismiss": "Dismiss announcement"
+    }
 }
 ```
 
@@ -2834,6 +3145,7 @@ git commit -m "feat: announcement banner theme extension"
 ## Task 15: shopify.app.toml + Final Config
 
 **Files:**
+
 - Create: `shopify-nextjs-app-router-starter/shopify.app.toml`
 
 - [ ] **Step 1: Create toml**
@@ -2885,6 +3197,7 @@ embedded = false
 cd /Users/radiustheme/Shopify/shopify-nextjs-app-router-starter/web
 bunx tsc --noEmit
 ```
+
 Expected: No errors. Fix any import path issues found.
 
 - [ ] **Step 3: Run tests**
@@ -2892,6 +3205,7 @@ Expected: No errors. Fix any import path issues found.
 ```bash
 bun test
 ```
+
 Expected: All tests pass.
 
 - [ ] **Step 4: Commit**
@@ -2906,6 +3220,7 @@ git commit -m "feat: shopify app config"
 ## Task 16: README
 
 **Files:**
+
 - Create: `shopify-nextjs-app-router-starter/README.md`
 
 - [ ] **Step 1: Write README**
@@ -3005,16 +3320,16 @@ git tag v0.1.0
 
 ### Spec coverage
 
-| Requirement | Task |
-|-------------|------|
-| Extract framework | Tasks 1–7 |
-| Announcement feature | Tasks 8–11 |
-| All 10 layers demonstrated | Tasks 8–11 |
-| Storefront integration | Task 14 (widget) + Task 7 (proxy route) |
-| Auth / webhooks | Tasks 6–7 |
-| GDPR handlers | Task 6 |
-| Tests | Task 13 |
-| README | Task 16 |
+| Requirement                | Task                                    |
+| -------------------------- | --------------------------------------- |
+| Extract framework          | Tasks 1–7                               |
+| Announcement feature       | Tasks 8–11                              |
+| All 10 layers demonstrated | Tasks 8–11                              |
+| Storefront integration     | Task 14 (widget) + Task 7 (proxy route) |
+| Auth / webhooks            | Tasks 6–7                               |
+| GDPR handlers              | Task 6                                  |
+| Tests                      | Task 13                                 |
+| README                     | Task 16                                 |
 
 ### Known gaps
 

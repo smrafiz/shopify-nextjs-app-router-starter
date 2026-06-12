@@ -73,13 +73,13 @@ model WebhookDelivery {
 
 ## Enums
 
-| Enum | Values |
-|---|---|
-| `ShopStatus` | ACTIVE, SUSPENDED, UNINSTALLED |
-| `PlanName` | FREE, PRO |
+| Enum                        | Values                                                |
+| --------------------------- | ----------------------------------------------------- |
+| `ShopStatus`                | ACTIVE, SUSPENDED, UNINSTALLED                        |
+| `PlanName`                  | FREE, PRO                                             |
 | `ShopifySubscriptionStatus` | ACTIVE, CANCELLED, DECLINED, EXPIRED, FROZEN, PENDING |
-| `BillingInterval` | EVERY_30_DAYS, ANNUAL |
-| `AnnouncementType` | INFO, WARNING, PROMO, URGENT |
+| `BillingInterval`           | EVERY_30_DAYS, ANNUAL                                 |
+| `AnnouncementType`          | INFO, WARNING, PROMO, URGENT                          |
 
 ## Adding a Model
 
@@ -93,10 +93,10 @@ model WebhookDelivery {
 import prisma from "@/shared/repositories/prisma-connect";
 
 export async function findProductsByShop(shopId: string) {
-  return prisma.product.findMany({
-    where: { shopId },
-    orderBy: { createdAt: "desc" },
-  });
+    return prisma.product.findMany({
+        where: { shopId },
+        orderBy: { createdAt: "desc" },
+    });
 }
 ```
 

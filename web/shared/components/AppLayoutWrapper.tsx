@@ -10,28 +10,28 @@ import { Navigation } from "./Navigation";
  * Wraps app content and prevents hydration errors for Shopify web components.
  */
 export function AppLayoutWrapper({ children }: { children: ReactNode }) {
-  const [hasMounted, setHasMounted] = useState(false);
-  const pathname = usePathname();
+    const [hasMounted, setHasMounted] = useState(false);
+    const pathname = usePathname();
 
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
+    useEffect(() => {
+        setHasMounted(true);
+    }, []);
 
-  // Scroll to top on route change
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // Scroll to top on route change
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
-  if (!hasMounted) {
-    return null;
-  }
+    if (!hasMounted) {
+        return null;
+    }
 
-  return (
-    <>
-      <Suspense fallback={null}>
-        <Navigation />
-      </Suspense>
-      {children}
-    </>
-  );
+    return (
+        <>
+            <Suspense fallback={null}>
+                <Navigation />
+            </Suspense>
+            {children}
+        </>
+    );
 }

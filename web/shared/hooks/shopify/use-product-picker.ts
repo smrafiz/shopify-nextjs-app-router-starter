@@ -30,7 +30,9 @@ export function useProductPicker(options: UseProductPickerOptions) {
     const open = useCallback(async () => {
         if (!shopify) return;
 
-        const selectionIds = (options.initialSelectionIds ?? []).map((id) => ({ id }));
+        const selectionIds = (options.initialSelectionIds ?? []).map((id) => ({
+            id,
+        }));
 
         const result = await shopify.resourcePicker({
             type: "product",
@@ -53,7 +55,9 @@ export function useProductPicker(options: UseProductPickerOptions) {
             id: p.id as string,
             title: p.title as string,
             handle: p.handle as string,
-            images: (p.images ?? []).map((img: any) => ({ url: img.originalSrc ?? img.url ?? "" })),
+            images: (p.images ?? []).map((img: any) => ({
+                url: img.originalSrc ?? img.url ?? "",
+            })),
             variants: (p.variants ?? []).map((v: any) => ({
                 id: v.id as string,
                 title: v.title as string,

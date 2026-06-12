@@ -7,11 +7,10 @@
  * cannot be registered through the standard webhook handler.
  */
 
-
 interface SetupResult {
-  success: boolean;
-  message: string;
-  error?: string;
+    success: boolean;
+    message: string;
+    error?: string;
 }
 
 /**
@@ -26,32 +25,32 @@ interface SetupResult {
  * @returns Result indicating overall success and any warnings.
  */
 export async function runAppSetup(
-  accessToken: string,
-  shop: string,
+    accessToken: string,
+    shop: string,
 ): Promise<SetupResult> {
-  if (!/^[a-zA-Z0-9][a-zA-Z0-9\-]*\.myshopify\.com$/.test(shop)) {
-    return {
-      success: false,
-      message: "App setup failed",
-      error: `Invalid shop domain: ${shop}`,
-    };
-  }
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9\-]*\.myshopify\.com$/.test(shop)) {
+        return {
+            success: false,
+            message: "App setup failed",
+            error: `Invalid shop domain: ${shop}`,
+        };
+    }
 
-  try {
-    // Add install-time setup tasks here.
-    // Example: create metafield definitions, automatic discounts, etc.
-    // Each task should be idempotent (safe to run more than once).
+    try {
+        // Add install-time setup tasks here.
+        // Example: create metafield definitions, automatic discounts, etc.
+        // Each task should be idempotent (safe to run more than once).
 
-    return {
-      success: true,
-      message: "App setup completed",
-    };
-  } catch (error) {
-    console.error("[Setup] App setup failed:", error);
-    return {
-      success: false,
-      message: "App setup failed",
-      error: error instanceof Error ? error.message : "Unknown error",
-    };
-  }
+        return {
+            success: true,
+            message: "App setup completed",
+        };
+    } catch (error) {
+        console.error("[Setup] App setup failed:", error);
+        return {
+            success: false,
+            message: "App setup failed",
+            error: error instanceof Error ? error.message : "Unknown error",
+        };
+    }
 }

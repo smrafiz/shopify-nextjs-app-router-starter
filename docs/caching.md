@@ -19,10 +19,10 @@ experimental: {
 
 Two profiles are defined for dashboard data:
 
-| Profile | stale | revalidate | expire |
-|---|---|---|---|
-| `dashboard` | 30s | 60s | 300s (5 min) |
-| `dashboard-long` | 300s | 600s | 3600s (1 hr) |
+| Profile          | stale | revalidate | expire       |
+| ---------------- | ----- | ---------- | ------------ |
+| `dashboard`      | 30s   | 60s        | 300s (5 min) |
+| `dashboard-long` | 300s  | 600s       | 3600s (1 hr) |
 
 Use `dashboard` for data that changes frequently (recent activity, counters). Use `dashboard-long` for data that rarely changes (settings, plan info, shop config).
 
@@ -30,10 +30,10 @@ Use `dashboard` for data that changes frequently (recent activity, counters). Us
 import { unstable_cacheLife as cacheLife } from "next/cache";
 
 async function getDashboardStats(shopDomain: string) {
-  "use cache";
-  cacheLife("dashboard");
+    "use cache";
+    cacheLife("dashboard");
 
-  return fetchStats(shopDomain);
+    return fetchStats(shopDomain);
 }
 ```
 
@@ -56,11 +56,11 @@ Tag your cached functions with the shop domain:
 import { unstable_cacheTag as cacheTag } from "next/cache";
 
 async function getShopSettings(domain: string) {
-  "use cache";
-  cacheLife("dashboard-long");
-  cacheTag(`shop-${domain}`);
+    "use cache";
+    cacheLife("dashboard-long");
+    cacheTag(`shop-${domain}`);
 
-  return prisma.appSettings.findFirst({ where: { shop: { domain } } });
+    return prisma.appSettings.findFirst({ where: { shop: { domain } } });
 }
 ```
 

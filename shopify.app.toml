@@ -1,8 +1,11 @@
-name = "Shopify Next.js Starter"
-client_id = ""
+# Avoid writing to toml directly. Use your .env file instead
+
+name = "Next JS Starter"
+handle = "next-js-starter"
+client_id = "3fe9f6ee04f57b0bfdf5b2bc7d838675"
 application_url = "https://example.com"
 embedded = true
-extension_directories = ["extension/extensions/*"]
+extension_directories = [ "extension/extensions/*" ]
 
 [app_proxy]
 url = "https://example.com/api/proxy"
@@ -11,16 +14,17 @@ prefix = "apps"
 
 [build]
 automatically_update_urls_on_dev = true
+dev_store_url = ""
 
 [webhooks]
-api_version = "2025-10"
+api_version = "2026-04"
 
   [[webhooks.subscriptions]]
-  topics = ["app/uninstalled"]
+  topics = [ "app/uninstalled" ]
   uri = "/api/webhooks"
 
   [[webhooks.subscriptions]]
-  compliance_topics = ["customers/data_request", "customers/redact", "shop/redact"]
+  compliance_topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
   uri = "/api/webhooks"
 
 [access.admin]
@@ -29,9 +33,11 @@ embedded_app_direct_api_access = true
 
 [access_scopes]
 scopes = "read_products"
+optional_scopes = [ ]
+use_legacy_install_flow = false
 
 [auth]
-redirect_urls = []
+redirect_urls = [ ]
 
 [pos]
 embedded = false

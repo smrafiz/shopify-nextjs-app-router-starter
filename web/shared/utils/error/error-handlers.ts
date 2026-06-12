@@ -14,16 +14,33 @@ export function handleBundleError(error: unknown): ApiError {
 
     if (error instanceof Error) {
         if (error.message.includes("already exists")) {
-            return { status: "error", message: error.message, errors: [error.message] };
+            return {
+                status: "error",
+                message: error.message,
+                errors: [error.message],
+            };
         }
         if (error.message.includes("not found")) {
             return { status: "error", message: error.message };
         }
-        if (error.message.includes("permission") || error.message.includes("unauthorized")) {
-            return { status: "error", message: "You don't have permission to perform this action" };
+        if (
+            error.message.includes("permission") ||
+            error.message.includes("unauthorized")
+        ) {
+            return {
+                status: "error",
+                message: "You don't have permission to perform this action",
+            };
         }
-        if (error.message.includes("validation") || error.message.includes("invalid")) {
-            return { status: "error", message: error.message, errors: [error.message] };
+        if (
+            error.message.includes("validation") ||
+            error.message.includes("invalid")
+        ) {
+            return {
+                status: "error",
+                message: error.message,
+                errors: [error.message],
+            };
         }
         return { status: "error", message: error.message };
     }
@@ -64,9 +81,16 @@ export function handleZodValidationError(zodError: ZodError): ApiError {
  */
 export function handleValidationError(error: unknown): ApiError {
     if (error instanceof Error) {
-        return { status: "error", message: "Validation failed", errors: [error.message] };
+        return {
+            status: "error",
+            message: "Validation failed",
+            errors: [error.message],
+        };
     }
-    return { status: "error", message: "Validation failed. Please check your input." };
+    return {
+        status: "error",
+        message: "Validation failed. Please check your input.",
+    };
 }
 
 /**
@@ -80,11 +104,17 @@ export function handleDatabaseError(error: unknown): ApiError {
             return { status: "error", message: "This record already exists" };
         }
         if (error.message.includes("Foreign key constraint")) {
-            return { status: "error", message: "Cannot perform this action due to related records" };
+            return {
+                status: "error",
+                message: "Cannot perform this action due to related records",
+            };
         }
     }
 
-    return { status: "error", message: "Database operation failed. Please try again." };
+    return {
+        status: "error",
+        message: "Database operation failed. Please try again.",
+    };
 }
 
 /**
@@ -92,13 +122,19 @@ export function handleDatabaseError(error: unknown): ApiError {
  */
 export function handleTransactionError(error: unknown): ApiError {
     console.error("[handleTransactionError]", error);
-    return { status: "error", message: "Transaction failed. No changes were made." };
+    return {
+        status: "error",
+        message: "Transaction failed. No changes were made.",
+    };
 }
 
 /**
  * Format error for API response bodies
  */
-export function formatErrorResponse(error: unknown, defaultMessage = "An error occurred") {
+export function formatErrorResponse(
+    error: unknown,
+    defaultMessage = "An error occurred",
+) {
     if (error instanceof Error) {
         return { error: error.message, details: error.name };
     }

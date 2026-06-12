@@ -1,7 +1,4 @@
-import {
-    deleteSessions,
-    findSessionsByShop,
-} from "./session-storage";
+import { deleteSessions, findSessionsByShop } from "./session-storage";
 
 /**
  * App installation helpers — check if a shop has the app installed

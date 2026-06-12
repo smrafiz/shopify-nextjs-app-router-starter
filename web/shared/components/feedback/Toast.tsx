@@ -1,8 +1,14 @@
 "use client";
 
-import { useGlobalBannerStore, type BannerType } from "@/shared/stores/global-banner.store";
+import {
+    useGlobalBannerStore,
+    type BannerType,
+} from "@/shared/stores/global-banner.store";
 
-const toneFromType: Record<BannerType, "success" | "info" | "warning" | "critical"> = {
+const toneFromType: Record<
+    BannerType,
+    "success" | "info" | "warning" | "critical"
+> = {
     success: "success",
     error: "critical",
     warning: "warning",
@@ -30,7 +36,9 @@ export function Toast() {
                     tone={toneFromType[banner.type]}
                     dismissible={banner.dismissible}
                     onDismiss={
-                        banner.dismissible ? () => removeBanner(banner.id) : undefined
+                        banner.dismissible
+                            ? () => removeBanner(banner.id)
+                            : undefined
                     }
                 >
                     {banner.message}

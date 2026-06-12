@@ -72,7 +72,10 @@ export function useSessionProvider() {
                     await storeToken(token);
                     stored = true;
                 } catch (e) {
-                    console.error("[useSessionProvider] Token storage failed:", e);
+                    console.error(
+                        "[useSessionProvider] Token storage failed:",
+                        e,
+                    );
                 }
 
                 if (!stored) {
@@ -120,7 +123,8 @@ export function useSessionProvider() {
     // Expose app bridge globally for non-React code
     useEffect(() => {
         if (!isThemeExtension && app) {
-            window.__APP_BRIDGE__ = app as unknown as typeof window.__APP_BRIDGE__;
+            window.__APP_BRIDGE__ =
+                app as unknown as typeof window.__APP_BRIDGE__;
         }
     }, [app, isThemeExtension]);
 

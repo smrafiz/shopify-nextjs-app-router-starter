@@ -31,18 +31,20 @@ Tests match `**/*.test.ts` and `**/*.test.tsx`. Put test files next to the code 
 import { prismaMock } from "@/tests/mocks/prisma/prisma.mock";
 
 it("returns shop settings", async () => {
-  prismaMock.appSettings.findFirst.mockResolvedValue({
-    id: "1",
-    shopId: "shop-1",
-    maxBundlesPerShop: 10,
-    // ...
-  });
+    prismaMock.appSettings.findFirst.mockResolvedValue({
+        id: "1",
+        shopId: "shop-1",
+        maxBundlesPerShop: 10,
+        // ...
+    });
 
-  const result = await getAppSettings("my-shop.myshopify.com");
-  expect(result.maxBundlesPerShop).toBe(10);
-  expect(prismaMock.appSettings.findFirst).toHaveBeenCalledWith(
-    expect.objectContaining({ where: { shop: { domain: "my-shop.myshopify.com" } } })
-  );
+    const result = await getAppSettings("my-shop.myshopify.com");
+    expect(result.maxBundlesPerShop).toBe(10);
+    expect(prismaMock.appSettings.findFirst).toHaveBeenCalledWith(
+        expect.objectContaining({
+            where: { shop: { domain: "my-shop.myshopify.com" } },
+        }),
+    );
 });
 ```
 
@@ -62,20 +64,22 @@ The generated Prisma client is also mocked in `moduleNameMapper`:
 import { shopifyMock } from "@/tests/mocks/shopify/shopify-graphql.mock";
 
 it("loads products", async () => {
-  shopifyMock.mockQuery("GetProducts", {
-    products: {
-      nodes: [{ id: "gid://shopify/Product/1", title: "Test" }]
-    }
-  });
+    shopifyMock.mockQuery("GetProducts", {
+        products: {
+            nodes: [{ id: "gid://shopify/Product/1", title: "Test" }],
+        },
+    });
 
-  const result = await shopifyMock.execute("query GetProducts { ... }");
-  expect(result.data.products.nodes).toHaveLength(1);
+    const result = await shopifyMock.execute("query GetProducts { ... }");
+    expect(result.data.products.nodes).toHaveLength(1);
 });
 
 it("handles GraphQL errors", async () => {
-  shopifyMock.mockError("GetProducts", "Product not found");
+    shopifyMock.mockError("GetProducts", "Product not found");
 
-  await expect(shopifyMock.execute("query GetProducts { ... }")).rejects.toThrow("Product not found");
+    await expect(
+        shopifyMock.execute("query GetProducts { ... }"),
+    ).rejects.toThrow("Product not found");
 });
 ```
 
@@ -86,8 +90,12 @@ A `mockShopifyProducts` fixture is exported for common test data.
 ## Test Utilities
 
 ```ts
-import { render, createTestQueryClient, mockUseAppBridge, waitForLoadingToFinish }
-  from "@/tests/setup/test-utils";
+import {
+    render,
+    createTestQueryClient,
+    mockUseAppBridge,
+    waitForLoadingToFinish,
+} from "@/tests/setup/test-utils";
 ```
 
 - **`render()`** — custom render that wraps the component in `QueryClientProvider` with a fresh query client (retry: false, gcTime: 0)
@@ -102,20 +110,20 @@ import { prismaMock } from "@/tests/mocks/prisma/prisma.mock";
 import { getAnnouncements } from "@/features/announcements/actions/announcements.actions";
 
 describe("getAnnouncements", () => {
-  it("returns active announcements for shop", async () => {
-    prismaMock.announcement.findMany.mockResolvedValue([
-      { id: "1", title: "Summer Sale", isActive: true, type: "PROMO" }
-    ]);
+    it("returns active announcements for shop", async () => {
+        prismaMock.announcement.findMany.mockResolvedValue([
+            { id: "1", title: "Summer Sale", isActive: true, type: "PROMO" },
+        ]);
 
-    const result = await getAnnouncements("test-shop.myshopify.com");
+        const result = await getAnnouncements("test-shop.myshopify.com");
 
-    expect(result).toHaveLength(1);
-    expect(prismaMock.announcement.findMany).toHaveBeenCalledWith(
-      expect.objectContaining({
-        where: expect.objectContaining({ isActive: true })
-      })
-    );
-  });
+        expect(result).toHaveLength(1);
+        expect(prismaMock.announcement.findMany).toHaveBeenCalledWith(
+            expect.objectContaining({
+                where: expect.objectContaining({ isActive: true }),
+            }),
+        );
+    });
 });
 ```
 

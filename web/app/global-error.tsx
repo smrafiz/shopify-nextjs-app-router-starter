@@ -15,7 +15,9 @@ export default function GlobalError({
 
     return (
         <html lang="en">
-            <body style={{ margin: 0, padding: "2rem", fontFamily: "sans-serif" }}>
+            <body
+                style={{ margin: 0, padding: "2rem", fontFamily: "sans-serif" }}
+            >
                 <div
                     style={{
                         maxWidth: 600,

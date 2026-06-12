@@ -7,7 +7,11 @@ interface SkeletonProps {
     count?: number;
 }
 
-function SkeletonItem({ width = "100%", height = "1rem", className = "" }: Omit<SkeletonProps, "count">) {
+function SkeletonItem({
+    width = "100%",
+    height = "1rem",
+    className = "",
+}: Omit<SkeletonProps, "count">) {
     return (
         <div
             className={`rounded overflow-hidden relative bg-[#f3f3f3] ${className}`}

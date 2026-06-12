@@ -1,4 +1,6 @@
-import React, { Component, ReactNode } from "react";
+"use client";
+
+import { Component, ErrorInfo, ReactNode, createRef } from "react";
 
 interface ErrorBoundaryProps {
     fallback?: ReactNode;
@@ -10,7 +12,10 @@ interface ErrorBoundaryState {
     error: Error | null;
 }
 
-export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export class ErrorBoundary extends Component<
+    ErrorBoundaryProps,
+    ErrorBoundaryState
+> {
     constructor(props: ErrorBoundaryProps) {
         super(props);
         this.state = { hasError: false, error: null };
@@ -20,7 +25,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         return { hasError: true, error };
     }
 
-    componentDidCatch(error: Error, info: React.ErrorInfo) {
+    componentDidCatch(error: Error, info: ErrorInfo) {
         console.error("[ErrorBoundary]", error, info);
     }
 
@@ -37,7 +42,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             return (
                 <div className="flex flex-col items-center justify-center gap-4 p-8 text-center">
                     <div className="text-4xl">⚠️</div>
-                    <div className="font-semibold text-gray-800">Something went wrong</div>
+                    <div className="font-semibold text-gray-800">
+                        Something went wrong
+                    </div>
                     <div className="text-sm text-gray-500 max-w-md">
                         Something went wrong. Please try refreshing the page.
                     </div>

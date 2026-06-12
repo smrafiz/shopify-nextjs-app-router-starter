@@ -8,40 +8,40 @@
 import { revalidateTag } from "next/cache";
 
 export const cacheTags = {
-  /** Shop configuration and settings */
-  shop: (shop: string) => `shop-${shop}`,
+    /** Shop configuration and settings */
+    shop: (shop: string) => `shop-${shop}`,
 
-  /** Session and auth state */
-  session: (shop: string) => `session-${shop}`,
+    /** Session and auth state */
+    session: (shop: string) => `session-${shop}`,
 
-  /** In-app announcements or notifications */
-  announcements: (shop: string) => `announcements-${shop}`,
+    /** In-app announcements or notifications */
+    announcements: (shop: string) => `announcements-${shop}`,
 
-  /**
-   * Shopify product data for a shop.
-   * Keyed by shop so invalidation is scoped per-tenant.
-   * Bust via products/update webhook.
-   */
-  shopifyProducts: (shop: string) => `shopify-products-${shop}`,
+    /**
+     * Shopify product data for a shop.
+     * Keyed by shop so invalidation is scoped per-tenant.
+     * Bust via products/update webhook.
+     */
+    shopifyProducts: (shop: string) => `shopify-products-${shop}`,
 } as const;
 
 /** Revalidation durations in seconds */
 export const cacheDurations = {
-  /** 5 minutes — frequently changing data */
-  short: 300,
+    /** 5 minutes — frequently changing data */
+    short: 300,
 
-  /** 10 minutes — moderately stable data */
-  medium: 600,
+    /** 10 minutes — moderately stable data */
+    medium: 600,
 
-  /**
-   * 1 hour — Shopify product data.
-   * Changes infrequently; webhook handlers bust this tag on product update.
-   * TTL is a safety net, not the primary freshness mechanism.
-   */
-  shopifyProducts: 3600,
+    /**
+     * 1 hour — Shopify product data.
+     * Changes infrequently; webhook handlers bust this tag on product update.
+     * TTL is a safety net, not the primary freshness mechanism.
+     */
+    shopifyProducts: 3600,
 
-  /** 24 hours — rarely changing config */
-  long: 86400,
+    /** 24 hours — rarely changing config */
+    long: 86400,
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -50,12 +50,12 @@ export const cacheDurations = {
 
 /** Invalidate all shop-scoped cache tags for a given shop domain. */
 export function invalidateShopCache(shop: string): void {
-  revalidateTag(cacheTags.shop(shop), "max");
-  revalidateTag(cacheTags.session(shop), "max");
-  revalidateTag(cacheTags.announcements(shop), "max");
+    revalidateTag(cacheTags.shop(shop), "max");
+    revalidateTag(cacheTags.session(shop), "max");
+    revalidateTag(cacheTags.announcements(shop), "max");
 }
 
 /** Invalidate Shopify product cache for a shop. */
 export function invalidateProductCache(shop: string): void {
-  revalidateTag(cacheTags.shopifyProducts(shop), "max");
+    revalidateTag(cacheTags.shopifyProducts(shop), "max");
 }

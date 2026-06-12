@@ -56,7 +56,8 @@ export const useSessionStore = create<SessionStore>()((set, get) => ({
 
     setParams: (shop, host) => set({ shop, host, isInitialized: true }),
 
-    startSessionValidation: () => set({ isValidating: true, sessionError: null }),
+    startSessionValidation: () =>
+        set({ isValidating: true, sessionError: null }),
 
     sessionValidationSuccess: (shop) =>
         set((state) => ({

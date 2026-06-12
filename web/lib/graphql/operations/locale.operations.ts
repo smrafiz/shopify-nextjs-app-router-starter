@@ -10,20 +10,20 @@ import type { CachedLocale } from "./locale.validation";
 // ---------------------------------------------------------------------------
 
 export const GET_SHOP_LOCALE = /* GraphQL */ `
-  query GetShopLocale {
-    shop {
-      name
-      email
-      currencyCode
-      ianaTimezone
-      primaryDomain {
-        url
-      }
-      billingAddress {
-        countryCodeV2
-      }
+    query GetShopLocale {
+        shop {
+            name
+            email
+            currencyCode
+            ianaTimezone
+            primaryDomain {
+                url
+            }
+            billingAddress {
+                countryCodeV2
+            }
+        }
     }
-  }
 `;
 
 export interface GetShopLocaleQueryResponse {
@@ -42,14 +42,14 @@ export interface GetShopLocaleQueryResponse {
 // ---------------------------------------------------------------------------
 
 const GET_SHOP_LOCALES = /* GraphQL */ `
-  query GetShopLocales {
-    shopLocales {
-      locale
-      name
-      primary
-      published
+    query GetShopLocales {
+        shopLocales {
+            locale
+            name
+            primary
+            published
+        }
     }
-  }
 `;
 
 interface ShopLocalesResponse {

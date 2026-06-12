@@ -17,12 +17,22 @@ export function DashboardSkeleton() {
                     gap: "1rem",
                 }}
             >
-                <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "1rem",
+                    }}
+                >
                     {[0, 1].map((i) => (
                         <div
                             key={i}
                             className="rounded border border-[#e1e3e5] p-5"
-                            style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "0.75rem",
+                            }}
                         >
                             <Skeleton width="50%" height="1.25rem" />
                             <Skeleton count={4} height="0.875rem" />
@@ -31,7 +41,11 @@ export function DashboardSkeleton() {
                 </div>
                 <div
                     className="rounded border border-[#e1e3e5] p-5"
-                    style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.75rem",
+                    }}
                 >
                     <Skeleton width="60%" height="1.25rem" />
                     <Skeleton count={8} height="0.875rem" />

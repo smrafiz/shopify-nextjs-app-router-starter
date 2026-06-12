@@ -88,14 +88,22 @@ The `announcements` feature is a reference implementation. Copy it when adding a
 
 ```tsx
 // web/shared/components/Providers.tsx
-<AppProvider apiKey={apiKey}>           // App Bridge v4
-  <TanstackProvider>                   // React Query client
-    <SessionProvider>                  // Token init via Zustand
-      <ProtectedRoute>                 // Auth guard
-        {children}
-      </ProtectedRoute>
-    </SessionProvider>
-  </TanstackProvider>
+<AppProvider apiKey={apiKey}>
+    {" "}
+    // App Bridge v4
+    <TanstackProvider>
+        {" "}
+        // React Query client
+        <SessionProvider>
+            {" "}
+            // Token init via Zustand
+            <ProtectedRoute>
+                {" "}
+                // Auth guard
+                {children}
+            </ProtectedRoute>
+        </SessionProvider>
+    </TanstackProvider>
 </AppProvider>
 ```
 

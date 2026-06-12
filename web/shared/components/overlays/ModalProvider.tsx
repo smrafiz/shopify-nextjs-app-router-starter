@@ -9,7 +9,9 @@ export function ModalProvider() {
 
     const handleConfirm = async () => {
         if (!isOpen) return;
-        const payload = modal.payload as { onConfirm?: () => Promise<void> } | undefined;
+        const payload = modal.payload as
+            | { onConfirm?: () => Promise<void> }
+            | undefined;
         if (!payload?.onConfirm) {
             closeModal();
             return;
@@ -21,21 +23,27 @@ export function ModalProvider() {
             await payload.onConfirm();
             closeModal();
         } catch (err) {
-            setError(err instanceof Error ? err.message : "An unexpected error occurred");
+            setError(
+                err instanceof Error
+                    ? err.message
+                    : "An unexpected error occurred",
+            );
         } finally {
             setLoading(false);
         }
     };
 
     const payload = isOpen
-        ? (modal.payload as {
-              heading?: string;
-              message?: string;
-              confirmText?: string;
-              cancelText?: string;
-              destructive?: boolean;
-              onConfirm?: () => Promise<void>;
-          } | undefined)
+        ? (modal.payload as
+              | {
+                    heading?: string;
+                    message?: string;
+                    confirmText?: string;
+                    cancelText?: string;
+                    destructive?: boolean;
+                    onConfirm?: () => Promise<void>;
+                }
+              | undefined)
         : undefined;
 
     return isOpen ? (

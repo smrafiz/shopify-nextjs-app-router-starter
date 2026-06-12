@@ -103,16 +103,20 @@ export async function translateLabels(
     const sourceLang = toLang(sourceLocale);
     const targetLang = toLang(targetLocale);
 
-    const entries = Object.entries(labels).filter(
-        ([, v]) => v && v.trim(),
-    ) as [string, string][];
+    const entries = Object.entries(labels).filter(([, v]) => v && v.trim()) as [
+        string,
+        string,
+    ][];
 
     if (entries.length === 0) return {};
 
     const translated = await Promise.all(
         entries.map(
             async ([key, value]) =>
-                [key, await translateOne(value, sourceLang, targetLang)] as const,
+                [
+                    key,
+                    await translateOne(value, sourceLang, targetLang),
+                ] as const,
         ),
     );
 

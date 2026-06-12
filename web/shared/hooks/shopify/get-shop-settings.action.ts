@@ -65,7 +65,10 @@ export async function getShopSettingsAction(
     } catch (error) {
         return {
             status: "error",
-            message: error instanceof Error ? error.message : "Failed to fetch shop settings",
+            message:
+                error instanceof Error
+                    ? error.message
+                    : "Failed to fetch shop settings",
         };
     }
 }

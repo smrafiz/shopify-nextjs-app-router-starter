@@ -4,19 +4,19 @@ A production-ready monorepo starter for embedded Shopify apps. Not a toy templat
 
 ## Stack
 
-| Layer | Choice |
-|---|---|
-| Framework | Next.js 16.2.4 (App Router), React 19 |
-| Language | TypeScript 5 strict mode |
-| Database | PostgreSQL via Prisma 7 + Neon serverless adapter |
-| Shopify | `@shopify/shopify-api` v13, `@shopify/app-bridge-react` v4 |
-| State | Zustand v5 + Immer (feature + global stores) |
-| Server state | TanStack Query v5 |
-| Forms | React Hook Form v7 + Zod v4 |
-| UI | Shopify Polaris + Tailwind CSS v4 |
-| Testing | Jest + React Testing Library + jest-mock-extended |
-| Deployment | Vercel with cron jobs |
-| Package manager | pnpm (workspaces) |
+| Layer           | Choice                                                     |
+| --------------- | ---------------------------------------------------------- |
+| Framework       | Next.js 16.2.4 (App Router), React 19                      |
+| Language        | TypeScript 5 strict mode                                   |
+| Database        | PostgreSQL via Prisma 7 + Neon serverless adapter          |
+| Shopify         | `@shopify/shopify-api` v13, `@shopify/app-bridge-react` v4 |
+| State           | Zustand v5 + Immer (feature + global stores)               |
+| Server state    | TanStack Query v5                                          |
+| Forms           | React Hook Form v7 + Zod v4                                |
+| UI              | Shopify Polaris + Tailwind CSS v4                          |
+| Testing         | Jest + React Testing Library + jest-mock-extended          |
+| Deployment      | Vercel with cron jobs                                      |
+| Package manager | pnpm (workspaces)                                          |
 
 ## Quick Start
 

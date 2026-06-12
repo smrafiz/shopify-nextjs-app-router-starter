@@ -61,8 +61,7 @@ export function useProtectedSession() {
                 console.warn("[useProtectedSession] Validation failed:", error);
                 clearSession();
 
-                const shopParam =
-                    searchParamsRef.current.get("shop") || shop;
+                const shopParam = searchParamsRef.current.get("shop") || shop;
                 const authUrl = `/api/auth?returnTo=${encodeURIComponent(pathnameRef.current)}${shopParam ? `&shop=${shopParam}` : ""}`;
 
                 setTimeout(() => router.push(authUrl), 0);

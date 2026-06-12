@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
  *
  * Skips: static assets, API routes, and theme extension requests.
  */
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
     const { pathname, searchParams } = request.nextUrl;
     const locale = searchParams.get("locale");
 

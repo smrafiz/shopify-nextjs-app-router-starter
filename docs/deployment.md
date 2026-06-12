@@ -6,14 +6,14 @@ The app deploys to Vercel. The `vercel.json` at the repo root configures the bui
 
 ```json
 {
-  "buildCommand": "cd web && pnpm build",
-  "outputDirectory": "web/.next",
-  "installCommand": "pnpm install",
-  "framework": "nextjs",
-  "crons": [
-    { "path": "/api/cron/keep-alive", "schedule": "*/5 * * * *" },
-    { "path": "/api/cron/prune", "schedule": "0 2 * * *" }
-  ]
+    "buildCommand": "cd web && pnpm build",
+    "outputDirectory": "web/.next",
+    "installCommand": "pnpm install",
+    "framework": "nextjs",
+    "crons": [
+        { "path": "/api/cron/keep-alive", "schedule": "*/5 * * * *" },
+        { "path": "/api/cron/prune", "schedule": "0 2 * * *" }
+    ]
 }
 ```
 
@@ -23,17 +23,17 @@ The build runs `pnpm graphql-codegen` before `next build` via the `prebuild` scr
 
 Set all of these in your Vercel project settings under Settings → Environment Variables:
 
-| Variable | Required | Notes |
-|---|---|---|
-| `SHOPIFY_API_KEY` | yes | from Partner Dashboard |
-| `SHOPIFY_API_SECRET` | yes | from Partner Dashboard |
-| `SCOPES` | yes | e.g. `read_products,write_products` |
-| `HOST` | yes | your production Vercel URL |
-| `DATABASE_URL` | yes | Neon connection string (use pooled endpoint) |
-| `ENCRYPTION_KEY` | yes | 32-byte hex, generate once and never rotate unless migrating tokens |
-| `CRON_SECRET` | yes | min 16 chars, Vercel sends this automatically for cron routes |
-| `NEXT_PUBLIC_SHOPIFY_API_KEY` | yes | same as `SHOPIFY_API_KEY` |
-| `NEXT_PUBLIC_HOST` | yes | same as `HOST` |
+| Variable                      | Required | Notes                                                               |
+| ----------------------------- | -------- | ------------------------------------------------------------------- |
+| `SHOPIFY_API_KEY`             | yes      | from Partner Dashboard                                              |
+| `SHOPIFY_API_SECRET`          | yes      | from Partner Dashboard                                              |
+| `SCOPES`                      | yes      | e.g. `read_products,write_products`                                 |
+| `HOST`                        | yes      | your production Vercel URL                                          |
+| `DATABASE_URL`                | yes      | Neon connection string (use pooled endpoint)                        |
+| `ENCRYPTION_KEY`              | yes      | 32-byte hex, generate once and never rotate unless migrating tokens |
+| `CRON_SECRET`                 | yes      | min 16 chars, Vercel sends this automatically for cron routes       |
+| `NEXT_PUBLIC_SHOPIFY_API_KEY` | yes      | same as `SHOPIFY_API_KEY`                                           |
+| `NEXT_PUBLIC_HOST`            | yes      | same as `HOST`                                                      |
 
 The app throws at startup if `SHOPIFY_API_KEY`, `SHOPIFY_API_SECRET`, `ENCRYPTION_KEY`, or `CRON_SECRET` are missing or invalid. A bad deployment will fail fast rather than silently misbehave.
 

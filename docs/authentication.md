@@ -73,15 +73,15 @@ On the client, session state lives in `useSessionStore` (Zustand). `SessionProvi
 ```tsx
 // web/shared/components/auth/ProtectedRoute.tsx
 export function ProtectedRoute({ children }) {
-  const { isInitialized, hasValidSession, isRefreshing, isThemeExtension } =
-    useProtectedSession();
+    const { isInitialized, hasValidSession, isRefreshing, isThemeExtension } =
+        useProtectedSession();
 
-  if (isThemeExtension) return <>{children}</>;
-  if (pathname === "/") return <>{children}</>;  // Shopify init route
-  if (!isInitialized || isRefreshing || !hasValidSession) {
-    return <DashboardSkeleton />;
-  }
-  return <>{children}</>;
+    if (isThemeExtension) return <>{children}</>;
+    if (pathname === "/") return <>{children}</>; // Shopify init route
+    if (!isInitialized || isRefreshing || !hasValidSession) {
+        return <DashboardSkeleton />;
+    }
+    return <>{children}</>;
 }
 ```
 

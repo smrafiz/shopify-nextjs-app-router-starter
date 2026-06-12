@@ -1,36 +1,42 @@
 {
-  "name": "shopify-nextjs-app-router-starter",
-  "version": "0.1.0",
-  "private": true,
-  "license": "MIT",
-  "type": "module",
-  "scripts": {
-    "dev:app": "shopify app dev",
-    "dev:widgets": "cd web/widgets && vite build --watch",
-    "dev": "concurrently --raw \"pnpm:dev:app\" \"pnpm:dev:widgets\"",
-    "dev:auto": "node scripts/update-env-host.js",
-    "dev:full": "pnpm run --filter web graphql-codegen && node scripts/update-env-host.js",
-    "build": "shopify app build",
-    "build:widgets": "cd web/widgets && vite build",
-    "deploy": "shopify app deploy",
-    "info": "shopify app info",
-    "pretty": "prettier --write ./",
-    "update:config": "pnpx tsx web/_developer/tomlWriter.ts && pnpm run pretty",
-    "encrypt-tokens": "pnpx tsx scripts/encrypt-existing-tokens.ts"
-  },
-  "dependencies": {
-    "@iarna/toml": "^2.2.5",
-    "prettier": "^3.8.3"
-  },
-  "devDependencies": {
-    "concurrently": "^9.2.1",
-    "vite": "^6.3.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.2.14",
-      "@types/react-dom": "19.2.3"
-    }
-  },
-  "keywords": ["shopify", "nextjs", "polaris", "prisma", "starter"]
+    "name": "shopify-nextjs-app-router-starter",
+    "version": "0.1.0",
+    "private": true,
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "dev:app": "shopify app dev",
+        "dev:widgets": "cd web/widgets && vite build --watch",
+        "dev": "concurrently --raw \"pnpm:dev:app\" \"pnpm:dev:widgets\"",
+        "dev:auto": "node scripts/update-env-host.js",
+        "dev:full": "pnpm run --filter web graphql-codegen && node scripts/update-env-host.js",
+        "build": "shopify app build",
+        "build:widgets": "cd web/widgets && vite build",
+        "deploy": "shopify app deploy",
+        "info": "shopify app info",
+        "pretty": "prettier --write ./",
+        "update:config": "bunx tsx web/_developer/tomlWriter.ts && bun run pretty",
+        "encrypt-tokens": "bunx tsx scripts/encrypt-existing-tokens.ts"
+    },
+    "dependencies": {
+        "@iarna/toml": "^2.2.5",
+        "prettier": "^3.8.3"
+    },
+    "devDependencies": {
+        "concurrently": "^9.2.1",
+        "vite": "^8.0.11"
+    },
+    "pnpm": {
+        "overrides": {
+            "@types/react": "19.2.14",
+            "@types/react-dom": "19.2.3"
+        }
+    },
+    "keywords": [
+        "shopify",
+        "nextjs",
+        "polaris",
+        "prisma",
+        "starter"
+    ]
 }

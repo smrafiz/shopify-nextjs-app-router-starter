@@ -16,6 +16,7 @@ frame-ancestors https://*.myshopify.com https://admin.shopify.com
 `script-src` includes `'unsafe-inline'` because Shopify Polaris and App Bridge inject inline scripts. Removing it breaks the UI.
 
 Static headers from `next.config.js`:
+
 - `X-Content-Type-Options: nosniff`
 - `Referrer-Policy: strict-origin-when-cross-origin`
 - `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`
@@ -42,12 +43,12 @@ The limiter is in-memory, so it resets on Vercel function cold starts. For produ
 
 The app validates required environment variables at startup and throws if any are missing or invalid:
 
-| Variable | Requirement |
-|---|---|
-| `SHOPIFY_API_KEY` | must be present |
-| `SHOPIFY_API_SECRET` | must be present |
-| `ENCRYPTION_KEY` | must be a 64-character hex string (32 bytes) |
-| `CRON_SECRET` | minimum 16 characters |
+| Variable             | Requirement                                  |
+| -------------------- | -------------------------------------------- |
+| `SHOPIFY_API_KEY`    | must be present                              |
+| `SHOPIFY_API_SECRET` | must be present                              |
+| `ENCRYPTION_KEY`     | must be a 64-character hex string (32 bytes) |
+| `CRON_SECRET`        | minimum 16 characters                        |
 
 ## Cron Authentication
 
@@ -58,6 +59,7 @@ Vercel sends this header automatically when the `CRON_SECRET` env var is set in 
 ## Upload Endpoint
 
 `/api/upload` enforces:
+
 - **CORS:** only Shopify origins are allowed (allowlist, not `*`)
 - **File size:** 20MB maximum (enforced before reading the body into memory)
 - **Body validation:** `Array.isArray()` check on parsed JSON before processing

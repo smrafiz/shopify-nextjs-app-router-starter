@@ -19,35 +19,35 @@ import { getShopSetupStatus } from "@/shared/repositories";
  * @returns Result with overall success and any errors encountered.
  */
 export async function ensureAppSetup(
-  sessionToken: string,
+    sessionToken: string,
 ): Promise<{ success: boolean; errors: string[] }> {
-  const errors: string[] = [];
+    const errors: string[] = [];
 
-  try {
-    const {
-      session: { shop },
-    } = await handleSessionToken(sessionToken);
+    try {
+        const {
+            session: { shop },
+        } = await handleSessionToken(sessionToken);
 
-    const { setupComplete } = await getShopSetupStatus(shop);
+        const { setupComplete } = await getShopSetupStatus(shop);
 
-    if (setupComplete) {
-      return { success: true, errors: [] };
+        if (setupComplete) {
+            return { success: true, errors: [] };
+        }
+
+        // Add feature-specific setup checks here.
+        // Each check should be idempotent and mirror a task in runAppSetup.
+        // Example:
+        //   const metafieldResult = await ensureMetafieldDefinition(sessionToken);
+        //   if (!metafieldResult.success && metafieldResult.error) {
+        //     errors.push(`Metafield: ${metafieldResult.error}`);
+        //   }
+    } catch (error) {
+        console.error("[EnsureSetup] Setup check failed:", error);
+        errors.push(error instanceof Error ? error.message : "Unknown error");
     }
 
-    // Add feature-specific setup checks here.
-    // Each check should be idempotent and mirror a task in runAppSetup.
-    // Example:
-    //   const metafieldResult = await ensureMetafieldDefinition(sessionToken);
-    //   if (!metafieldResult.success && metafieldResult.error) {
-    //     errors.push(`Metafield: ${metafieldResult.error}`);
-    //   }
-  } catch (error) {
-    console.error("[EnsureSetup] Setup check failed:", error);
-    errors.push(error instanceof Error ? error.message : "Unknown error");
-  }
-
-  return {
-    success: errors.length === 0,
-    errors,
-  };
+    return {
+        success: errors.length === 0,
+        errors,
+    };
 }

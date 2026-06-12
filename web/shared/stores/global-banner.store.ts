@@ -33,7 +33,8 @@ export const useGlobalBannerStore = create<GlobalBannerState>((set, get) => ({
 
     addBanner: (banner) => {
         const id = `banner-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
-        const isErrorOrWarning = banner.type === "error" || banner.type === "warning";
+        const isErrorOrWarning =
+            banner.type === "error" || banner.type === "warning";
 
         const newBanner: Banner = {
             ...banner,

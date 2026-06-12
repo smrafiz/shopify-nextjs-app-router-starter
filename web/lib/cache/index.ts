@@ -1,6 +1,6 @@
 export {
-  cacheTags,
-  cacheDurations,
-  invalidateShopCache,
-  invalidateProductCache,
+    cacheTags,
+    cacheDurations,
+    invalidateShopCache,
+    invalidateProductCache,
 } from "./cache-tags";
