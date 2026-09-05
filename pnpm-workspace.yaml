@@ -1,2 +1,10 @@
 packages:
-    - "web"
+  - "extensions/*"
+  - "web"
+allowBuilds:
+  '@parcel/watcher': true
+  '@prisma/engines': true
+  prisma: true
+  protobufjs: true
+  sharp: true
+  unrs-resolver: true

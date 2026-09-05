@@ -1,35 +1,43 @@
 {
     "name": "shopify-nextjs-app-router-starter",
+    "description": "A Shopify app starter built with Next.js and App Router",
     "version": "0.1.0",
+    "main": "web/dist/index.js",
+    "author": "SM Rafiz",
     "private": true,
     "license": "MIT",
     "type": "module",
     "scripts": {
         "dev:app": "shopify app dev",
         "dev:widgets": "cd web/widgets && vite build --watch",
-        "dev": "concurrently --raw \"pnpm:dev:app\" \"pnpm:dev:widgets\"",
-        "dev:auto": "node scripts/update-env-host.js",
-        "dev:full": "pnpm run --filter web graphql-codegen && node scripts/update-env-host.js",
-        "build": "shopify app build",
+        "dev": "concurrently --raw \"bun:dev:app\" \"bun:dev:widgets\"",
         "build:widgets": "cd web/widgets && vite build",
-        "deploy": "shopify app deploy",
         "info": "shopify app info",
+        "build": "shopify app build",
+        "deploy": "shopify app deploy",
+        "generate": "shopify app generate",
         "pretty": "prettier --write ./",
-        "update:config": "bunx tsx web/_developer/tomlWriter.ts && bun run pretty",
-        "encrypt-tokens": "bunx tsx scripts/encrypt-existing-tokens.ts"
+        "update:config": "bun run web/_developer/tomlWriter.ts; bun run pretty; shopify app deploy;"
     },
     "dependencies": {
         "@iarna/toml": "^2.2.5",
-        "prettier": "^3.8.3"
+        "prettier": "^3.8.4"
     },
     "devDependencies": {
-        "concurrently": "^9.2.1",
-        "vite": "^8.0.11"
+        "@types/node": "^25.9.3",
+        "concurrently": "^10.0.3",
+        "nodemon": "^3.1.14",
+        "sass-embedded": "^1.100.0",
+        "vite": "^8.0.16"
+    },
+    "overrides": {
+        "mux-embed": "^5.16.1"
     },
     "pnpm": {
         "overrides": {
             "@types/react": "19.2.14",
-            "@types/react-dom": "19.2.3"
+            "@types/react-dom": "19.2.3",
+            "mux-embed": "^5.16.1"
         }
     },
     "keywords": [
