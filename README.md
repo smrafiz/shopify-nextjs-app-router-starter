@@ -1,6 +1,18 @@
 # Shopify Next.js App Router Starter
 
-A production-ready monorepo starter for embedded Shopify apps. Not a toy template — it ships with OAuth, encrypted session storage, webhook idempotency, per-request CSP, i18n, GraphQL codegen, a full test harness, and Vercel cron jobs all pre-wired. You write your features; the plumbing is already done.
+A reference implementation of an embedded Shopify app on the Next.js App Router. The plumbing most starters leave to you is written here: OAuth, encrypted session storage, webhook idempotency, per-request CSP, App Proxy HMAC verification, rate limiting, i18n, GraphQL codegen, and Vercel cron jobs.
+
+Read it as a worked example of how these pieces fit together, and lift what you need.
+
+## Status
+
+Honest about where this is:
+
+- **Written, not yet verified end to end.** The code is complete for the features listed below, but a full install against a live development store has not been walked through. Expect to fix something on first run.
+- **The test harness is wired; coverage is not there yet.** Jest, ts-jest for ESM, a deep Prisma mock and a Shopify GraphQL mock are all set up and working. There is one service test using them so far.
+- **No Prisma migrations are committed.** `prisma/schema.prisma` is the source of truth. Run `pnpm migrate` to generate your first migration.
+
+If you run into a problem, open an issue. Fixes are welcome.
 
 ## Stack
 
@@ -86,14 +98,11 @@ The app throws at startup if `SHOPIFY_API_KEY`, `SHOPIFY_API_SECRET`, `ENCRYPTIO
     │   │   ├── cron/        # keep-alive + WebhookDelivery prune
     │   │   ├── session/     # validate + refresh endpoints
     │   │   └── upload/      # File upload to Shopify Files API
-    │   ├── dashboard/
-    │   ├── announcements/
-    │   ├── settings/
-    │   └── billing/
+    │   └── (dashboard)/     # Dashboard shell + announcements
     ├── features/            # Feature modules (self-contained)
     ├── shared/              # Cross-feature: components, hooks, stores, utils
     ├── lib/                 # Infrastructure: shopify, graphql, i18n, security
-    ├── prisma/              # Schema, migrations, generated client
+    ├── prisma/              # Schema + generated client (no migrations committed)
     ├── messages/            # i18n JSON (en.json, fr.json)
     └── tests/               # Jest setup, mocks, test utilities
 ```
@@ -114,7 +123,7 @@ The app throws at startup if `SHOPIFY_API_KEY`, `SHOPIFY_API_SECRET`, `ENCRYPTIO
 
 **Caching** — `dynamicIO` enabled. Custom `cacheLife` profiles (`dashboard`, `dashboard-long`). Per-shop tag invalidation prevents cross-tenant cache pollution. [→ docs/caching.md](docs/caching.md)
 
-**Testing** — Jest + ts-jest for ESM. Deep Prisma mock via jest-mock-extended. `ShopifyGraphQLMock` for operation-level mocking. Custom `render()` with QueryClientProvider. [→ docs/testing.md](docs/testing.md)
+**Testing** — Jest + ts-jest for ESM. Deep Prisma mock via jest-mock-extended. `ShopifyGraphQLMock` for operation-level mocking. Custom `render()` with QueryClientProvider. The harness works; one service test uses it so far, so treat this as a foundation to build on rather than a suite to inherit. [→ docs/testing.md](docs/testing.md)
 
 **Deployment** — Vercel-native. Cron jobs for function keep-alive (every 5 min) and WebhookDelivery pruning (daily at 2am). [→ docs/deployment.md](docs/deployment.md)
 
